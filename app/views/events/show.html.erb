@@ -1,0 +1,13 @@
+<% provide(:page_title, @event.title) %>
+
+<p id="notice"><%= notice %></p>
+
+<div class= "row">
+	<div class= "col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
+  		<h1><%= @event.title %></h1>
+		<p><%= @event.published_date %> </p>
+		<%= @event.content.html_safe %>
+	</div>
+</div>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

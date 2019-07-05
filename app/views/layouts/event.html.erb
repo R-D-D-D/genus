@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:page_title) %> | Genus</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.tiny.cloud/1/46ojjbp40wknmx8v182rac6lfs0jtcy10gtqkquv3rvqk4qr/tinymce/5/tinymce.min.js"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
+  </head>
+
+  <body>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

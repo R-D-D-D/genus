@@ -1,0 +1,44 @@
+@import "bootstrap";
+
+
+$gray-base: #000 !default;
+$gray-light: lighten($gray-base, 46.7%) !default; // #777
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $gray-light;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+
+/* miscellaneous */
+
+.info-page {
+  h1, h2 {
+    text-align: left;
+  }
+  h2 {
+    line-height: 1.75;
+    letter-spacing: -0.5px;
+  }
+}

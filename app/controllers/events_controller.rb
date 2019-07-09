@@ -61,6 +61,12 @@ class EventsController < ApplicationController
     end
   end
 
+  def delete_image
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+    redirect_to event_path(event_id: @event.id )
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -69,6 +75,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :content)
+      params.require(:event).permit(:title, :content, images: [])
     end
 end

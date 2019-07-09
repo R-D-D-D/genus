@@ -16,6 +16,11 @@
     <%= form.text_field :title %>
   </div>
 
+  <div class = "field">
+    <%= form.label :images%>
+    <%= form.file_field :images,multiple: true %>
+  </div>
+
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content, :class => "tinymce"%> 
@@ -26,6 +31,16 @@
         toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bulist outdent indent link image nonbreaking',
         min_height: 300,
         width: 1400,
+        style_formats: [
+          {title: 'Image Left', selector: 'img', styles: {
+            'float' : 'left',
+            'margin': '0 10px 0 10px'
+          }},
+          {title: 'Image Right', selector: 'img', styles: {
+            'float' : 'right',
+            'margin': '0 10px 0 10px'
+          }}
+        ],
         //List settings
           lists_indent_on_tab: true,
           nonbreaking_force_tab: true,

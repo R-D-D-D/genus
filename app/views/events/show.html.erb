@@ -1,13 +1,45 @@
 <% provide(:page_title, @event.title) %>
 
 <p id="notice"><%= notice %></p>
+<div>
+	<div class= "row">
+		<div class= "col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
+  			<h1><%= @event.title %></h1>
+  			<p><%= @event.published_date %> </p>
+  		</div>
+  	</div>
+	<!-- Nav tabs -->
+	<div class= "row">
+		<div class= "col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
+		<ul class = "nav nav-tabs" role = "tablist">
+			<li class = "nav-item"> <a class = "nav-link active" href = "#post" aria-controls = "#post"	aria-selected = "true" role = "tab" data-toggle = "tab">Post</a></li>
+			<li class = "nav-item"> <a class = "nav-link" href = "#images" aria-controls = "#images"
+				aria-selected = "false" role = "tab" data-toggle = "tab">Images</a></li>
+		</ul>
+		</div>
+	</div>
 
-<div class= "row">
-	<div class= "col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
-  		<h1><%= @event.title %></h1>
-		<p><%= @event.published_date %> </p>
-		<%= @event.content.html_safe %>
+	<!-- Tab panes -->
+	<div class = "tab-content">
+	  <div role = "tabpanel" class = "tab-pane active" id="post">
+		<div class= "row">
+			<div class= "col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
+				<%= @event.content.html_safe %>
+			</div>
+		</div>
+	</div>
+
+	<div role = "tabpanel" class = "tab-pane" id ="images">
+		<div class = "row">
+			<div class= "col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
+				<% (0...@event.images.count).each do |image| %>
+					<%= image_tag(@event.images[image]) %>
+					<%= link_to "Delete Image", delete_image_event_path(@event.images[image].id, event_id: @event.id), method: :delete, data:{ confirm: "Are you sure?"} %>
+				<% end %>
+			</div>
+		</div>
 	</div>
 </div>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

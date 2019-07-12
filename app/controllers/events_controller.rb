@@ -67,6 +67,12 @@ class EventsController < ApplicationController
     redirect_to event_path(params[:id])
   end
 
+  def delete_video
+    @video = ActiveStorage::Attachment.find(params[:videos_id])
+    @video.purge
+    redirect_to event_path(params[:id])
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -75,6 +81,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :content, images: [])
+      params.require(:event).permit(:title, :content, images: [], videos: [])
     end
 end

@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
 	has_many_attached :images
+	has_many_attached :videos
 	extend FriendlyId
 	friendly_id :title, use: :slugged
 

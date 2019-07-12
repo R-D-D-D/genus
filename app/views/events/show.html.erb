@@ -1,6 +1,8 @@
 <% provide(:page_title, @event.title) %>
 
 <p id="notice"><%= notice %></p>
+
+
 <div>
 	<div class= "row">
 		<div class= "col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
@@ -15,6 +17,8 @@
 			<li class = "nav-item"> <a class = "nav-link active" href = "#post" aria-controls = "#post"	aria-selected = "true" role = "tab" data-toggle = "tab">Post</a></li>
 			<li class = "nav-item"> <a class = "nav-link" href = "#images" aria-controls = "#images"
 				aria-selected = "false" role = "tab" data-toggle = "tab">Images</a></li>
+			<li class = "nav-item"> <a class = "nav-link" href = "#videos" aria-controls = "#videos"
+				aria-selected = "false" role = "tab" data-toggle = "tab">Videos</a></li>
 		</ul>
 		</div>
 	</div>
@@ -35,6 +39,17 @@
 				<% (0...@event.images.count).each do |image| %>
 					<%= image_tag(@event.images[image]) %>
 					<%= link_to "Delete Image", delete_image_event_path(images_id: @event.images[image].id), method: :delete, data:{ confirm: "Are you sure?"} %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<div role = "tabpanel" class = "tab-pane" id ="videos">
+		<div class = "row">
+			<div class= "col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center embed-responsive embed-responsive-16by9">
+				<% (0...@event.videos.count).each do |video| %>
+					<%= video_tag(url_for(@event.videos[video]),controls: '' )%>
+					<%= link_to "Delete Video", delete_video_event_path(videos_id: @event.videos[video].id), method: :delete, data:{ confirm: "Are you sure?"} %>
 				<% end %>
 			</div>
 		</div>

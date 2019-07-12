@@ -34,7 +34,7 @@
 			<div class= "col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
 				<% (0...@event.images.count).each do |image| %>
 					<%= image_tag(@event.images[image]) %>
-					<%= link_to "Delete Image", delete_image_event_path(@event.images[image].id, event_id: @event.id), method: :delete, data:{ confirm: "Are you sure?"} %>
+					<%= link_to "Delete Image", delete_image_event_path(images_id: @event.images[image].id), method: :delete, data:{ confirm: "Are you sure?"} %>
 				<% end %>
 			</div>
 		</div>

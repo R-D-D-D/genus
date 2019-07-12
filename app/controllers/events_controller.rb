@@ -62,9 +62,9 @@ class EventsController < ApplicationController
   end
 
   def delete_image
-    @image = ActiveStorage::Attachment.find(params[:id])
+    @image = ActiveStorage::Attachment.find(params[:images_id])
     @image.purge
-    redirect_to event_path(event_id: @event.id )
+    redirect_to event_path(params[:id])
   end
 
   private

@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
   root 'events#index'
+
   resources :events do
-  	member do
-  		delete :delete_image
-  	end
+  	delete '/images/:images_id', 
+  	to: 'events#delete_image',
+  	as: 'delete_image',
+  	on: :member
   end
 
   #static_pages

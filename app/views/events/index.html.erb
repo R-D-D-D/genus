@@ -1,4 +1,4 @@
-<% provide(:page_title, "Events") %>
+<% provide(:page_title, "Index") %>
 
 <p id="notice"><%= notice %></p>
 
@@ -18,9 +18,7 @@
       <tr>
         <td><%= event.title %></td>
         <td><%= event.content.html_safe %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', event %></td> 
       </tr>
     <% end %>
   </tbody>

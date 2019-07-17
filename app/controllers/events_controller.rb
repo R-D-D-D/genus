@@ -1,12 +1,25 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   # GET /events
   # GET /events.json
   def index
+    @events = Event.most_recent.published
+  end
+
+  def front
     @events = Event.most_recent
   end
 
+  def publish
+    @event.update(published: true)
+    redirect_to events_front_path
+  end
+
+  def unpublish
+    @event.update(published: false)
+    redirect_to events_front_path
+  end
   # GET /events/1
   # GET /events/1.json
   def show

@@ -15,7 +15,7 @@ class Event < ApplicationRecord
 	end
 
 	def published_date
-		"Published #{published_at.strftime('%-b %-d, %Y')}"
+		"Published #{created_at.strftime('%-b %-d, %Y')}"
 	end
 
 	def resize_image input

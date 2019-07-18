@@ -4,7 +4,7 @@ class Event < ApplicationRecord
 	extend FriendlyId
 	friendly_id :title, use: :slugged
 
-	scope :most_recent, -> { order(id: :desc)}
+	scope :most_recent, -> { order(published_at: :desc)}
 	scope :published, -> { where(published: true)}
 	validates :title , presence: true
 	validates :content, presence: true 
@@ -15,7 +15,7 @@ class Event < ApplicationRecord
 	end
 
 	def published_date
-		"Published #{created_at.strftime('%-b %-d, %Y')}"
+		"Published #{published_at.strftime('%-b %-d, %Y')}"
 	end
 
 	def resize_image input

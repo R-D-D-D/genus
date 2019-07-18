@@ -12,12 +12,12 @@ class EventsController < ApplicationController
   end
 
   def publish
-    @event.update(published: true)
+    @event.update(published: true, published_at: Time.now)
     redirect_to events_front_path
   end
 
   def unpublish
-    @event.update(published: false)
+    @event.update(published: false,published_at: nil)
     redirect_to events_front_path
   end
   # GET /events/1

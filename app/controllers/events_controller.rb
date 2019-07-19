@@ -4,11 +4,15 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.most_recent.published
+    @events = Event.most_recent.published.paginate(page: params[:page], per_page: 5)
   end
 
   def front
-    @events = Event.most_recent
+    if(params[:tag].present?)
+       @events = Event.most_recent.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 5)
+    else
+       @events = Event.most_recent.paginate(page: params[:page], per_page: 5)
+    end
   end
 
   def publish
@@ -94,6 +98,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :content, images: [], videos: [])
+      params.require(:event).permit(:title, :tag_list, :content, images: [], videos: [])
     end
 end

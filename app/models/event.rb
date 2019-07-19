@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+	acts_as_taggable
 	has_many_attached :images
 	has_many_attached :videos
 	extend FriendlyId
@@ -15,7 +16,11 @@ class Event < ApplicationRecord
 	end
 
 	def published_date
-		"Published #{published_at.strftime('%-b %-d, %Y')}"
+		if(published) 
+			"Published #{published_at.strftime('%-b %-d, %Y')}"
+		else
+			"Not published yet"
+		end
 	end
 
 	def resize_image input

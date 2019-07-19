@@ -6,8 +6,16 @@ $gray-light: lighten($gray-base, 46.7%) !default; // #777
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  color: #76443D;
+  color: rgb(59, 116, 76);
 }
+
+.heading-background{
+  background: asset-url('wood2.jpg'); /* Alt: image-path("rails.png") becomes "/assets/rails.png"*/
+  background-size: cover;
+  background-position: center;
+}
+
+
 
 /* footer */
 

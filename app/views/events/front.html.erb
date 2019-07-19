@@ -2,44 +2,48 @@
 
 <p id="notice"><%= notice %></p>
 
-<div id="posts" class="container-fluid">
-    <div class="row heading-background">
+<div id="posts" class="container-fluid heading-background">
+    <div class="row">
       <h1><strong>My Posts</strong></h1>
     </div>
-<!-- Table --> 
-  <table class="table table-striped table-bordered table-hover">
-    <thead class="thead-dark">
-      <tr class="text-center">
-        <th>Title</th>
-        <th>Content</th>
-        <th>Tags</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
 
-    <tbody>
+<!-- Card --> 
+
       <% @events.each do |event| %>
-        <tr>
-          <td class="text-center"><%= event.title %></td>
-          <td><%= event.content.html_safe %></td>
-          <td><%= raw event.tags.map{ |t| link_to t.name,  events_front_path(tag: t.name)}.join(',') %></td>
-          <td>
-            <div class="btn-group mt-3 btn-sm">
-              <button type="button"><%= link_to 'Show', event %></button>
-              <% if event.published? %>
-                <button type="button"><%= link_to 'Unpublish', unpublish_event_path(event.id), method: :put ,data: { confirm: 'Are you sure?' }%></button>
-              <% else %>
-                <button type="button"><%= link_to 'Publish',  publish_event_path(event.id), method: :put ,data: { confirm: 'Are you sure?' }%></button>
-              <% end %>
-              <button type="button"><%= link_to 'Edit', edit_event_path(event) %></button>
-              <button type="button"><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+        <div class="card-group">
+        <div class="card">
+          <div class="card-header">
+            <!-- insert published at time here --> 
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title"><%= event.title %></h5>
+            <p class="card-text"><%= event.content.html_safe %></p>
+            
+            <!-- Start of Card-footer -->
+            <div class="card-footer text-muted">
+              <td><%= raw event.tags.map{ |t| link_to t.name,  events_front_path(tag: t.name)}.join(',') %></td>
+              <td>
+                <div class="btn-group btn-sm">
+                  <button type="button"><%= link_to 'Show', event %></button>
+                  <% if event.published? %>
+                    <button type="button"><%= link_to 'Unpublish', unpublish_event_path(event.id), method: :put ,data: { confirm: 'Are you sure?' }%></button>
+                  <% else %>
+                    <button type="button"><%= link_to 'Publish',  publish_event_path(event.id), method: :put ,data: { confirm: 'Are you sure?' }%></button>
+                  <% end %>
+                  <button type="button"><%= link_to 'Edit', edit_event_path(event) %></button>
+                  <button type="button"><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                </div>
+              </td>
             </div>
-          </td>
-        </tr>
+            <!-- End of Card-footer -->
+
+          </div>
+        </div>
+        </div>
       <% end %>
-    </tbody>
-  </table>
-<!-- End of Table --> 
+
+<!-- End of Card --> 
 
   <div class="d-flex justify-content-center">
     <%= will_paginate %>

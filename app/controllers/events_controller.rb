@@ -24,6 +24,7 @@ class EventsController < ApplicationController
     @event.update(published: false,published_at: nil)
     redirect_to events_front_path
   end
+  
   # GET /events/1
   # GET /events/1.json
   def show

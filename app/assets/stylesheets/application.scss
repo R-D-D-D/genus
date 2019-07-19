@@ -1,17 +1,22 @@
 @import "bootstrap";
 
-
 $gray-base: #000 !default;
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   color: rgb(59, 116, 76);
+  font-family: 'Cormorant', serif;
 }
 
 .heading-background{
-  background: asset-url('wood2.jpg'); /* Alt: image-path("rails.png") becomes "/assets/rails.png"*/
-  background-size: cover;
+  background: asset-url('wood1.jpg'); /* Alt: image-path("rails.png") becomes "/assets/rails.png"*/
+  // background-size: cover;
+  background-position: center;
+}
+
+.navbar-background-img {
+  background: asset-url('wood2.jpg');
   background-position: center;
 }
 

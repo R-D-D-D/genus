@@ -13,6 +13,8 @@ class EventsController < ApplicationController
     else
        @events = Event.most_recent.paginate(page: params[:page], per_page: 5)
     end
+      @tags = Event.tag_counts_on(:tags)
+
   end
 
   def publish
@@ -90,6 +92,8 @@ class EventsController < ApplicationController
     @video.purge
     redirect_to event_path(params[:id])
   end
+
+
   
   private
     # Use callbacks to share common setup or constraints between actions.

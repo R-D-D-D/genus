@@ -4,7 +4,7 @@
 <div class = 'container-fluid'>
 <div class = "row">
   <div class = "col-sm-2">
-        <nav class = "sidebar">
+        <nav class = "sidenav">
           <ul >
             <% @tags.each do |tag| %>
               <li><%= link_to "#{tag.name}(#{tag.taggings_count})", events_front_path(tag: tag.name) %></li>

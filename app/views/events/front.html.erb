@@ -1,0 +1,64 @@
+<% provide(:page_title, "My Posts") %>
+
+<p id="notice"><%= notice %></p>
+
+<div class = 'container-fluid'>
+  <div class = "row">
+    <div class = "sidebar col-sm-2 bg-light">
+      <nav class = "sidebar-nav navbar-dark">
+        <ul class= "nav">
+          <li class="nav-title" style="min-width: 100vw;">
+            <h3>Tags</h3>
+          </li>
+          <% @tags.each do |tag| %>
+            <li class = "nav-item"><%= link_to "#{tag.name}(#{tag.taggings_count})", events_front_path(tag: tag.name) %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class= "col-8 heading-background">
+      <h1><strong>My Posts</strong></h1>
+
+    <!-- Card --> 
+      <% @events.each do |event| %>
+        <div class="card">
+          
+          <div class="card-header">
+            <!-- insert published at time here --> 
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title"><%= event.title %></h5>
+            <p class="card-text"><%= event.content.html_safe %></p>
+            
+            <!-- Start of Card-footer -->
+            <div class="card-footer text-muted">
+              <td><%= raw event.tags.map{ |t| link_to t.name,  events_front_path(tag: t.name)}.join(',') %></td>
+              <td>
+                <div class="btn-group btn-sm">
+                  <button type="button"><%= link_to 'Show', event %></button>
+                  <% if event.published? %>
+                    <button type="button"><%= link_to 'Unpublish', unpublish_event_path(event.id), method: :put ,data: { confirm: 'Are you sure?' }%></button>
+                  <% else %>
+                    <button type="button"><%= link_to 'Publish',  publish_event_path(event.id), method: :put ,data: { confirm: 'Are you sure?' }%></button>
+                  <% end %>
+                  <button type="button"><%= link_to 'Edit', edit_event_path(event) %></button>
+                  <button type="button"><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                </div>
+              </td>
+            </div>
+            <!-- End of Card-footer -->
+
+          </div>
+        </div>
+    <% end %>
+    <!-- End of Card --> 
+
+  <div class="d-flex justify-content-between">
+    <%= link_to 'New Event', new_event_path %>
+    <%= will_paginate %>
+  </div>
+</div>
+</div>
+

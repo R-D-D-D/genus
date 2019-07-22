@@ -5,12 +5,35 @@ $gray-light: lighten($gray-base, 46.7%) !default; // #777
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  color: rgb(59, 116, 76);
+  color: #55432e;
   font-family: 'Cormorant', serif;
 }
 
+.brown-button{
+  background: #a8865d;
+}
+
+.card-background{
+  background: #efe5d9;
+}
+
+#post, #event{
+  h1, p{
+    color: #efe5d9;
+  }
+  h3{
+    color: #ff8c00;
+  }
+  a {
+    color: #efe5d9;
+  }
+  button{
+    color: #55432e;
+  }
+}
+
 .heading-background{
-  background: asset-url('wood1.jpg'); /* Alt: image-path("rails.png") becomes "/assets/rails.png"*/
+  background: asset-url('wood5.jpg'); /* Alt: image-path("rails.png") becomes "/assets/rails.png"*/
   // background-size: cover;
   background-position: center;
 }
@@ -20,8 +43,18 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
 }
 
+#navbar{
+  a{
+    color: #efe5d9;
+  }
+}
 #sidebar{
-  background: #7386D5;
+  background: asset-url('wood7.jpg');
+  background-size: cover;
+  //background: #7386D5;
+  a{
+    color: #efe5d9;
+  }
 }
 
 /* footer */

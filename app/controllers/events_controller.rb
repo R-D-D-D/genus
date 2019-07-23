@@ -14,7 +14,6 @@ class EventsController < ApplicationController
        @events = Event.most_recent.paginate(page: params[:page], per_page: 5)
     end
       @tags = Event.tag_counts_on(:tags)
-
   end
 
   def publish

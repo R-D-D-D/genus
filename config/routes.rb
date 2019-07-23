@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  root 'events#index'
+  root 'static_pages#home'
 
   get '/events/front' => 'events#front'
   resources :events do

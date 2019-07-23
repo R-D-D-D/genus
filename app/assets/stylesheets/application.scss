@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 $gray-base: #000 !default;
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
@@ -65,18 +66,24 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: $gray-light;
+
   a {
     color: #555;
+
     &:hover {
       color: #222;
     }
   }
+
   small {
     float: left;
   }
+
   ul {
     float: right;
     list-style: none;
+    margin-right: 15px;
+
     li {
       float: left;
       margin-left: 15px;
@@ -84,16 +91,70 @@ footer {
   }
 }
 
-.css1 { font-size: 1.0em; }
-.css2 { font-size: 1.2em; }
-.css3 { font-size: 1.4em; }
-.css4 { font-size: 1.6em; }
+.css1 {
+  font-size: 1.0em;
+}
+
+.css2 {
+  font-size: 1.2em;
+}
+
+.css3 {
+  font-size: 1.4em;
+}
+
+.css4 {
+  font-size: 1.6em;
+}
+
+/* nav */
+
+.home-bg {
+  background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), image-url('ensemble_photo.jpg') center no-repeat fixed;
+  height: 80vh;
+  background-size: cover;
+  overflow: auto;
+
+  .home-text {
+
+    h1 {
+      text-shadow: 2px 2px 4px black;
+      font-family: 'Cantarell', sans-serif;
+      color: white;
+      margin-top: 23%;
+      margin-left: 5%;
+    }
+
+    h3 {
+      text-shadow: 2px 2px 4px black;
+      font-family: 'Cantarell', sans-serif;
+      color: white;
+      margin-left: 5%;
+    }
+  }
+}
+
+#logo {
+  float: left;
+  margin-right: 30px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 /* miscellaneous */
 
 .info-page {
   h1, h2 {
     text-align: left;
   }
+
   h2 {
     line-height: 1.75;
     letter-spacing: -0.5px;

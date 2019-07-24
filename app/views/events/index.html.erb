@@ -1,25 +1,19 @@
 <% provide(:page_title, "Index") %>
 
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
 
-<div id="event" class="container-fluid heading-background">
-  <h1>Events</h1>
+<div class="container">
+  <div id="event" class="container-fluid">
+    <h1>Events</h1>
 
-      <% @events.each do |event| %>
-        <div class="card-transparent">
-          <div class="card-body">
-            <div class="card-title"><h3><%= event.title %></h3></div>
-              <div class="card-text"><%= event.content.html_safe %></div>
-                <div class="card-footer">
-                  <div class="row justify-content-between">
-                    <button class="btn brown-button"><%= link_to 'Show', event %></button>
-                    <p> Tag: <%= raw event.tags.map{ |t| link_to t.name,  events_front_path(tag: t.name)}.join(', ') %></p>
-                  </div>
-                </div>
-              </div>
-        <% end %>
+    <div class="row">
+      <%= render @events %>
+    </div>
 
-  <%= link_to 'New Event', new_event_path %>
+    <%= link_to 'New Event', new_event_path %>
 
-  <%= will_paginate @events %>
+    <%= will_paginate @events %>
+  </div>
 </div>

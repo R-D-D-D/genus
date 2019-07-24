@@ -1,38 +1,56 @@
 <% if Rails.env.production? %>
-<header id="navbar" class = "navbar navbar-fixed-top navbar-inverse navbar-background-img">
-  <div class = "container">
-    <%= link_to "Blog", root_url %>
-    <nav>
-      <ul class= 'nav navbar-nav navbar-right'>
-        <li><%= link_to "My Posts", events_front_path %> </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <header id="navbar" class="navbar navbar-sticky-top navbar-inverse navbar-background-img">
+    <div class="container">
+      <%= link_to "Blog", root_url %>
+      <nav>
+        <ul class='nav navbar-nav navbar-right'>
+          <li><%= link_to "My Posts", events_front_path %> </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 <% end %>
 
-<div class="container-fluid home-bg">
+<% if yield(:page_title).include?("Home") %>
+  <div class="container-fluid">
 
-  <div class="row mb-5">
-    <div class="col">
-      <nav class="navbar navbar-expand-lg navbar-dark" id="home-nav">
-        <%= render 'layouts/navbar' %>
-      </nav>
-      <div class="row home-text">
-        <h1>
-          NUS Guitar Ensemble
-        </h1>
+    <div class="row home-bg">
+      <div class="col">
+        <div class="row home-text">
+          <h1>
+            NUS Guitar Ensemble
+          </h1>
+        </div>
+        <div class="row home-text">
+          <h3>
+            where the fun begins
+          </h3>
+        </div>
       </div>
-      <div class="row home-text">
-        <h3>
-          where the fun begins
-        </h3>
+    </div>
+
+    <div class="row">
+      <div class="col p-0">
+        <div style="height:80px">
+          <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+            <%= render 'layouts/navbar' %>
+          </nav>
+        </div>
       </div>
     </div>
   </div>
 
-</div>
+<% else %>
 
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae quaerat quam? Accusamus adipisci architecto, aspernatur dignissimos doloremque enim eos eum inventore ipsam minus modi nobis praesentium quaerat quo recusandae sequi totam veniam vero, vitae voluptate. Aliquid assumenda aut, commodi corporis cumque dicta dolor doloribus est in ipsum modi obcaecati officiis quidem quod, repudiandae saepe sequi ut! Adipisci, assumenda, doloribus eos ex iste magni numquam omnis pariatur quam reiciendis repudiandae, tenetur. At consequuntur error explicabo, id iste itaque quia repellendus repudiandae, sequi sint tenetur totam ullam. Aliquid, illum, temporibus. Aperiam cum facere iusto nemo quas, reprehenderit sed tenetur voluptatem. Accusamus aliquam amet asperiores assumenda consequatur cupiditate deserunt dolore esse fugit, itaque laboriosam molestiae nemo nobis numquam officia provident sunt totam unde. Alias amet architecto beatae consequuntur culpa excepturi magnam nulla quam reprehenderit! Esse et id illo magnam maxime nobis quo tenetur! Aliquam debitis eveniet exercitationem illum iure maxime, nam officiis quidem soluta tempore ullam veniam. Ab aliquam at culpa dolorem, enim eos ex fugit maxime mollitia natus numquam, officiis quasi quod sed sit soluta tempore ut vel vitae voluptatem. Esse, illum, ipsa. Aut optio quae
-rat saepe voluptatem voluptatum? Ab cum dignissimos, illo mollitia nam quaerat quo rem repellendus tempore velit!
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col p-0">
+        <div style="height:80px">
+          <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+            <%= render 'layouts/navbar' %>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

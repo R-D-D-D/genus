@@ -1,32 +1,9 @@
-<!-- <%= link_to "GENUS", root_url, id: 'logo' %> -->
+<%= link_to "GENUS", root_url, id: 'logo' %>
 
-<button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
+<ul class="navbar-nav ml-auto">
+  <li class="nav-item active">
+    <%= link_to "Home", root_url, class: 'nav-link text-light' %>
+  </li>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item active">
-      <%= link_to "Home", root_url, class: 'nav-link text-light' %>
-    </li>
-
-    <!--Account items-->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle text-light" href="#" id="navbarAccountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Account
-      </a>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <!--My Profile-->
-        <%= link_to "My Profile", '#', class: 'dropdown-item' %>
-        <!--Settings-->
-          <%= link_to "Settings", '#', class: 'dropdown-item' %>
-
-        <div class="dropdown-divider"></div>
-
-        <%= link_to "Log Out", '#', method: :delete, class: 'dropdown-item' %>
-      </div>
-    </li>
-    <li><%= link_to "Log In", '#', class: 'nav-link text-light' %></li>
-
-  </ul>
-</div>
+  <li><%= link_to "Events", events_path, class: 'nav-link text-light' %></li>
+</ul>

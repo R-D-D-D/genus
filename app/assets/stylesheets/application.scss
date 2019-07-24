@@ -6,32 +6,40 @@ $gray-light: lighten($gray-base, 46.7%) !default; // #777
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  color: #55432e;
+  // color: #55432e;
   font-family: 'Cormorant', serif;
 }
+
 
 .brown-button{
   background: #a8865d;
 }
 
-.card-background{
-  background: #efe5d9;
+.card-body{
+  //background: #efe5d9;
+  background-color: #333333;
 }
 
+.card-title {
+  color: white;
+}
 #post, #event{
   h1, p{
-    color: #efe5d9;
+    //color: #efe5d9;
+    color: white;
   }
   h3{
-    color: #ff8c00;
+    //color: #ff8c00;
+    color: white;
   }
   a {
     color: #efe5d9;
   }
   button{
-    color: #55432e;
+    //color: #55432e;
   }
 }
+
 
 .heading-background{
   background: asset-url('wood5.jpg'); /* Alt: image-path("rails.png") becomes "/assets/rails.png"*/
@@ -42,12 +50,6 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-background-img {
   background: asset-url('wood2.jpg');
   background-position: center;
-}
-
-#navbar{
-  a{
-    color: #efe5d9;
-  }
 }
 
 #sidebar{
@@ -147,6 +149,17 @@ footer {
     text-decoration: none;
   }
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar {
+  background-color: #333333;
+}
+
 
 /* miscellaneous */
 

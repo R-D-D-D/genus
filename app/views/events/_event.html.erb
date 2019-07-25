@@ -10,10 +10,15 @@
     <div class="card-body">
       <!--Title-->
       <h4 class="card-title">PPE</h4><!--Text-->
-      <p class="card-text">PPE is equipment that will protect the user against health or safety risks at work...</p><!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+      <p class="card-text text-light">
+        <% event.content %>
+      </p>
+      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
       <%= link_to event_path(event) do %>
+        <div class="text-light">
         <%= fa_icon "search" %>
         find out more
+        </div>
       <% end %>
     </div>
   </div>

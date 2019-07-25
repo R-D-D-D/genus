@@ -1,16 +1,3 @@
-<% if Rails.env.production? %>
-  <header id="navbar" class="navbar navbar-sticky-top navbar-inverse navbar-background-img">
-    <div class="container">
-      <%= link_to "Blog", root_url %>
-      <nav>
-        <ul class='nav navbar-nav navbar-right'>
-          <li><%= link_to "My Posts", events_front_path %> </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-<% end %>
-
 <% if yield(:page_title).include?("Home") %>
   <div class="container-fluid">
 

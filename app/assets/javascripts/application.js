@@ -18,6 +18,7 @@
 //= require turbolinks
 //= require tinymce
 //= require_tree .
+//= require nivo
 
 // This is to create sticky navbar
 // When the user scrolls the page, execute myFunction

@@ -20,27 +20,12 @@
 //= require_tree .
 
 // This is to create sticky navbar
-
-// Get the navbar
-var navbar = $("#navbar");
-
 // When the user scrolls the page, execute myFunction
 $(window).scroll(function() {
-    console.log($(window).scrollTop() >= 474.39);
-    if ($(window).scrollTop() >= 474.39) {
+    console.log($(window).scrollTop() >= 488);
+    if ($(window).scrollTop() >= 488) {
         $("#navbar").addClass('sticky')
     } else {
         $("#navbar").removeClass('sticky');
     }
 });
-
-function getPosition(element) {
-    let location = 0;
-    if (element.offsetParent) {
-        do {
-            location += element.offsetTop;
-            element = element.offsetParent;
-        } while (element);
-    }
-    return location >= 0 ? location : 0;
-}

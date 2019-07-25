@@ -1,9 +1,43 @@
-<%= link_to "GENUS", root_url, id: 'logo' %>
+<%= link_to root_url do %>
+  <div class="container logo">
+    <div class="row">
+      <div class="col-3 text-light pr-0" id="myelement">
+      </div>
+      <div class="col-9 pl-0">
+        GENUS
+      </div>
+    </div>
+    <div class="row" style="font-size: 0.5em">
+      NUS GUITAR ENSEMBLE
+    </div>
+  </div>
+<% end %>
 
-<ul class="navbar-nav ml-auto">
-  <li class="nav-item active">
-    <%= link_to "Home", root_url, class: 'nav-link text-light' %>
-  </li>
+<button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
 
-  <li><%= link_to "Events", events_path, class: 'nav-link text-light' %></li>
-</ul>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item active">
+      <%= link_to "Home", root_url, class: 'nav-link text-light' %>
+    </li>
+
+    <li>
+      <%= link_to "Upcoming Events", '#', class: 'nav-link text-light' %>
+    </li>
+
+    <li>
+      <%= link_to "Gallery", events_path, class: 'nav-link text-light' %>
+    </li>
+
+    <li>
+      <%= link_to "About", about_path, class: 'nav-link text-light' %>
+    </li>
+
+    <li>
+      <%= link_to "Join Us", join_us_path, class: 'nav-link text-light' %>
+    </li>
+
+  </ul>
+</div>

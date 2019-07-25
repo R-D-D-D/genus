@@ -4,18 +4,19 @@
 $gray-base: #000 !default;
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-  // color: #55432e;
-  font-family: 'Cormorant', serif;
+/* universal */
+
+body {
+  background-color: #F2EFE8;
 }
 
+/* card */
 
-.brown-button{
+.brown-button {
   background: #a8865d;
 }
 
-.card-body{
+.card-body {
   //background: #efe5d9;
   background-color: #333333;
 }
@@ -23,25 +24,29 @@ h1, h2, h3, h4, h5, h6 {
 .card-title {
   color: white;
 }
-#post, #event{
-  h1, p{
+
+#post, #event {
+  h1, p {
     //color: #efe5d9;
     color: white;
   }
-  h3{
+
+  h3 {
     //color: #ff8c00;
     color: white;
   }
+
   a {
     color: #efe5d9;
   }
-  button{
+
+  button {
     //color: #55432e;
   }
 }
 
 
-.heading-background{
+.heading-background {
   background: asset-url('wood5.jpg'); /* Alt: image-path("rails.png") becomes "/assets/rails.png"*/
   // background-size: cover;
   background-position: center;
@@ -52,11 +57,11 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
 }
 
-#sidebar{
+#sidebar {
   background: asset-url('wood7.jpg');
   background-size: cover;
   //background: #7386D5;
-  a{
+  a {
     color: #efe5d9;
   }
 }
@@ -64,9 +69,6 @@ h1, h2, h3, h4, h5, h6 {
 /* footer */
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
   color: $gray-light;
 
   a {
@@ -78,7 +80,7 @@ footer {
   }
 
   small {
-    float: left;
+    float: right;
   }
 
   ul {
@@ -117,37 +119,45 @@ footer {
   background-size: cover;
   overflow: auto;
 
-  .home-text {
+  .text-box {
+    background-color: white;
+    opacity: 0.6;
+    margin-top: 25em;
+    margin-left: 2rem;
+    height: 60px;
+    width: 470px;
+    border: 2px solid black;
 
-    h1 {
-      text-shadow: 2px 2px 4px black;
-      font-family: 'Cantarell', sans-serif;
-      color: white;
-      margin-top: 23%;
-      margin-left: 5%;
-    }
-
-    h3 {
-      text-shadow: 2px 2px 4px black;
-      font-family: 'Cantarell', sans-serif;
-      color: white;
-      margin-left: 5%;
+    .home-text {
+        text-shadow: 2px 2px 4px black;
+        font-family: 'Cantarell', sans-serif;
+        color: black;
+        text-align: center;
     }
   }
 }
 
-#logo {
+.logo {
   float: left;
   margin-right: 30px;
-  font-size: 1.7em;
+  font-size: 2.3em;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
+  font-family: 'Overlock', cursive;
+  
   &:hover {
     color: #fff;
     text-decoration: none;
   }
+}
+
+#myelement {
+  background-image: url("https://static.thenounproject.com/noun-svg/1031.svg?Expires=1564055342&Signature=I5Zk9SbSEK~l8ZRK8hmUlzve0ZV6n5N9Q8-OeHX3D4SVGJau3Na1jGSP--gc2zwE2uybNnmjqT~2q2zSpsM10g1gwHyCbNSYu4gwMGZoIAzIDmKlKQMCF5J45Tg89tQFBhajBZjoiFv66u2GdJ8mPur6f8Zko5fc382zTWBWMpE_&Key-Pair-Id=APKAI5ZVHAXN65CHVU2Q");
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(87%) sepia(100%) saturate(3%) hue-rotate(264deg) brightness(111%) contrast(97%);
 }
 
 .sticky {
@@ -157,7 +167,8 @@ footer {
 }
 
 .navbar {
-  background-color: #333333;
+  background-color: #837359;
+  z-index: 100;
 }
 
 
@@ -174,3 +185,28 @@ footer {
   }
 }
 
+/* icon */
+
+footer {
+  i.fa {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.5em 0.6em;
+    color: white;
+    background: #837359;
+  }
+}
+
+/* button */
+
+.btn {
+  background-color: #837359;
+  border-color: #837359;
+  color: white;
+
+  &:hover {
+    color: #fff;
+    background-color: #73654e;
+  }
+}

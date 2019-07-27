@@ -1,13 +1,129 @@
 <% provide(:page_title, "Home") %>
 
-<div class="container">
-  <div class="row pt-5 pb-5">
-    <div class="col d-flex justify-content-center">
-      <h1>
-        Welcome to NUS Guitar Ensemble(GENUS)!
-      </h1>
+<script type="text/javascript" charset="utf-8">
+    // This is to create sticky navbar
+    // When the user scrolls the page, execute myFunction
+    $(window).scroll(function () {
+        console.log($(window).scrollTop() >= 488);
+        if ($(window).scrollTop() >= 488) {
+            $("#navbar").addClass('sticky')
+        } else {
+            $("#navbar").removeClass('sticky');
+        }
+    });
+
+</script>
+
+<div class="container" id="home">
+  <div class="row pt-5 pb-5 text-light">
+  </div>
+
+  <div class="row performance-bg text-light">
+    <div class="col pt-5">
+      <div class="d-flex justify-content-center">
+        <h1>Welcome to NUS Guitar Ensemble</h1>
+      </div>
+      <div class="d-flex justify-content-center pt-3">
+        <p>wonder how is our performance like?</p>
+      </div>
+      <div class="d-flex justify-content-center pt-3">
+        <a href="https://www.youtube.com/user/NusGuitarEnsemble" class="btn btn-md" style="height: 2.5rem;">WATCH NOW</a>
+      </div>
     </div>
   </div>
+
+  <div class="row pt-1 text-light">
+    <div class="col-4 pt-1 pb-1 pr-1 pl-0">
+      <div class="container-fluid practicing-bg ">
+        <div class="row d-flex justify-content-center pt-5">
+          <h3>Polishing our skills</h3>
+        </div>
+        <div class="row d-flex justify-content-center pt-3">
+          <%= link_to "Gallery", events_path, class: 'btn btn-md' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4 pt-1 pb-1">
+      <div class="container-fluid family-bg">
+        <div class="row d-flex justify-content-center pt-5">
+          <h3>GENUS is a family</h3>
+        </div>
+        <div class="row d-flex justify-content-center pt-3">
+          <%= link_to "Gallery", events_path, class: 'btn btn-md' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4 pt-1 pb-1 pl-1 pr-0">
+      <div class="container-fluid fun-bg">
+        <div class="row d-flex justify-content-center pt-5">
+          <h3>Where the fun begins</h3>
+        </div>
+        <div class="row d-flex justify-content-center pt-3">
+          <%= link_to "Gallery", events_path, class: 'btn btn-md' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row join-us-bg mt-1">
+    <div class="col d-flex justify-content-center align-items-center">
+      <%= link_to "JOIN US NOW", join_us_path, id: 'join-us', style: "font-size: 3rem;" %>
+    </div>
+  </div>
+
+</div>
+<div class="container-fluid" id="home">
+  <div class="row d-flex justify-content-center p-5">
+    <h1>Follow our social media</h1>
+  </div>
+
+  <div class="row pl-5">
+    <div class="col-4">
+      <div class="row" style="height: 40vh">
+        <div class="col-3">
+          <%= fa_icon "youtube-play 2x" %>
+        </div>
+        <div class="col-9">
+          <h4>Youtube</h4>
+          <p>
+            Timely updates on performace videos. Recent ones include kaleidoscope and esplanade.
+            There will also be music videos made by us and many more exciting videos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4" style="height: 40vh">
+      <div class="row" style="height: 40vh">
+        <div class="col-3">
+          <%= fa_icon "instagram 2x" %>
+        </div>
+        <div class="col-9">
+          <h4>Instagram</h4>
+          <p>
+            Short stories and photos depicting daily life of genus. Information on audition, concert,
+            performance, engagement and almost all activities will be made known on instagram.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4" style="height: 40vh">
+      <div class="row" style="height: 40vh">
+        <div class="col-3">
+          <%= fa_icon "facebook-official 2x" %>
+        </div>
+        <div class="col-9">
+          <h4>Facebook</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi consequatur
+            eos ipsum labore magnam minima molestiae obcaecati rerum ut.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="row">
     <h1>We are...</h1>

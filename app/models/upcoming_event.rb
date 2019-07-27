@@ -1,0 +1,2 @@
+class UpcomingEvent < ApplicationRecord
+end

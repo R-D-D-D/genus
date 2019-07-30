@@ -1,23 +1,106 @@
 <% if yield(:page_title).include?("Home") %>
-  <div class="container-fluid">
-
-    <div class="row home-bg">
-      <div class="col">
-        <!-- <div class="row text-box d-flex justify-content-center align-items-center">
-          <h1 class="home-text">
-            NUS Guitar Ensemble
-          </h1>
-        </div> -->
-      </div>
-    </div>
-
+  <div class="container-fluid" style="height: 100vh; overflow: hidden;">
     <div class="row">
       <div class="col p-0">
-        <div style="height:80px">
+        <div>
           <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
             <%= render 'layouts/navbar' %>
           </nav>
         </div>
+      </div>
+    </div>
+
+    <div class="row home-bg">
+      <div class="container">
+
+        <div class="row d-flex justify-content-center pt-5 mt-3 text-light">
+          <h1>WELCOME TO</h1>
+        </div>
+
+
+        <div class="row">
+          <div class="col">
+            <div class="container mb-0" style="width: 900px">
+              <div class="row">
+                <div class="col">
+                  <h1 class="home-text">NUS GUITAR ENSEMBLE</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+
+                </div>
+                <div class="col-3">
+                  <hr>
+                </div>
+                <div class="col-2 text-light">
+                  <h2 class="font-italic">GENUS</h2>
+                </div>
+                <div class="col-3">
+                  <hr>
+                </div>
+                <div class="col-2">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <p>WHERE THE FUN BEGINS</p>
+          </div>
+        </div>
+
+        <!-- begin of 4 icons -->
+        <div class="row">
+          <div class="container d-flex justify-content-center pt-5 mt-1">
+            <div class="row" style="width: 80%;">
+              <div class="col-3">
+                <div class="d-flex justify-content-center">
+                  <%= link_to events_path do %>
+                    <i class="fas fa-photo-video fa-3x"></i>
+                  <% end %>
+                </div>
+                <h5>Gallery</h5>
+                <p>See us in action</p>
+              </div>
+
+              <div class="col-3">
+                <div class="d-flex justify-content-center">
+                  <%= link_to events_path do %>
+                    <i class="far fa-calendar-check fa-3x"></i>
+                  <% end %>
+                </div>
+                <h5>Calendar</h5>
+                <p>Check the dates!</p>
+              </div>
+
+              <div class="col-3">
+                <div class="d-flex justify-content-center">
+                  <%= link_to events_path do %>
+                    <i class="fas fa-guitar fa-3x"></i>
+                  <% end %>
+                </div>
+                <h5>Music Production</h5>
+                <p>See our past work</p>
+              </div>
+
+              <div class="col-3">
+                <div class="d-flex justify-content-center">
+                  <%= link_to events_path do %>
+                    <i class="far fa-address-book fa-3x"></i>
+                  <% end %>
+                </div>
+                <h5>Contact Us</h5>
+                <p>Get speedy reply</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of 4 icons -->
+
       </div>
     </div>
   </div>
@@ -27,9 +110,9 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col p-0">
-          <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
-            <%= render 'layouts/navbar' %>
-          </nav>
+        <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+          <%= render 'layouts/navbar' %>
+        </nav>
       </div>
     </div>
   </div>

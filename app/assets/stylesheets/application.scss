@@ -1,41 +1,63 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
 $gray-base: #000 !default;
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
+$brown: #B6955D;
+$dark-brown: #9b7b4e;
 
 /* universal */
 
 body {
-  background-color: #F2EFE8;
+  /* background-color: #F2EFE8; */
   color: #2c2f2f;
 }
 
 .bg-brown {
-  background: #a8865d;
+  background: #B6955D;
 }
 
 .bg-dark {
   background-color: #2F2E2E;
 }
 
+.brown-button {
+  padding: 7px;
+  background-color: $brown;
+  height: 20px;
+  width: 110%;
+  border-radius: 3px;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: $dark-brown;
+  }
+}
+
+
 /* home page */
 
 #home {
-  i.fa {
-    display: inline-block;
-    border-radius: 50%;
-    box-shadow: 0px 0px 2px #888;
-    padding: 20px;
-    color: white;
-    background: #a8865d;
-
-    &:hover {
-      color: #fff;
-      background-color: #837359;
-      border-color: #837359;
-    }
+  h1 {
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-weight: bold;
+    font-size: 3.5rem;
+    text-align: center;
   }
+
+  h4 {
+    padding-top: 5px;
+    color: $brown;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
 }
 
 #join-us {
@@ -51,40 +73,70 @@ body {
   }
 }
 
-.performance-bg {
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), image-url('ensemble_photo.jpg') center no-repeat;
-  height: 60vh;
-  background-size: cover;
-  overflow: auto;
+/* arrow down */
+
+/* upcoming events */
+
+.upcoming-events {
+  h1 {
+    font-family: "Times New Roman";
+    font-size: 3rem;
+    font-weight: bold;
+  }
 }
 
-.practicing-bg {
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), image-url('practicing.jpeg') center no-repeat;
-  height: 40vh;
-  background-size: cover;
-  overflow: auto;
+/* Contact us */
+
+#contact-us {
+  color: white;
+
+  h1 {
+    text-align: center;
+    font-family: "Times New Roman";
+    font-weight: bold;
+    font-size: 4rem;
+  }
+
+  .hero {
+    background: image-url('desk.jpeg') center no-repeat;
+    background-size: cover;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+  }
+
+  #icon {
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 2px;
+    color: #a1a1a1;
+
+    font-size: 35px;
+    text-align: center;
+    line-height: 35px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  hr {
+    background-color: $brown;
+    color: $brown;
+    border-width: 3px;
+    width: 100px;
+  }
 }
 
-.fun-bg {
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), image-url('fun.jpeg') center no-repeat;
-  height: 40vh;
-  background-size: cover;
-  overflow: auto;
-}
-
-.family-bg {
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), image-url('family.jpeg') center no-repeat;
-  height: 40vh;
-  background-size: cover;
-  overflow: auto;
-}
-
-.join-us-bg {
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), image-url('join_us_now.jpeg') center no-repeat;
-  height: 60vh;
-  background-size: cover;
-  overflow: auto;
-}
 
 /* card */
 
@@ -118,54 +170,178 @@ body {
 }
 
 
-.heading-background {
-  background: asset-url('wood5.jpg'); /* Alt: image-path("rails.png") becomes "/assets/rails.png"*/
-  // background-size: cover;
-  background-position: center;
-}
-
-.navbar-background-img {
-  background: asset-url('wood2.jpg');
-  background-position: center;
-}
-
-#sidebar {
-  background: asset-url('wood7.jpg');
-  background-size: cover;
-  //background: #7386D5;
-  a {
-    color: #efe5d9;
-  }
-}
 
 /* footer */
 
-footer {
-  color: $gray-light;
+.footer-distributed {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
 
-  a {
-    color: #555;
-
-    &:hover {
-      color: #222;
-    }
-  }
-
-  small {
-    float: right;
-  }
-
-  ul {
-    float: right;
-    list-style: none;
-    margin-right: 15px;
-
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
+  padding: 55px 50px;
+  margin-top: 80px;
 }
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3 {
+  color: #ffffff;
+  font: normal 36px 'Cookie', cursive;
+  margin: 0;
+}
+
+.footer-distributed h3 span {
+  color: #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+  color: #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+  color: #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center {
+  width: 35%;
+}
+
+.footer-distributed .footer-center i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+  color: #5383d3;
+  text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+  line-height: 20px;
+  color: #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i {
+    margin-left: 0;
+  }
+
+}
+
 
 .css1 {
   font-size: 1.0em;
@@ -186,28 +362,61 @@ footer {
 /* nav */
 
 .home-bg {
-  background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), image-url('ensemble_photo.jpg') center no-repeat fixed;
-  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), image-url('ensemble_photo_grey.jpg') center no-repeat;
+  height: 90vh;
   background-size: cover;
-  overflow: auto;
 
-  .text-box {
-    background-color: white;
-    opacity: 0.6;
-    margin-top: 25em;
-    margin-left: 2rem;
-    height: 60px;
-    width: 470px;
-    border: 2px solid black;
+  .home-text {
+    text-shadow: 2px 2px 4px black;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    color: $brown;
+    font-weight: bold;
+    font-size: 4rem;
+  }
 
-    .home-text {
-      text-shadow: 2px 2px 4px black;
-      font-family: 'Cantarell', sans-serif;
-      color: black;
-      text-align: center;
+  hr {
+    background-color: $brown;
+    color: $brown;
+    border-width: 3px;
+  }
+
+  h2 {
+    text-align: center;
+    font: normal 32px 'Ubuntu';
+  }
+
+  h5 {
+    padding-top: 5px;
+    color: $brown;
+    text-align: center;
+  }
+
+  p {
+    color: white;
+    text-align: center;
+  }
+
+  a {
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: $brown;
+    text-align: center;
+    line-height: 35px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+
+    &:hover {
+      color: $dark-brown;
     }
   }
+
 }
+
 
 .logo {
   float: left;
@@ -239,10 +448,9 @@ footer {
 }
 
 .navbar {
-  background-color: #a8865d;
+  background-color: #151515;
   z-index: 100;
 }
-
 
 /* miscellaneous */
 
@@ -257,7 +465,7 @@ footer {
   }
 }
 
-/* icon */
+/* icon
 
 footer {
   i.fa {
@@ -275,7 +483,7 @@ footer {
     }
   }
 }
-
+*/
 /* button */
 
 .btn {

@@ -69,6 +69,6 @@ class UpcomingEventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def upcoming_event_params
-      params.require(:upcoming_event).permit(:title, :content, :date)
+      params.require(:upcoming_event).permit(:title, :content, :date, :image)
     end
 end

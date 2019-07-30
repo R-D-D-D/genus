@@ -30,6 +30,9 @@ Rails.application.routes.draw do
   #static_pages
   get "/about" , to: 'static_pages#about'
   get "/join_us", to: 'static_pages#join_us'
+
+  #sessions
   get "/log_in", to: 'sessions#new'
+  post "/log_in", to: 'sessions#create'
 
 end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :upcoming_events
   root 'static_pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :sessions, only:[:create]
+  resources :sessions, only:[:create, :new]
   resources :registrations, only:[:create]
   delete :logout, to: "sessions#logout"
   get :logged_in, to: "sessions#logged_in"
@@ -30,5 +30,6 @@ Rails.application.routes.draw do
   #static_pages
   get "/about" , to: 'static_pages#about'
   get "/join_us", to: 'static_pages#join_us'
+  get "/log_in", to: 'sessions#new'
 
 end

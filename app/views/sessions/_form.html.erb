@@ -1,0 +1,17 @@
+<%= form_with(model: session, local: true) do |form| %>
+  
+    <div class="field">
+      <%= form.label :user %>
+      <%= form.text_field :user %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit "log in"%>
+    </div>
+  <% end %>
+  

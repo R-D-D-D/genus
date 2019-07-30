@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
   include CurrentUserConcern
+  before_action :set_session, only: [:create]
+
+  def new
+  end
+
     def create
         user = User.find_by(email: params["user"]["email"]).try(:authenticate, params["user"]["password"])
         if user 

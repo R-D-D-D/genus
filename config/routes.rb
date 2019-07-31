@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   	on: :member
   end
 
+  #resources :messages
+  resources :messages, :path => "contact_us"
+
   #static_pages
   get "/about" , to: 'static_pages#about'
   get "/join_us", to: 'static_pages#join_us'
@@ -34,5 +37,8 @@ Rails.application.routes.draw do
   #sessions
   get "/log_in", to: 'sessions#new'
   post "/log_in", to: 'sessions#create'
+
+  #search_page
+  get '/search', to: 'search_page#search'
 
 end

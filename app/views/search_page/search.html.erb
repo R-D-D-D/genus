@@ -1,0 +1,17 @@
+<% provide(:page_title, "Search") %>
+
+<div class="container pt-5">
+  <div class="row">
+    <h1><strong>Search Results</strong></h1>
+  </div>
+<br>
+  <div class="row">
+    <% if @results.present? %>
+        <%= render @results %>
+    <% else %>
+        <p>There are no events containing the term(s) "<%= params[:search] %>".</p>
+    <% end %>
+  </div>
+
+</div>
+

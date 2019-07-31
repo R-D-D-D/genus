@@ -24,26 +24,38 @@
   <ul class="navbar-nav ml-auto">
     <li class="nav-item active">
       <%= link_to "Home", root_url, class: 'nav-link text-light' %>
-      <uL> 
-          <li><%= link_to "Home", root_url, class: 'nav-link' %></li>
-          <li>
-            <%= link_to "Upcoming Events", upcoming_events_path, class: 'nav-link' %>
-          </li>
-      </uL>
     </li>
 
     <li>
-      <%= link_to "Upcoming Events", upcoming_events_path, class: 'nav-link text-light' %>
-        <uL> 
-          <li><%= link_to "Home", root_url, class: 'nav-link text-light' %></li>
-          <li>
-            <%= link_to "Upcoming Events", upcoming_events_path, class: 'nav-link text-light' %>
-          </li>
-      </uL>
+      <%= link_to upcoming_events_path, class: 'nav-link text-light' do %>
+        Upcoming Events <i class="fas fa-caret-down"></i>
+      <% end %>
+      <% if UpcomingEvent.any? %>
+        <ul class="p-1">
+          <% UpcomingEvent.all.each do |event| %>
+            <li class="py-1 ml-2">
+              <%= link_to "#{event.title}", root_url, class: 'nav-link text-light ml-0 pl-0' %>
+            </li>
+            <hr class="p-0 m-0">
+          <% end %>
+        </ul>
+      <% end %>
     </li>
 
     <li>
-      <%= link_to "Gallery", events_path, class: 'nav-link text-light' %>
+      <%= link_to events_path, class: 'nav-link text-light' do %>
+        Gallery
+      <% end %>
+      <% if Event.any? %>
+        <ul class="p-1">
+          <% Event.all.each do |event| %>
+            <li class="py-1 ml-2">
+              <%= link_to "#{event.title}", root_url, class: 'nav-link text-light ml-0 pl-0' %>
+            </li>
+            <hr class="p-0 m-0">
+          <% end %>
+        </ul>
+      <% end %>
     </li>
 
     <li>
@@ -54,27 +66,23 @@
       <%= link_to "Join Us", join_us_path, class: 'nav-link text-light' %>
     </li>
 
-    <li>
-    <%= link_to "log in", log_in_path, class: 'nav-link text-light' %>
-  </li>
-
   </ul>
 
   <!--Search bar-->
-  <%= form_tag(search_path, :method => "get", class: 'navbar-form navbar-left') do %>  
-  <div class="input-group">  
-    <%= search_field_tag :search, params[:search], placeholder: "Search Events", class: "form-control" %>  
-    <div class="input-group-btn">  
-      <%= button_tag "Go!", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
-    </div>  
-  </div>  
+  <%= form_tag(search_path, :method => "get", class: 'navbar-form navbar-left') do %>
+    <div class="input-group">
+      <%= search_field_tag :search, params[:search], placeholder: "Search Events", class: "form-control" %>
+      <div class="input-group-btn">
+        <%= button_tag "Go!", :class => 'btn btn-info glyphicon glyphicon-search', :name => nil %>
+      </div>
+    </div>
   <% end %>
   <!--Search bar end-->
-  
+
 </div>
 
 <script type="text/javascript">
-$('.dropDownMenu ul li').hover(function() {
-  $(this).children('ul').stop(true, false, true).fadeToggle(300);
-});
+    $('.dropDownMenu ul li').hover(function () {
+        $(this).children('ul').stop(true, false, true).fadeToggle(300);
+    });
 </script>

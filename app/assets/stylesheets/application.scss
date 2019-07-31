@@ -346,11 +346,11 @@ body {
 
   .home-text {
     text-shadow: 2px 2px 4px black;
-    font-family: 'Gabriola', sans-serif;
+    font-family: 'Rubik', sans-serif;
     text-align: center;
     color: $brown;
     font-weight: bold;
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   hr {
@@ -427,23 +427,30 @@ body {
 
 .navbar {
   background-color: #151515;
-  z-index: 100;
+  z-index: 10;
+
   .dropDownMenu {
-  li {
-    ul {
+    li {
+      a {
+        padding: 0px;
+      }
+      ul {
         text-align: left;
-        display: none;  
+        display: none;
         position: absolute;
         top: 100%;
-        width: 240px;
-        z-index: 999999; 
-        background-color: #FFFFFF;
-        li{
+        width: 200px;
+        background-color: $brown;
+        list-style: outside none none;
+        z-index: 99;
+
+        li {
           color: #151515;
+          line-height: inherit;
         }
       }
     }
-}
+  }
 }
 
 /* miscellaneous */
@@ -461,23 +468,7 @@ body {
 
 /* icon
 
-footer {
-  i.fa {
-    display: inline-block;
-    border-radius: 50%;
-    box-shadow: 0px 0px 2px #888;
-    padding: 10px;
-    color: white;
-    background: #a8865d;
 
-    &:hover {
-      color: #fff;
-      background-color: #837359;
-      border-color: #837359;
-    }
-  }
-}
-*/
 /* button */
 
 .btn {

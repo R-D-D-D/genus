@@ -35,4 +35,7 @@ Rails.application.routes.draw do
   get "/log_in", to: 'sessions#new'
   post "/log_in", to: 'sessions#create'
 
+  #search_page
+  get '/search', to: 'search_page#search'
+
 end

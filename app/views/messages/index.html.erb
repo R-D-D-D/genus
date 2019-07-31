@@ -1,0 +1,31 @@
+<% provide(:page_title, "All Messages") %>
+
+<p id="notice" class="text-success"><%= notice %></p>
+
+<div id="message" class="container-fluid heading-background">
+  <h1 class="text-light">All Messages</h1>
+
+<p> <%= @messages.count %> </p>       
+
+    <% @messages.each do |message| %>
+      <div class="card">
+        <div class="card-header text-muted">
+            <p><%= message.created_at.strftime('%-b %-d, %Y') %> </p>
+        </div>
+        <div class="card-body">
+          <div class="card-text"> <p> <%= message.message_body %> </p></div>
+          <div class="card-text">
+            <div class="row justify-content-end">
+               <p class="text-muted"> ~ <%= message.name %> |  <%= message.email %> </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+          <div class="card-text"> 
+            <p><%= link_to 'Resolved', message_path(message), method: :delete, data: { confirm: 'Are you certain you have resolved this?' } %> </p>            
+          </div>   
+        </div>
+      </div>
+    <% end %>
+
+</div>

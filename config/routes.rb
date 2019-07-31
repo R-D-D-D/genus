@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   	on: :member
   end
 
+  #resources :messages
+  resources :messages, :path => "contact_us"
+
   #static_pages
   get "/about" , to: 'static_pages#about'
   get "/contact", to: 'static_pages#contact'

@@ -6,6 +6,13 @@ $gray-base: #000 !default;
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
 $brown: #B6955D;
 $dark-brown: #9b7b4e;
+@mixin title {
+  font-family: 'Crimson Text', serif;
+  font-weight: bold;
+  font-size: 3.5rem;
+  text-align: center;
+  font-style: italic;
+}
 
 /* universal */
 
@@ -44,11 +51,7 @@ body {
 
 #home {
   h1 {
-    font-family: "Times New Roman";
-    font-style: italic;
-    font-weight: bold;
-    font-size: 3.5rem;
-    text-align: center;
+    @include title;
   }
 
   h4 {
@@ -60,18 +63,6 @@ body {
 
 }
 
-#join-us {
-  text-decoration: none;
-  color: white;
-  padding: 10px;
-  border: 1px solid white;
-  border-radius: 10px;
-
-  &:hover {
-    background-color: #a8865d;
-    text-decoration: none;
-  }
-}
 
 /* arrow down */
 
@@ -79,9 +70,7 @@ body {
 
 .upcoming-events {
   h1 {
-    font-family: "Times New Roman";
-    font-size: 3rem;
-    font-weight: bold;
+    @include title;
   }
 }
 
@@ -91,10 +80,7 @@ body {
   color: white;
 
   h1 {
-    text-align: center;
-    font-family: "Times New Roman";
-    font-weight: bold;
-    font-size: 4rem;
+    @include title;
   }
 
   .hero {
@@ -137,6 +123,21 @@ body {
   }
 }
 
+/* events */
+
+#events {
+  h1 {
+    @include title;
+  }
+}
+
+/* about */
+
+#about {
+  h1 {
+    @include title;
+  }
+}
 
 /* card */
 
@@ -148,28 +149,6 @@ body {
 .card-title {
   color: white;
 }
-
-#post, #event {
-  h1, p {
-    //color: #efe5d9;
-    color: white;
-  }
-
-  h3 {
-    //color: #ff8c00;
-    color: white;
-  }
-
-  a {
-    color: #efe5d9;
-  }
-
-  button {
-    //color: #55432e;
-  }
-}
-
-
 
 /* footer */
 
@@ -363,16 +342,15 @@ body {
 
 .home-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), image-url('ensemble_photo_grey.jpg') center no-repeat;
-  height: 90vh;
   background-size: cover;
 
   .home-text {
     text-shadow: 2px 2px 4px black;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Gabriola', sans-serif;
     text-align: center;
     color: $brown;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 5rem;
   }
 
   hr {

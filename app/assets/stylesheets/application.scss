@@ -450,6 +450,22 @@ body {
 .navbar {
   background-color: #151515;
   z-index: 100;
+  .dropDownMenu {
+  li {
+    ul {
+        text-align: left;
+        display: none;  
+        position: absolute;
+        top: 100%;
+        width: 240px;
+        z-index: 999999; 
+        background-color: #FFFFFF;
+        li{
+          color: #151515;
+        }
+      }
+    }
+}
 }
 
 /* miscellaneous */
@@ -574,3 +590,5 @@ footer {
 #slider .slide-block p {
   margin: 0;
 }
+
+

@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   include CurrentUserConcern
 
   def new
-    @session = Session.new
   end
 
     def create

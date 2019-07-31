@@ -1,32 +1,80 @@
-<!-- <%= link_to "GENUS", root_url, id: 'logo' %> -->
+<%= link_to root_url do %>
+  <div class="container logo">
+    <div class="row">
+      <div class="col-3 text-light pr-0" id="myelement">
+      </div>
+      <div class="col-9 pl-0">
+        GENUS
+      </div>
+    </div>
+    <!--
+    <div class="row" style="font-size: 0.5em">
+      NUS GUITAR ENSEMBLE
+    </div>
+    -->
+  </div>
+<% end %>
 
 <button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+<div class="collapse navbar-collapse dropDownMenu" id="navbarSupportedContent">
   <ul class="navbar-nav ml-auto">
     <li class="nav-item active">
       <%= link_to "Home", root_url, class: 'nav-link text-light' %>
+      <uL> 
+          <li><%= link_to "Home", root_url, class: 'nav-link' %></li>
+          <li>
+            <%= link_to "Upcoming Events", upcoming_events_path, class: 'nav-link' %>
+          </li>
+      </uL>
     </li>
 
-    <!--Account items-->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle text-light" href="#" id="navbarAccountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Account
-      </a>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <!--My Profile-->
-        <%= link_to "My Profile", '#', class: 'dropdown-item' %>
-        <!--Settings-->
-          <%= link_to "Settings", '#', class: 'dropdown-item' %>
-
-        <div class="dropdown-divider"></div>
-
-        <%= link_to "Log Out", '#', method: :delete, class: 'dropdown-item' %>
-      </div>
+    <li>
+      <%= link_to "Upcoming Events", upcoming_events_path, class: 'nav-link text-light' %>
+        <uL> 
+          <li><%= link_to "Home", root_url, class: 'nav-link text-light' %></li>
+          <li>
+            <%= link_to "Upcoming Events", upcoming_events_path, class: 'nav-link text-light' %>
+          </li>
+      </uL>
     </li>
-    <li><%= link_to "Log In", '#', class: 'nav-link text-light' %></li>
+
+    <li>
+      <%= link_to "Gallery", events_path, class: 'nav-link text-light' %>
+    </li>
+
+    <li>
+      <%= link_to "About", about_path, class: 'nav-link text-light' %>
+    </li>
+
+    <li>
+      <%= link_to "Join Us", join_us_path, class: 'nav-link text-light' %>
+    </li>
+
+    <li>
+    <%= link_to "log in", log_in_path, class: 'nav-link text-light' %>
+  </li>
 
   </ul>
+
+  <!--Search bar-->
+  <%= form_tag(search_path, :method => "get", class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search Events", class: "form-control" %>  
+    <div class="input-group-btn">  
+      <%= button_tag "Go!", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+    </div>  
+  </div>  
+  <% end %>
+  <!--Search bar end-->
+  
 </div>
+
+<script type="text/javascript">
+$('.dropDownMenu ul li').hover(function() {
+  $(this).children('ul').stop(true, false, true).fadeToggle(300);
+});
+</script>

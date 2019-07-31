@@ -1,0 +1,25 @@
+<div class="col-md-6 col-lg-4">
+  <div class="card mb-4">
+    <!--Card image-->
+    <div class="view overlay">
+      <% if upcoming_event.image.attached? %>
+        <%= image_tag upcoming_event.image, class: 'card-img-top img-fluid' %>
+      <% else %>
+      <% end %>
+    </div><!--Card content-->
+    <div class="card-body">
+      <!--Title-->
+      <h4 class="card-title">PPE</h4><!--Text-->
+      <p class="card-text text-light">
+        <% upcoming_event.content %>
+      </p>
+      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+      <%= link_to upcoming_event_path(upcoming_event) do %>
+        <div class="text-light">
+          <%= fa_icon "search" %>
+          find out more
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

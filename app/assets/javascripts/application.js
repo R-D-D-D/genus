@@ -17,4 +17,6 @@
 //= require activestorage
 //= require turbolinks
 //= require tinymce
+//= require jquery.carouFredSel.js
 //= require_tree .
+

@@ -2,6 +2,7 @@ class Event < ApplicationRecord
 	acts_as_taggable
 	has_many_attached :images
 	has_many_attached :videos
+
 	extend FriendlyId
 	friendly_id :title, use: :slugged
 

@@ -15,7 +15,9 @@
       <%= render @events %>
     </div>
 
-    <%= link_to 'New Event', new_event_path %>
+    <% if @current_user %>
+      <%= link_to 'New Event', new_event_path, class: 'btn' %>
+    <% end %>
 
     <%= will_paginate @events %>
   </div>

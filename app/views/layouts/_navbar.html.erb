@@ -33,10 +33,16 @@
       <% if UpcomingEvent.any? %>
         <ul class="p-1">
           <% UpcomingEvent.all.each do |event| %>
-            <li class="py-1 ml-2">
-              <%= link_to "#{event.title}", root_url, class: 'nav-link text-light ml-0 pl-0' %>
-            </li>
-            <hr class="p-0 m-0">
+            <% if (event == UpcomingEvent.last || UpcomingEvent.count == 1) %>
+              <li class="py-1 ml-2">
+                <%= link_to "#{event.title}", upcoming_event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
+              </li>
+            <% else %>
+              <li class="py-1 ml-2">
+                <%= link_to "#{event.title}", upcoming_event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
+              </li>
+              <hr class="p-0 m-0">
+            <% end %>
           <% end %>
         </ul>
       <% end %>
@@ -44,22 +50,57 @@
 
     <li>
       <%= link_to events_path, class: 'nav-link text-light' do %>
-        Gallery
+        Gallery <i class="fas fa-caret-down"></i>
       <% end %>
       <% if Event.any? %>
         <ul class="p-1">
           <% Event.all.each do |event| %>
-            <li class="py-1 ml-2">
-              <%= link_to "#{event.title}", root_url, class: 'nav-link text-light ml-0 pl-0' %>
-            </li>
-            <hr class="p-0 m-0">
+            <% if (event == Event.last || Event.count == 1) %>
+              <li class="py-1 ml-2">
+                <%= link_to "#{event.title}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
+              </li>
+            <% else %>
+              <li class="py-1 ml-2">
+                <%= link_to "#{event.title}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
+              </li>
+              <hr class="p-0 m-0">
+            <% end %>
           <% end %>
         </ul>
       <% end %>
     </li>
 
     <li>
-      <%= link_to "About", about_path, class: 'nav-link text-light' %>
+      <%= link_to about_path, class: 'nav-link text-light' do %>
+        About <i class="fas fa-caret-down"></i>
+      <% end %>
+      <ul class="p-1">
+        <li class="py-1 ml-2">
+          <%= link_to "GENUS", about_path(anchor: 'genus'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "Mission Vision Values", about_path(anchor: 'mvv'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "Music Production", about_path(anchor: 'music'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "schedule", about_path(anchor: 'schedule'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "tutors", about_path(anchor: 'tutors'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+
+
+      </ul>
     </li>
 
     <li>
@@ -69,13 +110,15 @@
   </ul>
 
   <!--Search bar-->
-  <%= form_tag(search_path, :method => "get", class: 'navbar-form navbar-left') do %>
-    <div class="input-group">
-      <%= search_field_tag :search, params[:search], placeholder: "Search Events", class: "form-control" %>
-      <div class="input-group-btn">
-        <%= button_tag "Go!", :class => 'btn btn-info glyphicon glyphicon-search', :name => nil %>
+  <% if false %>
+    <%= form_tag(search_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :search, params[:search], placeholder: "Search Events", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "Go!", :class => 'btn btn-info glyphicon glyphicon-search', :name => nil %>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
   <!--Search bar end-->
 

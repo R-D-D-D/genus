@@ -5,7 +5,9 @@
 $gray-base: #000 !default;
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
 $brown: #B6955D;
+$light-brown: #F2EFE8;
 $dark-brown: #9b7b4e;
+
 @mixin title {
   font-family: 'Crimson Text', serif;
   font-weight: bold;
@@ -19,6 +21,14 @@ $dark-brown: #9b7b4e;
 body {
   /* background-color: #F2EFE8; */
   color: #2c2f2f;
+}
+
+.title {
+  @include title;
+}
+
+.bg-light {
+  background-color: $light-brown;
 }
 
 .bg-brown {
@@ -143,11 +153,10 @@ body {
 
 .card-body {
   //background: #efe5d9;
-  background-color: #a8865d;
 }
 
 .card-title {
-  color: white;
+  color: #292c2f;
 }
 
 /* footer */
@@ -475,6 +484,7 @@ body {
   background-color: #a8865d;
   border-color: #a8865d;
   color: white;
+  padding: 5px 8px;
 
   &:hover {
     color: #fff;
@@ -483,7 +493,8 @@ body {
   }
 }
 
-/* carousel */
+/* carousel upcoming event */
+/* carousel gallery */
 
 .carousel {
   i.fa {
@@ -506,11 +517,10 @@ body {
   width: 100%;
   min-height: 650px;
   min-width: 900px;
-  padding-top: 1px;
 }
 
 #slider {
-  margin: 100px 0 0 0;
+  margin: 10px 0 0 0;
   height: 500px;
   overflow: hidden;
   background: url(img/ajax-loader.gif) center center no-repeat;

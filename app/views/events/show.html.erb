@@ -30,17 +30,12 @@
   <div class="row">
     <div id="wrapper">
       <div id="slider">
-
-        <div class="slide" style="background-image: url(<%= path_to_image('ensemble_photo.jpg') %>); background-repeat: no-repeat; background-size: cover">
-        </div>
-
-        <div class="slide" style="background-image: url(<%= path_to_image('bugs.jpg') %>); background-repeat: no-repeat; background-size: cover">
-        </div>
-
-        <div class="slide" style="background-image: url(<%= path_to_image('bugs.jpg') %>); background-repeat: no-repeat; background-size: cover">
-
-        </div>
-
+        <% if @event.images.attached? %>
+          <% @event.images.each do |image| %>
+            <div class="slide" style="background-image: url(<%= url_for(image) %>); background-repeat: no-repeat; background-size: cover">
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

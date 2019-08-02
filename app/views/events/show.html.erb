@@ -8,40 +8,51 @@
       <h1 class="title  "><%= @event.title.capitalize %></h1>
     </div>
   </div>
-  <div class="row pt-4">
-    <div class="col-4 px-0 bg-light">
-      <p class="p-4">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid amet architecto beatae
-        consectetur corporis cupiditate dolor dolores ea eaque eos esse eum eveniet ex excepturi explicabo
-        fugit incidunt ipsa iste, labore laborum nam neque nisi nobis non nostrum praesentium quas qui quisquam
-        reiciendis repellat reprehenderit suscipit tempore ut, voluptatum!
-      </p>
+  <% if @event.thumbnail.attached? %>
+    <% if @event.thumbnail_type == 'Portrait' %>
+      <div class="row pt-4 ml-5" style="width: 90%;">
+        <div class="col-6 px-0 bg-light" id="event-content">
+          <%= @event.content.html_safe %>
+        </div>
+        <div class="col-6 px-0 m-0">
+          <%= image_tag @event.thumbnail, class: 'img-fluid' %>
+        </div>
+      </div>
+    <% else %>
+      <div class="row pt-4 ml-5" style="width: 90%;">
+        <div class="col-4 px-0 bg-light" id="event-content">
+          <%= @event.content.html_safe %>
+        </div>
+        <div class="col-8 px-0 m-0">
+          <%= image_tag @event.thumbnail, class: 'img-fluid' %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="col px-0 bg-light" id="event-content">
+      <%= @event.content.html_safe %>
     </div>
-    <div class="col-8 pl-0">
-      <% if @event.thumbnail.attached? %>
-        <%= image_tag @event.thumbnail, class: 'img-fluid' %>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 </div>
 
-<div class="container-fluid mt-5">
-  <div class="row justify-content-center">
-    <h1 class="title"><%= @event.title.capitalize %></h1>
-  </div>
-  <div class="row">
-    <div id="wrapper">
-      <div id="slider">
-        <% if @event.images.attached? %>
+
+<% if @event.images.attached? %>
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+      <h1 class="title"><%= @event.title.capitalize %></h1>
+    </div>
+    <div class="row">
+      <div id="wrapper">
+        <div id="slider">
           <% @event.images.each do |image| %>
             <div class="slide" style="background-image: url(<%= url_for(image) %>); background-repeat: no-repeat; background-size: cover; background-position: center">
             </div>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
 
 <script type="text/javascript">
     $(function () {

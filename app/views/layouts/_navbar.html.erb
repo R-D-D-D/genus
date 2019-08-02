@@ -33,14 +33,14 @@
       <% if Event.where(:event_type => "Upcoming").any? %>
         <% upcoming_events = Event.where(:event_type => "Upcoming") %>
         <ul class="p-1">
-          <% UpcomingEvent.all.each do |event| %>
+          <% upcoming_events.all.each do |event| %>
             <% if (event == upcoming_events.last || upcoming_events.count == 1) %>
               <li class="py-1 ml-2">
-                <%= link_to "#{event.title}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
+                <%= link_to "#{event.title.capitalize}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
               </li>
             <% else %>
               <li class="py-1 ml-2">
-                <%= link_to "#{event.title}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
+                <%= link_to "#{event.title.capitalize}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
               </li>
               <hr class="p-0 m-0">
             <% end %>
@@ -59,11 +59,11 @@
           <% Event.where(:event_type => "Gallery").each do |event| %>
             <% if (event == gallery_events.last || gallery_events.count == 1) %>
               <li class="py-1 ml-2">
-                <%= link_to "#{event.title}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
+                <%= link_to "#{event.title.capitalize}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
               </li>
             <% else %>
               <li class="py-1 ml-2">
-                <%= link_to "#{event.title}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
+                <%= link_to "#{event.title.capitalize}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
               </li>
               <hr class="p-0 m-0">
             <% end %>

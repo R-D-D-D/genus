@@ -3,7 +3,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class='container-fluid'>
-  <div class="row">
+  <div class="row mx-5">
     <% if false %>
       <div id="sidebar" class="sidebar col-sm-2">
         <nav class="sidebar-nav navbar-dark">
@@ -20,11 +20,11 @@
         </nav>
       </div>
     <% end %>
-<div class="col ml-3">
-  <h1><strong>Posts</strong></h1>
-</div>
+    <div class="col ml-3">
+      <h1><strong>Posts</strong></h1>
+    </div>
   </div>
-  <div class="row">
+  <div class="row mx-5">
     <!-- Card -->
     <% @events.each do |event| %>
       <div class="col-md-6 col-lg-4">
@@ -38,7 +38,7 @@
           </div><!--Card content-->
           <div class="card-body">
             <!--Title-->
-            <h4 class="card-title">PPE</h4><!--Text-->
+            <h4 class="card-title"><%= event.title %></h4><!--Text-->
             <p class="card-text">
               <% event.content %>
             </p>

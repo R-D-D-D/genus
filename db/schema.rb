@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_01_134514) do
+ActiveRecord::Schema.define(version: 2019_08_02_125108) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_08_01_134514) do
     t.boolean "published", default: false
     t.datetime "published_at"
     t.string "event_type"
+    t.string "thumbnail_type"
     t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 

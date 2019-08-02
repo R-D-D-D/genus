@@ -36,16 +36,43 @@
     <%= form.file_field :videos, multiple: true %>
   </div>
 
+  <p>Please indicate if the event you are creating is an upcoming one or past one</p>
+  <div class="custom-control custom-radio custom-control-inline">
+    <%= form.label :event_type, class: 'radio inline' do %>
+      <%= form.radio_button :event_type, 'Gallery', checked: true, class: 'form-check-input' %>
+      <span class="form-check-label">Gallery event</span>
+    <% end %>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <%= form.label :event_type, class: 'radio inline' do %>
+      <%= form.radio_button :event_type, 'Upcoming', class: 'form-check-input' %>
+      <span class="form-check-label">Upcoming Event</span>
+    <% end %>
+  </div>
+
+  <p>Please indicate if the portrait photo you provide is portrait or landscape</p>
+  <div class="custom-control custom-radio custom-control-inline">
+    <%= form.label :thumbnail_type, class: 'radio inline' do %>
+      <%= form.radio_button :thumbnail_type, 'Portrait', checked: true, class: 'form-check-input' %>
+      <span class="form-check-label">Portrait</span>
+    <% end %>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <%= form.label :thumbnail_type, class: 'radio inline' do %>
+      <%= form.radio_button :thumbnail_type, 'Landscape', class: 'form-check-input' %>
+      <span class="form-check-label">Landscape</span>
+    <% end %>
+  </div>
+
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content, :class => "tinymce" %>
+    <%= form.text_area :content, :class => "tinymce", style: 'width: 100%;' %>
     <script type="text/javascript">
         tinyMCE.init({
             selector: 'textarea',
             plugins: 'autosave advlist autolink lists link searchreplace media table paste imagetools wordcount image autoresize lists nonbreaking',
             toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bulist outdent indent link image nonbreaking',
             min_height: 300,
-            width: 1400,
             style_formats: [
                 {
                     title: 'Image Left', selector: 'img', styles: {
@@ -116,19 +143,6 @@
             }
         });
     </script>
-  </div>
-
-  <div class="form-check">
-    <%= form.label :event_type, class: 'radio inline' do %>
-      <%= form.radio_button :event_type, 'Gallery', checked: true, class: 'form-check-input' %>
-      <span class="form-check-label">Gallery event</span>
-    <% end %>
-  </div>
-  <div class="form-check">
-    <%= form.label :event_type, class: 'radio inline' do %>
-      <%= form.radio_button :event_type, 'Upcoming', class: 'form-check-input' %>
-      <span class="form-check-label">Upcoming Event</span>
-    <% end %>
   </div>
 
   <div>

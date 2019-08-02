@@ -3,13 +3,12 @@
     <!--Card image-->
     <div class="view overlay">
       <% if event.thumbnail.attached? %>
-        <%= image_tag event.thumbnail, class: 'card-img-top img-fluid' %>
-      <% else %>
+        <%= image_tag event.thumbnail, class: 'card-img-top' %>
       <% end %>
     </div><!--Card content-->
     <div class="card-body">
       <!--Title-->
-      <h4 class="card-title">PPE</h4><!--Text-->
+      <h4 class="card-title"><%= event.title %></h4><!--Text-->
       <p class="card-text">
         <% event.content %>
       </p>

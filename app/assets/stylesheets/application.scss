@@ -489,7 +489,6 @@ body {
   }
 }
 
-/* carousel upcoming event */
 /* carousel gallery */
 
 .carousel {
@@ -539,3 +538,16 @@ body {
   cursor: default;
 }
 
+/* event */
+#event-content {
+  p {
+    padding: 24px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+
+}

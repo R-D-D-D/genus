@@ -2,6 +2,7 @@ class Event < ApplicationRecord
 	acts_as_taggable
 	has_many_attached :images
 	has_many_attached :videos
+	has_one_attached :thumbnail
 
 	extend FriendlyId
 	friendly_id :title, use: :slugged
@@ -29,9 +30,12 @@ class Event < ApplicationRecord
 	end
 
 	def image_type
+		if !thumbnail.content_type.in?(%('image/jpeg image/png image/jpg'))
+			errors.add(:thumbnail, "not in JPEG or PNG or JPG form")
+		end
 		images.each do |image|
-			if !image.content_type.in?(%('image/jpeg' image/png'))
-				errors.add(:images, "not in JPEG or PNG form")
+			if !image.content_type.in?(%('image/jpeg image/png image/jpg'))
+				errors.add(:images, "not in JPEG or PNG or JPG form")
 			end
 		end
 	end

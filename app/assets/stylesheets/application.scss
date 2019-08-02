@@ -76,14 +76,6 @@ body {
 
 /* arrow down */
 
-/* upcoming events */
-
-.upcoming-events {
-  h1 {
-    @include title;
-  }
-}
-
 /* Contact us */
 
 #contact-us {
@@ -150,6 +142,10 @@ body {
 }
 
 /* card */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .card-body {
   //background: #efe5d9;
@@ -521,9 +517,8 @@ body {
 
 #slider {
   margin: 10px 0 0 0;
-  height: 500px;
+  height: auto;
   overflow: hidden;
-  background: url(img/ajax-loader.gif) center center no-repeat;
 }
 
 #slider .slide {
@@ -543,31 +538,4 @@ body {
 #slider .slide.active {
   cursor: default;
 }
-
-#slider .slide-block {
-  position: absolute;
-  left: 40px;
-  bottom: 75px;
-  display: inline-block;
-  width: 435px;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  font-size: 14px;
-  border: 1px solid #fff;
-  overflow: hidden;
-  border-radius: 4px;
-}
-
-#slider .slide-block h4 {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 0 0 10px 0;
-  line-height: 1;
-}
-
-#slider .slide-block p {
-  margin: 0;
-}
-
 

@@ -27,19 +27,20 @@
     </li>
 
     <li>
-      <%= link_to upcoming_events_path, class: 'nav-link text-light' do %>
+      <%= link_to events_path(event_type: "Upcoming"), class: 'nav-link text-light' do %>
         Upcoming Events <i class="fas fa-caret-down"></i>
       <% end %>
-      <% if UpcomingEvent.any? %>
+      <% if Event.where(:event_type => "Upcoming").any? %>
+        <% upcoming_events = Event.where(:event_type => "Upcoming") %>
         <ul class="p-1">
           <% UpcomingEvent.all.each do |event| %>
-            <% if (event == UpcomingEvent.last || UpcomingEvent.count == 1) %>
+            <% if (event == upcoming_events.last || upcoming_events.count == 1) %>
               <li class="py-1 ml-2">
-                <%= link_to "#{event.title}", upcoming_event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
+                <%= link_to "#{event.title}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
               </li>
             <% else %>
               <li class="py-1 ml-2">
-                <%= link_to "#{event.title}", upcoming_event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
+                <%= link_to "#{event.title}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
               </li>
               <hr class="p-0 m-0">
             <% end %>
@@ -49,13 +50,14 @@
     </li>
 
     <li>
-      <%= link_to events_path, class: 'nav-link text-light' do %>
+      <%= link_to events_path(event_type: "Gallery"), class: 'nav-link text-light' do %>
         Gallery <i class="fas fa-caret-down"></i>
       <% end %>
-      <% if Event.any? %>
+      <% if Event.where(:event_type => "Gallery").any? %>
+        <% gallery_events = Event.where(:event_type => "Gallery") %>
         <ul class="p-1">
-          <% Event.all.each do |event| %>
-            <% if (event == Event.last || Event.count == 1) %>
+          <% Event.where(:event_type => "Gallery").each do |event| %>
+            <% if (event == gallery_events.last || gallery_events.count == 1) %>
               <li class="py-1 ml-2">
                 <%= link_to "#{event.title}", event_path(event), class: 'nav-link text-light ml-0 pl-0' %>
               </li>
@@ -106,6 +108,15 @@
     <li>
       <%= link_to "Join Us", join_us_path, class: 'nav-link text-light' %>
     </li>
+
+    <% if @current_user %>
+      <li>
+        <%= link_to "Manage Post", manage_posts_path, class: 'nav-link text-light' %>
+      </li>
+      <li>
+        <%= link_to "Log out", logout_path, method: :delete, class: 'nav-link text-light' %>
+      </li>
+    <% end %>
 
   </ul>
 

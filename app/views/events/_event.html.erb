@@ -2,8 +2,8 @@
   <div class="card mb-4">
     <!--Card image-->
     <div class="view overlay">
-      <% if event.images.attached? %>
-        <%= image_tag event.images.first, class: 'card-img-top img-fluid' %>
+      <% if event.thumbnail.attached? %>
+        <%= image_tag event.thumbnail, class: 'card-img-top img-fluid' %>
       <% else %>
       <% end %>
     </div><!--Card content-->

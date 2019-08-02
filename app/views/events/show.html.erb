@@ -18,7 +18,9 @@
       </p>
     </div>
     <div class="col-8 pl-0">
-      <%= image_tag 'ensemble_photo.jpg', class: 'img-fluid' %>
+      <% if @event.thumbnail.attached? %>
+        <%= image_tag @event.thumbnail, class: 'img-fluid' %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -32,7 +34,7 @@
       <div id="slider">
         <% if @event.images.attached? %>
           <% @event.images.each do |image| %>
-            <div class="slide" style="background-image: url(<%= url_for(image) %>); background-repeat: no-repeat; background-size: cover">
+            <div class="slide" style="background-image: url(<%= url_for(image) %>); background-repeat: no-repeat; background-size: cover; background-position: center">
             </div>
           <% end %>
         <% end %>

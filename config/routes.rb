@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  resources :upcoming_events
   root 'static_pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :sessions, only:[:create, :new]
+  resources :sessions, only:[:create]
   resources :registrations, only:[:create]
   delete :logout, to: "sessions#logout"
-  get :logged_in, to: "sessions#logged_in"
+  get :login, to: "sessions#new"
 
-	# events
-  get '/events/front' => 'events#front'
+  # events
+  get '/events/front' => 'events#front', as: :manage_posts
   resources :events do
   	put 'publish' => 'events#publish',
   	on: :member, as: :publish

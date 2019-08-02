@@ -5,16 +5,22 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params["email"]).try(:authenticate, params["password"])
+    user = User.find_by(email: params[:session]["email"]).try(:authenticate, params[:session]["password"])
     if user
       session[:user_id] = user.id
-      render json: {
-          status: :created,
-          logged_in: true,
-          user: user
-      }
+      respond_to do |format|
+        format.html {
+          redirect_to root_url
+        }
+        format.json {
+          status = "created"
+          logged_in = true
+          user = user
+        }
+      end
     else
-      render json: {status: 401}
+      flash[:danger] = "Invalid password and account combination"
+      render 'new'
     end
   end
 

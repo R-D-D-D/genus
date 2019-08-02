@@ -1,0 +1,7 @@
+<% if @current_user %>
+    <li>
+    <p>Welcome <%= @current_user[:name] %></p>
+    </li>
+    <% else%>
+    <p>incorrect email / password. Please try again.</p>
+<% end %>

@@ -1,19 +1,25 @@
 class RegistrationsController < ApplicationController
-    def create
-        user = User.create!(
-            email: params['user']['email'],
-            password: params['user']['password'],
-            password_confirmation: params['user']['password_confirmation']
-        )
+    
+  def user_params
+    params.require(:user).permit(:email, :password)
+  end
 
-        if user
-          session[:user_id] = user.id
-          render json:{
-              status: :created,
-              user: user
-          }
+  def new
+  end 
+
+    def create
+        user = User.new(user_params)
+
+        if user.save
+          redirect_to root_path
         else
-          render json: { status: 500 }
+          flash[:register_errors] = user.errors.full_messages
+          redirect_to root_path  
         end
+    end
+
+    private
+      def user_params
+        params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end

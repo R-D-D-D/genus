@@ -42,9 +42,11 @@
       <%= link_to "Join Us", join_us_path, class: 'nav-link text-light' %>
     </li>
 
+    <% if @current_user %>
     <li>
-    <%= link_to "log in", log_in_path, class: 'nav-link text-light' %>
-  </li>
+    <%= link_to "log out", log_out_path, class: 'nav-link text-light' %>
+    </li>
+    <% end%>
 
   </ul>
 </div>

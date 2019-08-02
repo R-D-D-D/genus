@@ -8,22 +8,20 @@ class SessionsController < ApplicationController
         user = User.find_by(email: login_params["email"]).try(:authenticate, login_params["password"])
         if user 
           session[:user_id] = user.id
-          session[:expires_at] = Time.current + 24.hours
-          render json: {
-              status: :created,
-              logged_in: true,
-              user: user
-          }
+          session[:expires_at] = Time.current + 1.years
+            redirect_to root_url
+
         else
-          render json: { status: 401 }
+          flash[:danger] = "Invalid password and account combination"
+          render 'new'
         end
     end
-
+  
 
 
   def logout
     reset_session
-    render json: { status: 200, logged_out: true }
+    redirect_to root_url
   end
 
   private

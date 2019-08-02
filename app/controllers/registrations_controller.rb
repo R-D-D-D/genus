@@ -14,7 +14,7 @@ class RegistrationsController < ApplicationController
           redirect_to root_path
         else
           flash[:register_errors] = user.errors.full_messages
-          redirect_to root_path  
+          render 'new'
         end
     end
 

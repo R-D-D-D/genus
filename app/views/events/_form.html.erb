@@ -4,112 +4,134 @@
       <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
       <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field" >
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class = "field">
+  <div class="field">
     <%= form.label :tag_list %>
     <%= form.text_field :tag_list %>
   </div>
 
-  <div class = "field">
-    <%= form.label :images %>
-    <%= form.file_field :images,multiple: true %>
+  <div class="field">
+    <%= form.label :thumbnail %>
+    <%= form.file_field :thumbnail %>
   </div>
 
-  <div class = "field">
+  <div class="field">
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
+  <div class="field">
     <%= form.label :videos %>
-    <%= form.file_field :videos ,multiple: true %>
+    <%= form.file_field :videos, multiple: true %>
   </div>
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content, :class => "tinymce"%> 
+    <%= form.text_area :content, :class => "tinymce" %>
     <script type="text/javascript">
-      tinyMCE.init({
-        selector: 'textarea',
-        plugins: 'autosave advlist autolink lists link searchreplace media table paste imagetools wordcount image autoresize lists nonbreaking',
-        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bulist outdent indent link image nonbreaking',
-        min_height: 300,
-        width: 1400,
-        style_formats: [
-          {title: 'Image Left', selector: 'img', styles: {
-            'float' : 'left',
-            'margin': '0 10px 0 10px'
-          }},
-          {title: 'Image Right', selector: 'img', styles: {
-            'float' : 'right',
-            'margin': '0 10px 0 10px'
-          }}
-        ],
-        //List settings
-          lists_indent_on_tab: true,
-          nonbreaking_force_tab: true,
-        //Image settings
-          /* enable title field in the Image dialog*/
-          image_title: true,
-          image_caption: true,
-          image_advtab: true,
-          /* enable automatic uploads of images represented by blob or data URIs*/
-          automatic_uploads: true,
-          /*
-            URL of our upload handler (for more details check: https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_url)
-            images_upload_url: 'postAcceptor.php',
-            here we add custom filepicker only to Image dialog
-          */
-          file_picker_types: 'image',
-          /* and here's our custom image picker*/
-          file_picker_callback: function (cb, value, meta) {
-            var input = document.createElement('input');
-            input.setAttribute('type', 'file');
-            input.setAttribute('accept', 'image/*');
-
+        tinyMCE.init({
+            selector: 'textarea',
+            plugins: 'autosave advlist autolink lists link searchreplace media table paste imagetools wordcount image autoresize lists nonbreaking',
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bulist outdent indent link image nonbreaking',
+            min_height: 300,
+            width: 1400,
+            style_formats: [
+                {
+                    title: 'Image Left', selector: 'img', styles: {
+                        'float': 'left',
+                        'margin': '0 10px 0 10px'
+                    }
+                },
+                {
+                    title: 'Image Right', selector: 'img', styles: {
+                        'float': 'right',
+                        'margin': '0 10px 0 10px'
+                    }
+                }
+            ],
+            //List settings
+            lists_indent_on_tab: true,
+            nonbreaking_force_tab: true,
+            //Image settings
+            /* enable title field in the Image dialog*/
+            image_title: true,
+            image_caption: true,
+            image_advtab: true,
+            /* enable automatic uploads of images represented by blob or data URIs*/
+            automatic_uploads: true,
             /*
-              Note: In modern browsers input[type="file"] is functional without
-              even adding it to the DOM, but that might not be the case in some older
-              or quirky browsers like IE, so you might want to add it to the DOM
-              just in case, and visually hide it. And do not forget do remove it
-              once you do not need it anymore.
+              URL of our upload handler (for more details check: https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_url)
+              images_upload_url: 'postAcceptor.php',
+              here we add custom filepicker only to Image dialog
             */
+            file_picker_types: 'image',
+            /* and here's our custom image picker*/
+            file_picker_callback: function (cb, value, meta) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
 
-            input.onchange = function () {
-              var file = this.files[0];
-
-              var reader = new FileReader();
-              reader.onload = function () {
                 /*
-                  Note: Now we need to register the blob in TinyMCEs image blob
-                  registry. In the next release this part hopefully won't be
-                  necessary, as we are looking to handle it internally.
+                  Note: In modern browsers input[type="file"] is functional without
+                  even adding it to the DOM, but that might not be the case in some older
+                  or quirky browsers like IE, so you might want to add it to the DOM
+                  just in case, and visually hide it. And do not forget do remove it
+                  once you do not need it anymore.
                 */
-                var id = 'blobid' + (new Date()).getTime();
-                var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
-                var base64 = reader.result.split(',')[1];
-                var blobInfo = blobCache.create(id, file, base64);
-                blobCache.add(blobInfo);
 
-                /* call the callback and populate the Title field with the file name */
-                cb(blobInfo.blobUri(), { title: file.name });
-              };
-              reader.readAsDataURL(file);
-            };
+                input.onchange = function () {
+                    var file = this.files[0];
 
-            input.click();
-          }
-      });
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                        /*
+                          Note: Now we need to register the blob in TinyMCEs image blob
+                          registry. In the next release this part hopefully won't be
+                          necessary, as we are looking to handle it internally.
+                        */
+                        var id = 'blobid' + (new Date()).getTime();
+                        var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                        var base64 = reader.result.split(',')[1];
+                        var blobInfo = blobCache.create(id, file, base64);
+                        blobCache.add(blobInfo);
+
+                        /* call the callback and populate the Title field with the file name */
+                        cb(blobInfo.blobUri(), {title: file.name});
+                    };
+                    reader.readAsDataURL(file);
+                };
+
+                input.click();
+            }
+        });
     </script>
   </div>
 
-  <div class="actions">
+  <div class="form-check">
+    <%= form.label :event_type, class: 'radio inline' do %>
+      <%= form.radio_button :event_type, 'Gallery', checked: true, class: 'form-check-input' %>
+      <span class="form-check-label">Gallery event</span>
+    <% end %>
+  </div>
+  <div class="form-check">
+    <%= form.label :event_type, class: 'radio inline' do %>
+      <%= form.radio_button :event_type, 'Upcoming', class: 'form-check-input' %>
+      <span class="form-check-label">Upcoming Event</span>
+    <% end %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

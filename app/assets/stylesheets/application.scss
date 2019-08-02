@@ -5,13 +5,30 @@
 $gray-base: #000 !default;
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
 $brown: #B6955D;
+$light-brown: #F2EFE8;
 $dark-brown: #9b7b4e;
+
+@mixin title {
+  font-family: 'Crimson Text', serif;
+  font-weight: bold;
+  font-size: 3.5rem;
+  text-align: center;
+  font-style: italic;
+}
 
 /* universal */
 
 body {
   /* background-color: #F2EFE8; */
   color: #2c2f2f;
+}
+
+.title {
+  @include title;
+}
+
+.bg-light {
+  background-color: $light-brown;
 }
 
 .bg-brown {
@@ -44,11 +61,7 @@ body {
 
 #home {
   h1 {
-    font-family: "Times New Roman";
-    font-style: italic;
-    font-weight: bold;
-    font-size: 3.5rem;
-    text-align: center;
+    @include title;
   }
 
   h4 {
@@ -60,30 +73,8 @@ body {
 
 }
 
-#join-us {
-  text-decoration: none;
-  color: white;
-  padding: 10px;
-  border: 1px solid white;
-  border-radius: 10px;
-
-  &:hover {
-    background-color: #a8865d;
-    text-decoration: none;
-  }
-}
 
 /* arrow down */
-
-/* upcoming events */
-
-.upcoming-events {
-  h1 {
-    font-family: "Times New Roman";
-    font-size: 3rem;
-    font-weight: bold;
-  }
-}
 
 /* Contact us */
 
@@ -91,10 +82,7 @@ body {
   color: white;
 
   h1 {
-    text-align: center;
-    font-family: "Times New Roman";
-    font-weight: bold;
-    font-size: 4rem;
+    @include title;
   }
 
   .hero {
@@ -137,39 +125,35 @@ body {
   }
 }
 
+/* events */
+
+#events {
+  h1 {
+    @include title;
+  }
+}
+
+/* about */
+
+#about {
+  h1 {
+    @include title;
+  }
+}
 
 /* card */
 
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .card-body {
   //background: #efe5d9;
-  background-color: #a8865d;
 }
 
 .card-title {
-  color: white;
+  color: #292c2f;
 }
-
-#post, #event {
-  h1, p {
-    //color: #efe5d9;
-    color: white;
-  }
-
-  h3 {
-    //color: #ff8c00;
-    color: white;
-  }
-
-  a {
-    color: #efe5d9;
-  }
-
-  button {
-    //color: #55432e;
-  }
-}
-
-
 
 /* footer */
 
@@ -363,12 +347,11 @@ body {
 
 .home-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), image-url('ensemble_photo_grey.jpg') center no-repeat;
-  height: 90vh;
   background-size: cover;
 
   .home-text {
     text-shadow: 2px 2px 4px black;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Rubik', sans-serif;
     text-align: center;
     color: $brown;
     font-weight: bold;
@@ -449,7 +432,30 @@ body {
 
 .navbar {
   background-color: #151515;
-  z-index: 100;
+  z-index: 10;
+
+  .dropDownMenu {
+    li {
+      a {
+        padding: 0px;
+      }
+      ul {
+        text-align: left;
+        display: none;
+        position: absolute;
+        top: 100%;
+        width: 200px;
+        background-color: $brown;
+        list-style: outside none none;
+        z-index: 99;
+
+        li {
+          color: #151515;
+          line-height: inherit;
+        }
+      }
+    }
+  }
 }
 
 /* miscellaneous */
@@ -467,29 +473,14 @@ body {
 
 /* icon
 
-footer {
-  i.fa {
-    display: inline-block;
-    border-radius: 50%;
-    box-shadow: 0px 0px 2px #888;
-    padding: 10px;
-    color: white;
-    background: #a8865d;
 
-    &:hover {
-      color: #fff;
-      background-color: #837359;
-      border-color: #837359;
-    }
-  }
-}
-*/
 /* button */
 
 .btn {
   background-color: #a8865d;
   border-color: #a8865d;
   color: white;
+  padding: 5px 8px;
 
   &:hover {
     color: #fff;
@@ -498,7 +489,8 @@ footer {
   }
 }
 
-/* carousel */
+/* carousel upcoming event */
+/* carousel gallery */
 
 .carousel {
   i.fa {
@@ -521,14 +513,12 @@ footer {
   width: 100%;
   min-height: 650px;
   min-width: 900px;
-  padding-top: 1px;
 }
 
 #slider {
-  margin: 100px 0 0 0;
-  height: 500px;
+  margin: 10px 0 0 0;
+  height: auto;
   overflow: hidden;
-  background: url(img/ajax-loader.gif) center center no-repeat;
 }
 
 #slider .slide {
@@ -549,28 +539,3 @@ footer {
   cursor: default;
 }
 
-#slider .slide-block {
-  position: absolute;
-  left: 40px;
-  bottom: 75px;
-  display: inline-block;
-  width: 435px;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  font-size: 14px;
-  border: 1px solid #fff;
-  overflow: hidden;
-  border-radius: 4px;
-}
-
-#slider .slide-block h4 {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 0 0 10px 0;
-  line-height: 1;
-}
-
-#slider .slide-block p {
-  margin: 0;
-}

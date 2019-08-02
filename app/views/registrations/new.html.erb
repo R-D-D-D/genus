@@ -2,6 +2,6 @@
     <h1>Create New Account</h1>
     <%= render 'form', registration: @registration %>
 <% else %>
-    <p>Please log in to existing account to create new account.</p>
-    <%= render 'form', session: @session %>
+    <% flash[:danger] = "Please log in to existing account to create new account"%>
+<form>
 <% end %>

@@ -2,20 +2,15 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="container mt-5">
+<div class="container mt-5 p-0">
   <div class="row">
     <div class="col">
-      <h1><%= @event.title.capitalize %></h1>
-      <p><%= @event.published_date %> </p>
+      <h1 class="title  "><%= @event.title.capitalize %></h1>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-4 bg-brown pr-0">
-      <h2 class="p-4">
-        Kalaidoscope
-      </h2>
-      <p class="pl-4 pr-4 pt-0">
+  <div class="row pt-4">
+    <div class="col-4 px-0 bg-light">
+      <p class="p-4">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid amet architecto beatae
         consectetur corporis cupiditate dolor dolores ea eaque eos esse eum eveniet ex excepturi explicabo
         fugit incidunt ipsa iste, labore laborum nam neque nisi nobis non nostrum praesentium quas qui quisquam
@@ -23,7 +18,27 @@
       </p>
     </div>
     <div class="col-8 pl-0">
-      <%= image_tag 'ensemble_photo.jpg', class: 'img-fluid' %>
+      <% if @event.thumbnail.attached? %>
+        <%= image_tag @event.thumbnail, class: 'img-fluid' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-5">
+  <div class="row justify-content-center">
+    <h1 class="title"><%= @event.title.capitalize %></h1>
+  </div>
+  <div class="row">
+    <div id="wrapper">
+      <div id="slider">
+        <% if @event.images.attached? %>
+          <% @event.images.each do |image| %>
+            <div class="slide" style="background-image: url(<%= url_for(image) %>); background-repeat: no-repeat; background-size: cover; background-position: center">
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
@@ -117,108 +132,3 @@
 
     });
 </script>
-
-<div class="container-fluid mt-5">
-  <div class="row">
-    <div id="wrapper">
-      <div id="slider">
-
-        <div class="slide" style="background-image: url(<%= path_to_image('ensemble_photo.jpg') %>); background-repeat: no-repeat; background-size: cover">
-          <div class="slide-block">
-            <h4>Ice Age</h4>
-            <p>Heading south to avoid a bad case of global frostbite, a group of migrating misfit creatures embark on a
-              hilarious quest to reunite a human baby with his tribe.</p>
-          </div>
-        </div>
-
-        <div class="slide" style="background-image: url(<%= path_to_image('bugs.jpg') %>); background-repeat: no-repeat; background-size: cover">
-          <div class="slide-block">
-            <h4>For The Birds</h4>
-            <p>For the Birds is an animated short film, produced by Pixar Animation Studios released in 2000. It is
-              shown in a theatrical release of the 2001 Pixar feature film Monsters, Inc.</p>
-          </div>
-        </div>
-
-        <div class="slide" style="background-image: url(<%= path_to_image('bugs.jpg') %>); background-repeat: no-repeat; background-size: cover">
-          <div class="slide-block">
-            <h4>UP</h4>
-            <p>A comedy adventure in which 78-year-old Carl Fredricksen fulfills his dream of a great adventure when he
-              ties thousands of balloons to his house and flies away to the wilds of South America.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<% if false %>
-  <div class="container mt-5">
-    <div>
-      <div class="row">
-        <div class="col text-xs-center">
-          <h1><%= @event.title.capitalize %></h1>
-          <p><%= @event.published_date %> </p>
-        </div>
-      </div>
-      <!-- Nav tabs -->
-      <div class="row">
-        <div class="col text-xs-center">
-          <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" href="#post" aria-controls="#post" aria-selected="true" role="tab" data-toggle="tab">Post</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#images" aria-controls="#images"
-                                    aria-selected="false" role="tab" data-toggle="tab">Images</a></li>
-            <li class="nav-item"><a class="nav-link" href="#videos" aria-controls="#videos"
-                                    aria-selected="false" role="tab" data-toggle="tab">Videos</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="post">
-          <div class="row">
-            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
-              <%= @event.content.html_safe %>
-            </div>
-          </div>
-        </div>
-
-        <div role="tabpanel" class="tab-pane" id="images">
-          <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 text-xs-center mt-4">
-              <% (0...@event.images.count).each do |image| %>
-                <div class="card mb-4">
-                  <!--Card image-->
-                  <div class="view overlay">
-                    <% if @event.images[image] %>
-                      <%= image_tag @event.images[image], class: 'card-img-top img-fluid' %>
-                    <% else %>
-                    <% end %>
-                  </div>
-              <% end %>
-              </div>
-            </div>
-          </div>
-
-          <div role="tabpanel" class="tab-pane" id="videos">
-            <div class="row">
-              <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center embed-responsive embed-responsive-16by9">
-                <% (0...@event.videos.count).each do |video| %>
-                  <%= video_tag(url_for(@event.videos[video]), controls: '') %>
-                  <%= link_to "Delete Video", delete_video_event_path(videos_id: @event.videos[video].id), method: :delete, data: {confirm: "Are you sure?"} %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <%= link_to 'Edit', edit_event_path(@event) %> |
-        <%= link_to 'Back', events_front_path %>
-      </div>
-    </div>
-  </div>
-<% end %>
-

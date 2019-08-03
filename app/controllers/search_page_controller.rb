@@ -6,7 +6,7 @@ class SearchPageController < ApplicationController
             return  
         else  
             @parameter = params[:search].downcase
-            @results = Event.all.where("lower(title) LIKE :search", search: "%#{@parameter}%").uniq
+            @results = Event.where("lower(title) LIKE :search", search: "%#{@parameter}%").uniq
         end  
     end
 end

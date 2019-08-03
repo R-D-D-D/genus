@@ -1,11 +1,11 @@
-<% provide(:page_title, "Contact") %>
+<% provide(:page_title, "Join Us") %>
 
 <div class="container-fluid" id="contact-us">
   <div class="row hero" style="height: 89vh; overflow: hidden;">
     <div class="container">
       <div class="row">
         <div class="col mt-5">
-          <h1>Contact us</h1>
+          <h1>Join us</h1>
         </div>
       </div>
 
@@ -16,6 +16,7 @@
       <!-- end of email -->
 
       <hr>
+
 
       <!-- start of icons -->
       <div class="row">
@@ -30,6 +31,27 @@
         </div>
       </div>
       <!-- end of icons -->
+
+      <div class="row justify-content-center">
+        <!-- start of Google Maps -->
+        <div class="col d-flex justify-content-end">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7925696931566!2d103.77159691405718!3d1.2992456620995538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1af78cce2317%3A0x130a63b0e55d5d43!2sRunme+Shaw+CFA+Studios!5e0!3m2!1sen!2ssg!4v1564846462846!5m2!1sen!2ssg" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <!-- end of Google Maps -->
+
+        <div class="col d-flex justify-content-start">
+          <p> 
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque aut cum, deserunt dolores earum
+            eius enim eveniet facilis fuga hic id illo impedit incidunt laudantium libero maiores mollitia natus
+            necessitatibus nisi nostrum nulla obcaecati quae quaerat quas quia quibusdam rem sed sequi sint temporibus
+            totam vero voluptatem. Quis, soluta!
+          </p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center py-3">          
+        <button class="btn"> <%= link_to 'Drop us an email today!', new_message_path %> </button>
+      </div>
 
     </div>
   </div>

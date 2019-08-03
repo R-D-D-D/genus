@@ -1,47 +1,47 @@
 <% provide(:page_title, "Contact Us") %>
 
-<div id="Contact_us" class="container-fluid d-flex align-items-center ">
-    <h1> Contact Us </h1>
-  
-  <!-- Form for contact message --> 
-  <%= form_with(model: @message, local: true) do |f| %>
-  <% end %>
-  
-  <%= form_for @message, url: {action: "create"} do |f| %> 
-    <!-- Errors if any --> 
-    <% if @message.errors.any? %>
-      <div id="error_explanation">
-        <h4 class="text-danger"><%= pluralize(@message.errors.count, "error") %> prohibited this message from being sent:</h2>
+<div id="Contact_us" class="container-fluid d-flex justify-content-center">
+  <div class="col-4 d-flex justify-content-center">
 
-        <ul>
-        <% @message.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+  <div class="row justify-content-center py-3">
+    <h1> Contact Us </h1>
+
+    <!-- Form for contact message -->  
+    <%= form_for @message, url: {action: "create"} do |f| %> 
+      <!-- Errors if any --> 
+      <% if @message.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+          <% @message.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
       
+      <!-- Form fields --> 
+      <div class="text-success">
+        <%= notice %>
+      </div>
+      
+      <div class="field">
+        <%= f.text_field :name, placeholder: 'name', size: "50", class: "col-12" %>
+      </div>
+
+      <div class="field">    
+      <%= f.email_field :email, placeholder: 'email', class:"col-12"%>
+      </div>
+      
+      <div class="field">    
+      <%= f.text_area :message_body, placeholder: 'body', size: "100x10", class:"col-12" %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit 'Send', class:"col-12 btn-dark" %>
       </div>
     <% end %>
-    
-    <!-- Form fields --> 
-    <div class="text-success">
-      <%= notice %>
-    </div>
-    
-    <div class="field">
-      <%= f.text_field :name, placeholder: 'name' %>
-    </div>
+    <!-- End of Form -->
+  </div>
+  </div>
 
-    <div class="field">    
-    <%= f.email_field :email, placeholder: 'email' %>
-    </div>
-    
-    <div class="field">    
-    <%= f.text_area :message_body, placeholder: 'body' %>
-    </div>
-    
-    <div class="actions">
-      <%= f.submit 'Send' %>
-    </div>
-
-  <% end %>
 </div>

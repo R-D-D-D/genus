@@ -8,12 +8,21 @@ class RegistrationsController < ApplicationController
   end 
 
     def create
-        user = User.new(user_params)
+      puts user_params[:password]
+      puts user_params[:password_confirmation]
+      if user_params[:password] != user_params[:password_confirmation]
+        # error handling
+        flash[:danger] = "Password does not match confirmation password"
+        render 'new'  
+        return
+      end
+
+      user = User.new(user_params)
 
         if user.save
           redirect_to root_path
         else
-          flash[:register_errors] = user.errors.full_messages
+          flash[:danger] = user.errors.full_messages
           render 'new'
         end
     end

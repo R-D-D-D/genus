@@ -2,20 +2,20 @@
   <div class="card mb-4">
     <!--Card image-->
     <div class="view overlay">
-      <% if event.images.attached? %>
-        <%= image_tag event.images.first, class: 'card-img-top img-fluid' %>
+      <% if event.thumbnail.attached? %>
+        <%= image_tag event.thumbnail, class: 'card-img-top img-fluid' %>
       <% else %>
       <% end %>
     </div><!--Card content-->
     <div class="card-body">
       <!--Title-->
       <h4 class="card-title">PPE</h4><!--Text-->
-      <p class="card-text text-light">
+      <p class="card-text">
         <% event.content %>
       </p>
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
       <%= link_to event_path(event) do %>
-        <div class="text-light">
+        <div class="btn" >
         <%= fa_icon "search" %>
         find out more
         </div>

@@ -1,16 +1,19 @@
-<%= form_for(:session, url: log_in_path) do |form| %>
-  
-    <div class="field">
-      <%= form.label :email %>
-      <%= form.text_field :email %>
+<form action="/signup" method="POST">
+    <input type = "hidden" name = "authenticity_token" value = "<%=form_authenticity_token%>">
+    <div class="input-group form-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+        </div>
+        <input type = "email" name = "user[email]" placeholder = "email">
+    
     </div>
-  
-    <div class="field">
-      <%= form.label :password %>
-      <%= form.text_field :password %>
+    <div class="input-group form-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-key"></i></span>
+        </div>
+        <input type = "password" name = "user[password]" placeholder = "password">
     </div>
-  
-    <div class="actions">
-      <%= form.submit "log in"%>
+    <div class="form-group">
+        <input type="submit" value="Login" class="btn float-right login_btn">
     </div>
-  <% end %>
+<form>

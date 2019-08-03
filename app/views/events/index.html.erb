@@ -1,18 +1,29 @@
-<% provide(:page_title, "Index") %>
+<% provide(:page_title, @title) %>
 
 <% if notice %>
   <p id="notice"><%= notice %></p>
 <% end %>
 
-<div class="container mt-5">
-    <h1>Past Events</h1>
 
+<section id="events">
+  <div class="container">
+    <div class="row my-5">
+      <div class="col d-flex justify-content-center">
+        <% if yield(:page_title) == "Upcoming" %>
+          <h1>Upcoming</h1>
+        <% else %>
+          <h1>Past Events</h1>
+        <% end %>
+      </div>
+    </div>
     <div class="row">
       <%= render @events %>
     </div>
 
-    <%= link_to 'New Event', new_event_path %>
+    <% if @current_user %>
+      <%= link_to 'New Event', new_event_path, class: 'btn' %>
+    <% end %>
 
     <%= will_paginate @events %>
-</div>
-
+  </div>
+</section>

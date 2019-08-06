@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
 
         respond_to do |format|
             if @message.save
+              MessageMailer.contact_me(@message).deliver_now
               format.html { redirect_to new_message_url, notice: "We've received the message and will get back to you soon!" }
               format.json { render :new, status: :created, location: @message }
             else

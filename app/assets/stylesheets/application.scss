@@ -139,15 +139,52 @@ body {
   h1 {
     @include title;
   }
+
+  section {
+    min-height: 100vh;
+  }
+
+  .tutors {
+
+    img {
+      float: left;
+    }
+
+    display: inline;
+  }
+}
+
+/* faq */
+
+#faq {
+  h1 {
+    @include title;
+  }
+
+  .btn {
+    background-color: transparent;
+    border-color: transparent;
+    color: black;
+
+    &:hover {
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
 }
 
 /* card */
-
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  img {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+  }
+
 }
 
-.card-body {
+.event-card {
   //background: #efe5d9;
 }
 
@@ -418,9 +455,7 @@ body {
 }
 
 #myelement {
-  background-image: url("https://static.thenounproject.com/noun-svg/1031.svg?Expires=1564055342&Signature=I5Zk9SbSEK~l8ZRK8hmUlzve0ZV6n5N9Q8-OeHX3D4SVGJau3Na1jGSP--gc2zwE2uybNnmjqT~2q2zSpsM10g1gwHyCbNSYu4gwMGZoIAzIDmKlKQMCF5J45Tg89tQFBhajBZjoiFv66u2GdJ8mPur6f8Zko5fc382zTWBWMpE_&Key-Pair-Id=APKAI5ZVHAXN65CHVU2Q");
-  background-repeat: no-repeat;
-  background-position: center;
+  background: image-url("guitar.svg") center no-repeat;
   filter: invert(87%) sepia(100%) saturate(3%) hue-rotate(264deg) brightness(111%) contrast(97%);
 }
 
@@ -542,12 +577,58 @@ body {
 #event-content {
   p {
     padding: 24px;
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
   }
 
 
+}
+
+/* direct_uploads.css */
+
+.direct-upload {
+  display: block;
+  position: relative;
+  padding: 4px 4px;
+  margin: 0 3px 3px 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-size: 14px;
+  font-color: gray;
+  line-height: 13px;
+  width: 80%;
+}
+
+.direct-upload--pending {
+  opacity: 0.6;
+}
+
+.direct-upload__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0.2;
+  background: #0076ff;
+  transition: width 120ms ease-out, opacity
+  60ms 60ms ease-in;
+  transform: translate3d(0, 0, 0);
+}
+
+.direct-upload--complete
+.direct-upload__progress {
+  opacity: 0.4;
+}
+
+.direct-upload--error {
+  border-color: red;
+}
+
+input[type=file][data-direct-upload-url][disabled]
+{
+  display: none;
+}
+
+/* images */
+.portrait {
+  width: 100%;
+  object-fit: cover;
 }

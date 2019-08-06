@@ -4,61 +4,17 @@
 
 <div class='container-fluid'>
   <div class="row mx-5">
-    <% if false %>
-      <div id="sidebar" class="sidebar col-sm-2">
-        <nav class="sidebar-nav navbar-dark">
-          <ul class="nav">
-            <li class="nav-title glow" style="min-width: 100vw;">
-              <h3>Tags</h3>
-            </li>
-            <% @tags.each do |tag| %>
-              <li class="nav-item">
-                <%= link_to "#{tag.name}(#{tag.taggings_count})", manage_posts_path(tag: tag.name) %>
-              </li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
-    <% end %>
     <div class="col ml-3">
       <h1><strong>Posts</strong></h1>
     </div>
   </div>
-  <div class="row mx-5">
+  <div class="row mx-5" id="admin-card">
     <!-- Card -->
-    <% @events.each do |event| %>
-      <div class="col-md-6 col-lg-4">
-        <div class="card mb-4">
-          <!--Card image-->
-          <div class="view overlay">
-            <% if event.thumbnail.attached? %>
-              <%= image_tag event.thumbnail, class: 'card-img-top img-fluid' %>
-            <% else %>
-            <% end %>
-          </div><!--Card content-->
-          <div class="card-body">
-            <!--Title-->
-            <h4 class="card-title"><%= event.title %></h4><!--Text-->
-            <p class="card-text">
-              <% event.content %>
-            </p>
-            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-            <%= link_to 'Show', event %>
-            <% if event.published? %>
-              <%= link_to 'Unpublish', unpublish_event_path(event.id), method: :put, data: {confirm: 'Are you sure?'} %>
-            <% else %>
-              <%= link_to 'Publish', publish_event_path(event.id), method: :put, data: {confirm: 'Are you sure?'} %>
-            <% end %>
-            <%= link_to 'Edit', edit_event_path(event) %>
-            <%= link_to 'Destroy', event, method: :delete, data: {confirm: 'Are you sure?'} %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+      <%= render 'admin_card', events: @events %>
     <!-- End of Card -->
   </div>
-  <div class="row">
-    <%= link_to 'New Event', new_event_path %>
+  <div class="row ">
+    <%= link_to 'New Event', new_event_path, class: 'btn' %>
     <%= will_paginate %>
   </div>
 </div>

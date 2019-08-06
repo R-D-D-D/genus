@@ -1,0 +1,47 @@
+<% if event.images.attached? %>
+  <div class="container">
+    <h3>images</h3>
+    <ul>
+      <% event.images.each do |image| %>
+        <li>
+          <% if !image.id.nil? %>
+            <%=
+              link_to image.filename,
+                      rails_blob_path(image, disposition: :attachment)
+            %>
+            |
+            <%=
+              link_to 'delete',
+                      delete_image_event_path(images_id: image.id, event_id: event.id),
+                      method: :delete,
+                      data: {confirm: 'Are you sure?'}
+            %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if event.thumbnail.attached? %>
+  <div class="container">
+    <h3>thumbnail</h3>
+    <ul>
+      <li>
+        <% if !event.thumbnail.id.nil? %>
+          <%=
+            link_to event.thumbnail.filename,
+                    rails_blob_path(event.thumbnail, disposition: :attachment)
+          %>
+          |
+          <%=
+            link_to 'delete',
+                    delete_image_event_path(images_id: event.thumbnail.id, event_id: event.id),
+                    method: :delete,
+                    data: {confirm: 'Are you sure?'}
+          %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+<% end %>

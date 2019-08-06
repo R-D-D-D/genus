@@ -9,4 +9,6 @@ class StaticPagesController < ApplicationController
   def join_us
   end
 
+  def faq
+  end
 end

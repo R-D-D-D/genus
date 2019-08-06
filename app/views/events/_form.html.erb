@@ -11,30 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :tag_list %>
-    <%= form.text_field :tag_list %>
+    <%= form.text_field :tag_list, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :thumbnail %>
-    <%= form.file_field :thumbnail %>
+    <%= form.file_field :thumbnail, direct_upload: true, class: 'form-control-file' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :images %>
-    <%= form.file_field :images, multiple: true %>
+    <%= form.file_field :images, multiple: true, direct_upload: true, class: 'form-control-file' %>
   </div>
 
-  <div class="field">
-    <%= form.label :videos %>
-    <%= form.file_field :videos, multiple: true %>
-  </div>
+  <%= render 'events/resources', event: @event %>
 
   <p>Please indicate if the event you are creating is an upcoming one or past one</p>
   <div class="custom-control custom-radio custom-control-inline">
@@ -64,9 +61,10 @@
     <% end %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :content %>
-    <%= form.text_area :content, :class => "tinymce", style: 'width: 100%;' %>
+    <%= form.text_area :content, class: 'form-control' %>
+    <!--
     <script type="text/javascript">
         tinyMCE.init({
             selector: 'textarea',
@@ -143,9 +141,10 @@
             }
         });
     </script>
+    -->
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "#{yield(:page_title)}", data: { disable_with: 'Loading...' }, class: 'btn' %>
   </div>
 <% end %>

@@ -1,9 +1,9 @@
 <%= link_to root_url do %>
   <div class="container logo">
     <div class="row">
-      <div class="col-3 text-light pr-0" id="myelement">
+      <div class="col-3 text-light pr-3" id="myelement">
       </div>
-      <div class="col-9 pl-0">
+      <div class="col-9 pl-2">
         GENUS
       </div>
     </div>
@@ -19,11 +19,48 @@
   <span class="navbar-toggler-icon"></span>
 </button>
 
-
 <div class="collapse navbar-collapse dropDownMenu" id="navbarSupportedContent">
   <ul class="navbar-nav ml-auto">
     <li class="nav-item active">
       <%= link_to "Home", root_url, class: 'nav-link text-light' %>
+    </li>
+
+    <li>
+      <%= link_to about_path, class: 'nav-link text-light' do %>
+        About <i class="fas fa-caret-down"></i>
+      <% end %>
+      <ul class="p-1">
+        <li class="py-1 ml-2">
+          <%= link_to "GENUS", about_path(anchor: 'genus'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "The Niibori Method", about_path(anchor: 'niibori-method'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "Mission Vision Values", about_path(anchor: 'mvv'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "Music we play", about_path(anchor: 'music'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "Schedule", about_path(anchor: 'schedule'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "Tutors", about_path(anchor: 'tutors'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+
+
+      </ul>
     </li>
 
     <li>
@@ -75,40 +112,11 @@
     </li>
 
     <li>
-      <%= link_to about_path, class: 'nav-link text-light' do %>
-        About <i class="fas fa-caret-down"></i>
-      <% end %>
-      <ul class="p-1">
-        <li class="py-1 ml-2">
-          <%= link_to "GENUS", about_path(anchor: 'genus'), class: 'nav-link text-light ml-0 pl-0' %>
-        </li>
-        <hr class="p-0 m-0">
-
-        <li class="py-1 ml-2">
-          <%= link_to "Mission Vision Values", about_path(anchor: 'mvv'), class: 'nav-link text-light ml-0 pl-0' %>
-        </li>
-        <hr class="p-0 m-0">
-
-        <li class="py-1 ml-2">
-          <%= link_to "Music Production", about_path(anchor: 'music'), class: 'nav-link text-light ml-0 pl-0' %>
-        </li>
-        <hr class="p-0 m-0">
-
-        <li class="py-1 ml-2">
-          <%= link_to "schedule", about_path(anchor: 'schedule'), class: 'nav-link text-light ml-0 pl-0' %>
-        </li>
-        <hr class="p-0 m-0">
-
-        <li class="py-1 ml-2">
-          <%= link_to "tutors", about_path(anchor: 'tutors'), class: 'nav-link text-light ml-0 pl-0' %>
-        </li>
-
-
-      </ul>
+      <%= link_to "Contact Us", join_us_path, class: 'nav-link text-light' %>
     </li>
 
     <li>
-      <%= link_to "Join Us", join_us_path, class: 'nav-link text-light' %>
+      <%= link_to "FAQs", faqs_path, class: 'nav-link text-light' %>
     </li>
 
     <% if @current_user %>

@@ -1,7 +1,9 @@
-<% provide(:page_title, "New Post") %>
+<% provide(:page_title, "New Event") %>
 
-<h1>New Event</h1>
+<div class="container">
 
-<%= render 'form', event: @event %>
+  <h1>New Event</h1>
 
-<%= link_to 'Back', events_path %>
+  <%= render 'form', event: @event %>
+</div>
+

@@ -3,81 +3,18 @@
 <p id="notice"><%= notice %></p>
 
 <div class='container-fluid'>
-  <div class="row">
-    <div id="sidebar" class="sidebar col-sm-2">
-      <nav class="sidebar-nav navbar-dark">
-        <ul class="nav">
-          <li class="nav-title glow" style="min-width: 100vw;">
-            <h3>Tags</h3>
-          </li>
-          <% @tags.each do |tag| %>
-            <li class="nav-item">
-              <%= link_to "#{tag.name}(#{tag.taggings_count})", manage_posts_path(tag: tag.name) %>
-            </li>
-          <% end %>
-        </ul>
-      </nav>
+  <div class="row mx-5">
+    <div class="col ml-3">
+      <h1><strong>Posts</strong></h1>
     </div>
-
-    <div id="post" class="col-8 heading-background">
-      <h1><strong>My Posts</strong></h1>
-
-      <!-- Card -->
-      <% @events.each do |event| %>
-        <div class="card-transparent">
-
-          <div class="card-header">
-            <!-- insert published at time here -->
-          </div>
-
-          <div class="card-body">
-            <h3 class="card-title"><%= event.title %></h3>
-            <p class="card-text"><%= event.content.html_safe %></p>
-
-            <!-- Start of Card-footer -->
-            <div class="card-footer text-muted pb-0">
-              <!-- <td><%= raw event.tags.map {|t| link_to t.name, manage_posts_path(tag: t.name)}.join(',') %></td> -->
-              <div class="row align-items-end">
-                <div class="col-4 btn-group btn-sm">
-                  <button type="button" class="btn brown-button">
-                    <small><%= link_to 'Show', event %></small>
-                  </button>
-                  <% if event.published? %>
-                    <button type="button" class="btn brown-button">
-                      <small><%= link_to 'Unpublish', unpublish_event_path(event.id), method: :put, data: {confirm: 'Are you sure?'} %></small>
-                    </button>
-                  <% else %>
-                    <button type="button" class="btn brown-button">
-                      <small><%= link_to 'Publish', publish_event_path(event.id), method: :put, data: {confirm: 'Are you sure?'} %></small>
-                    </button>
-                  <% end %>
-                  <button type="button" class="btn brown-button">
-                    <small><%= link_to 'Edit', edit_event_path(event) %></small>
-                  </button>
-                  <button type="button" class="btn brown-button">
-                    <small><%= link_to 'Destroy', event, method: :delete, data: {confirm: 'Are you sure?'} %></small>
-                  </button>
-                </div>
-
-                <div class="col text-sm text-right">
-                  <small>
-                    <p>
-                      Tag: <%= raw event.tags.map {|t| link_to t.name, manage_posts_path(tag: t.name)}.join(', ') %></p>
-                  </small>
-                </div>
-              </div>
-            </div>
-            <!-- End of Card-footer -->
-
-          </div>
-        </div>
-      <% end %>
-      <!-- End of Card -->
-
-      <div class="d-flex justify-content-between">
-        <%= link_to 'New Event', new_event_path %>
-        <%= will_paginate %>
-      </div>
-    </div>
+  </div>
+  <div class="row mx-5" id="admin-card">
+    <!-- Card -->
+      <%= render 'admin_card', events: @events %>
+    <!-- End of Card -->
+  </div>
+  <div class="row ">
+    <%= link_to 'New Event', new_event_path, class: 'btn' %>
+    <%= will_paginate %>
   </div>
 </div>

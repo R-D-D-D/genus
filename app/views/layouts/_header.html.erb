@@ -49,7 +49,7 @@
 
         <div class="row">
           <div class="col d-flex justify-content-center">
-            <p class="font-italic">WHERE THE FUN BEGINS</p>
+            <p class="font-italic">A member of NUS Center For The Arts</p>
           </div>
         </div>
 
@@ -59,32 +59,30 @@
             <div class="row" style="width: 80%;">
               <div class="col-3">
                 <div class="d-flex justify-content-center">
-                  <%= link_to events_path do %>
+                  <%= link_to events_path(event_type: "Gallery") do %>
                     <i class="fas fa-photo-video fa-3x"></i>
                   <% end %>
                 </div>
                 <h5>Gallery</h5>
-                <p>See us in action</p>
+                <p>Check out our key events!</p>
               </div>
 
               <div class="col-3">
                 <div class="d-flex justify-content-center">
-                  <%= link_to about_path do %>
+                  <%= link_to events_path(event_type: "Upcoming") do %>
                     <i class="far fa-calendar-check fa-3x"></i>
                   <% end %>
                 </div>
                 <h5>Calendar</h5>
-                <p>Check the dates!</p>
+                <p>Find out more about upcoming events!</p>
               </div>
 
               <div class="col-3">
                 <div class="d-flex justify-content-center">
-                  <%= link_to about_path do %>
-                    <i class="fas fa-guitar fa-3x"></i>
-                  <% end %>
+                  <a href="https://www.youtube.com/user/NusGuitarEnsemble" target="_blank"><i class="fas fa-guitar fa-3x"></i></a>
                 </div>
-                <h5>Music Production</h5>
-                <p>See our past work</p>
+                <h5>Past Production</h5>
+                <p>Watch videos from our previous concerts!</p>
               </div>
 
               <div class="col-3">
@@ -94,7 +92,7 @@
                   <% end %>
                 </div>
                 <h5>Contact Us</h5>
-                <p>Get speedy reply</p>
+                <p>For any inquiries</p>
               </div>
             </div>
           </div>

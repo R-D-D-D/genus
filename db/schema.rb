@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_01_134514) do
+ActiveRecord::Schema.define(version: 2019_08_06_104925) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -47,7 +47,15 @@ ActiveRecord::Schema.define(version: 2019_08_01_134514) do
     t.boolean "published", default: false
     t.datetime "published_at"
     t.string "event_type"
+    t.string "thumbnail_type"
     t.index ["slug"], name: "index_events_on_slug", unique: true
+  end
+
+  create_table "faqs", force: :cascade do |t|
+    t.string "question"
+    t.text "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -92,14 +100,6 @@ ActiveRecord::Schema.define(version: 2019_08_01_134514) do
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
-  end
-
-  create_table "upcoming_events", force: :cascade do |t|
-    t.string "title"
-    t.string "content"
-    t.string "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

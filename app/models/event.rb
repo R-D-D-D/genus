@@ -7,6 +7,7 @@ class Event < ApplicationRecord
   friendly_id :title, use: :slugged
 
   scope :most_recent, -> { order(start_date: :desc) }
+  scope :least_recent, -> { order(start_date: :asc) }
   scope :published, -> { where(published: true) }
   validates :title, presence: true
   validates :content, presence: true

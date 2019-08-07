@@ -3,7 +3,7 @@
 <div class="container mt-5 p-0">
   <div class="row">
     <div class="col">
-      <h1 class="title  "><%= @event.title.capitalize %></h1>
+      <h1 class="title  "><%= @event.title %></h1>
     </div>
   </div>
   <% if @event.thumbnail.attached? %>
@@ -37,7 +37,7 @@
 <% if @event.images.attached? %>
   <div class="container-fluid mt-5">
     <div class="row justify-content-center">
-      <h1 class="title"><%= @event.title.capitalize %></h1>
+      <h1 class="title"><%= @event.title %></h1>
     </div>
     <div class="row">
       <div id="wrapper">

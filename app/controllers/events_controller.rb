@@ -10,7 +10,7 @@ class EventsController < ApplicationController
       @title = "Gallery"
     else
       @title = "Upcoming"
-      @events = Event.most_recent.published.where(:event_type => "Upcoming").paginate(page: params[:page], per_page: 6)
+      @events = Event.least_recent.published.where(:event_type => "Upcoming").paginate(page: params[:page], per_page: 6)
     end
   end
 

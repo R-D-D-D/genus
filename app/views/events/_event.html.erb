@@ -10,7 +10,7 @@
       <!--Title-->
       <h4 class="card-title"><%= event.title %></h4><!--Text-->
       <p class="card-text">
-        <% event.content %>
+        Date: <%= event.start_date.strftime("%d %b %Y") %> - <%= event.end_date.strftime("%d %b %Y") %>
       </p>
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
       <%= link_to event_path(event), class: 'stretched-link' do %>

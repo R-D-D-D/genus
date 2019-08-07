@@ -6,8 +6,8 @@ class Event < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  scope :most_recent, -> {order(published_at: :desc)}
-  scope :published, -> {where(published: true)}
+  scope :most_recent, -> { order(start_date: :desc) }
+  scope :published, -> { where(published: true) }
   validates :title, presence: true
   validates :content, presence: true
   validate :image_type

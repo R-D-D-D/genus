@@ -6,19 +6,19 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     if params[:event_type] == "Gallery"
-      @events = Event.most_recent.published.where(:event_type => "Gallery").paginate(page: params[:page], per_page: 8)
+      @events = Event.most_recent.published.where(:event_type => "Gallery").paginate(page: params[:page], per_page: 6)
       @title = "Gallery"
     else
       @title = "Upcoming"
-      @events = Event.most_recent.published.where(:event_type => "Upcoming").paginate(page: params[:page], per_page: 8)
+      @events = Event.most_recent.published.where(:event_type => "Upcoming").paginate(page: params[:page], per_page: 6)
     end
   end
 
   def front
     if (params[:tag].present?)
-      @events = Event.most_recent.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 8)
+      @events = Event.most_recent.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 6)
     else
-      @events = Event.most_recent.paginate(page: params[:page], per_page: 8)
+      @events = Event.most_recent.paginate(page: params[:page], per_page: 6)
     end
     @tags = Event.tag_counts_on(:tags)
   end
@@ -117,6 +117,6 @@ class EventsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.require(:event).permit(:title, :event_type, :thumbnail_type, :tag_list, :content, :thumbnail,  images: [])
+    params.require(:event).permit(:title, :event_type, :thumbnail_type, :tag_list, :start_date, :end_date, :content, :thumbnail,  images: [])
   end
 end

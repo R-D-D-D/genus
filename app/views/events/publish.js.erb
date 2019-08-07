@@ -1,3 +1,4 @@
 $("#publish-btn-<%= @event.id %>").html("<%= escape_javascript(render partial: 'events/unpublish', locals: {event: @event}) %>");
 $("#admin-card").html("<%= escape_javascript(render partial: 'events/admin_card', locals: {events: Event.most_recent.paginate(page: params[:page], per_page: 8)
 }) %>");
+$("#navbar").html("<%= escape_javascript(render partial: 'layouts/navbar') %>")

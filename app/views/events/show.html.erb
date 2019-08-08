@@ -8,7 +8,7 @@
   </div>
   <% if @event.thumbnail.attached? %>
     <% if @event.thumbnail_type == 'Portrait' %>
-      <div class="row pt-4 ml-5" style="width: 90%;">
+      <div class="row pt-4 mx-4">
         <div class="col-6 px-0 bg-light">
           <div class="event-content">
             <%= @event.content.html_safe %>
@@ -19,7 +19,7 @@
         </div>
       </div>
     <% else %>
-      <div class="row pt-4 ml-5" style="width: 90%;">
+      <div class="row pt-4 mx-4">
         <div class="col-5 px-0 bg-light" id="event-content">
           <div class="event-content">
             <%= @event.content.html_safe %>

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a99b668f-ee2c-4ab1-afad-75beee97bd3d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/events/_event.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/events/_event.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/events/front.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/events/front.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/events/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/events/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -46,11 +44,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/events/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+            <state relative-caret-position="105">
+              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/events_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -157,7 +164,6 @@
         <option value="$PROJECT_DIR$/app/views/faqs/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/events_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
         <option value="$PROJECT_DIR$/app/views/events/unpublish.js.erb" />
         <option value="$PROJECT_DIR$/app/views/events/publish.js.erb" />
@@ -174,6 +180,7 @@
         <option value="$PROJECT_DIR$/app/views/events/_event.html.erb" />
         <option value="$PROJECT_DIR$/app/views/events/front.html.erb" />
         <option value="$PROJECT_DIR$/app/views/events/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/events_controller.rb" />
       </list>
     </option>
   </component>
@@ -202,6 +209,12 @@
               <item name="genus" type="b2602c69:ProjectViewProjectNode" />
               <item name="genus" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="genus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="genus" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="genus" type="b2602c69:ProjectViewProjectNode" />
@@ -373,12 +386,12 @@
       <workItem from="1564622574810" duration="23677000" />
       <workItem from="1564908730410" duration="572000" />
       <workItem from="1564932058328" duration="23185000" />
-      <workItem from="1565098285682" duration="15332000" />
+      <workItem from="1565098285682" duration="15595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148643000" />
+    <option name="totallyTimeSpent" value="148906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1268" height="671" extended-state="0" />
@@ -576,13 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/events_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="118" column="18" lean-forward="true" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/events/unpublish.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -724,8 +730,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/events/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        <state relative-caret-position="105">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/events_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
         </state>
       </provider>
     </entry>

@@ -68,8 +68,7 @@
 
   <div class="form-group">
     <%= form.label :content %>
-    <%= form.text_area :content, class: 'form-control' %>
-    <!--
+    <%= form.text_area :content, :class => "tinymce"%>
     <script type="text/javascript">
         tinyMCE.init({
             selector: 'textarea',
@@ -146,7 +145,6 @@
             }
         });
     </script>
-    -->
   </div>
 
   <div>

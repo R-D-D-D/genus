@@ -13,6 +13,8 @@ class Event < ApplicationRecord
   validates :content, presence: true
   validate :image_type
   validates :thumbnail, presence: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
 
   def should_generate_new_friendly_id?
     title_changed?

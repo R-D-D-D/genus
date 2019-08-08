@@ -1,53 +1,12 @@
-<div class="container" id="faq">
-  <div class="row justify-content-center pt-5">
-    <h1>FAQs</h1>
-  </div>
-
-  <div class="row">
-    <div class="accordion" id="accordionExample">
-      <% @faqs.each do |faq| %>
-        <% if faq == @faqs[0] %>
-          <div class="card">
-            <div class="card-header" id="heading<%= faq.id.to_s %>" style="width: 90vw;">
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<%= faq.id.to_s %>" aria-expanded="true" aria-controls="collapse<%= faq.id.to_s %>">
-                  <h5 class="m-0"><%= faq.question %></h5>
-                </button>
-              </h2>
-            </div>
-
-            <div id="collapse<%= faq.id.to_s %>" class="collapse show" aria-labelledby="heading<%= faq.id.to_s %>" data-parent="#accordionExample">
-              <div class="card-body" style="width: 90vw;">
-                <%= faq.answer %>
-              </div>
-            </div>
-          </div>
-        <% else %>
-          <div class="card">
-            <div class="card-header" id="heading<%= faq.id.to_s %>" style="width: 90vw;">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse<%= faq.id.to_s %>" aria-expanded="false" aria-controls="collapse<%= faq.id.to_s %>">
-                  <h5 class="m-0"><%= faq.question %></h5>
-                </button>
-              </h2>
-            </div>
-            <div id="collapse<%= faq.id.to_s %>" class="collapse" aria-labelledby="heading<%= faq.id.to_s %>" data-parent="#accordionExample">
-              <div class="card-body" style="width: 90vw;">
-                <%= faq.answer %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
 <% if @current_user %>
 
   <p id="notice"><%= notice %></p>
 
   <h1>Faqs</h1>
+
+  <%= link_to 'New Faq', new_faq_path %>
+
+  <br>
 
   <table>
     <thead>
@@ -71,7 +30,51 @@
     </tbody>
   </table>
 
-  <br>
+<% else %>
 
-  <%= link_to 'New Faq', new_faq_path %>
+  <div class="container" id="faq">
+    <div class="row justify-content-center pt-5">
+      <h1>FAQs</h1>
+    </div>
+
+    <div class="row">
+      <div class="accordion" id="accordionExample">
+        <% @faqs.each do |faq| %>
+          <% if faq == @faqs[0] %>
+            <div class="card">
+              <div class="card-header" id="heading<%= faq.id.to_s %>" style="width: 90vw;">
+                <h2 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<%= faq.id.to_s %>" aria-expanded="true" aria-controls="collapse<%= faq.id.to_s %>">
+                    <h5 class="m-0"><%= faq.question %></h5>
+                  </button>
+                </h2>
+              </div>
+
+              <div id="collapse<%= faq.id.to_s %>" class="collapse show" aria-labelledby="heading<%= faq.id.to_s %>" data-parent="#accordionExample">
+                <div class="card-body" style="width: 90vw;">
+                  <%= faq.answer %>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <div class="card">
+              <div class="card-header" id="heading<%= faq.id.to_s %>" style="width: 90vw;">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse<%= faq.id.to_s %>" aria-expanded="false" aria-controls="collapse<%= faq.id.to_s %>">
+                    <h5 class="m-0"><%= faq.question %></h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse<%= faq.id.to_s %>" class="collapse" aria-labelledby="heading<%= faq.id.to_s %>" data-parent="#accordionExample">
+                <div class="card-body" style="width: 90vw;">
+                  <%= faq.answer %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 <% end %>

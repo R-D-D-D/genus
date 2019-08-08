@@ -19,7 +19,7 @@
     <% else %>
       <div class="row pt-4 ml-5" style="width: 90%;">
         <div class="col-4 px-0 bg-light" id="event-content">
-          <%= @event.content.html_safe %>
+          <p><%= @event.content %></p>
         </div>
         <div class="col-8 px-0 m-0">
           <%= image_tag @event.thumbnail, class: 'img-fluid' %>

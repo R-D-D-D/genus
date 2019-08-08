@@ -1,11 +1,17 @@
 <div class="col-md-6 col-lg-4 mt-5">
   <div class="card shadow event-card">
     <!--Card image-->
-    <div class="view overlay">
+    <div class="bg-dark d-flex justify-content-center">
       <% if event.thumbnail.attached? %>
-        <%= image_tag event.thumbnail %>
+        <% if event.thumbnail_type.eql?("Portrait") %>
+          <%= image_tag event.thumbnail, class: 'portrait' %>
+        <% else %>
+          <%= image_tag event.thumbnail, class: 'landscape' %>
+        <% end %>
       <% end %>
-    </div><!--Card content-->
+    </div>
+
+    <!--Card content-->
     <div class="card-body">
       <!--Title-->
       <h4 class="card-title"><%= event.title %></h4><!--Text-->

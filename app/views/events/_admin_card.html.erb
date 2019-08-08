@@ -2,17 +2,25 @@
   <div class="col-md-6 col-lg-4 mt-5">
     <div class="card height-10 event-card shadow">
       <!--Card image-->
-      <% if event.thumbnail.attached? %>
-        <%= image_tag event.thumbnail %>
-      <% end %>
+      <div class="bg-dark d-flex justify-content-center">
+        <% if event.thumbnail.attached? %>
+          <% if event.thumbnail_type.eql?("Portrait") %>
+            <%= image_tag event.thumbnail, class: 'portrait' %>
+          <% else %>
+            <%= image_tag event.thumbnail, class: 'landscape' %>
+          <% end %>
+        <% end %>
+      </div>
 
       <!--Card content-->
       <div class="card-body">
         <!--Title-->
         <h4 class="card-title"><%= event.title %></h4><!--Text-->
-        <p class="card-text">
-          <% event.content %>
-        </p>
+        <% if event.start_date && event.end_date %>
+          <p class="card-text">
+            Date: <%= event.start_date.strftime("%d %b %Y") %> - <%= event.end_date.strftime("%d %b %Y") %>
+          </p>
+        <% end %>
         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
         <div id="publish-btn-<%= event.id %>">
           <% if event.published? %>

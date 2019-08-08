@@ -1,24 +1,32 @@
 <div class="col-md-6 col-lg-4 mt-5">
-  <div class="card shadow event-card">
-    <!--Card image-->
-    <div class="view overlay">
-      <% if event.thumbnail.attached? %>
-        <%= image_tag event.thumbnail %>
-      <% end %>
-    </div><!--Card content-->
-    <div class="card-body">
-      <!--Title-->
-      <h4 class="card-title"><%= event.title %></h4><!--Text-->
-      <p class="card-text">
-        <% event.content %>
-      </p>
-      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-      <%= link_to event_path(event), class: 'stretched-link' do %>
-        <div class="btn" >
-        <%= fa_icon "search" %>
-        find out more
-        </div>
-      <% end %>
+  <div>
+    <div class="card shadow event-card">
+      <!--Card image-->
+      <div class="bg-dark d-flex justify-content-center">
+        <% if event.thumbnail.attached? %>
+          <% if event.thumbnail_type.eql?("Portrait") %>
+            <%= image_tag event.thumbnail, class: 'portrait' %>
+          <% else %>
+            <%= image_tag event.thumbnail, class: 'landscape' %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <!--Card content-->
+      <div class="card-body">
+        <!--Title-->
+        <h4 class="card-title"><%= event.title %></h4><!--Text-->
+        <p class="card-text">
+          Date: <%= event.start_date.strftime("%d %b %Y") %> - <%= event.end_date.strftime("%d %b %Y") %>
+        </p>
+        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+        <%= link_to event_path(event), class: 'stretched-link' do %>
+          <div class="btn">
+            <%= fa_icon "search" %>
+            find out more
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

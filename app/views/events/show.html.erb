@@ -1,34 +1,40 @@
 <% provide(:page_title, @event.title) %>
 
-<div class="container mt-5 p-0">
+<div class="container-fluid mt-5 p-0">
   <div class="row">
     <div class="col">
-      <h1 class="title  "><%= @event.title.capitalize %></h1>
+      <h1 class="title"><%= @event.title %></h1>
     </div>
   </div>
   <% if @event.thumbnail.attached? %>
     <% if @event.thumbnail_type == 'Portrait' %>
-      <div class="row pt-4 ml-5" style="width: 90%;">
-        <div class="col-6 px-0 bg-light" id="event-content">
-          <p><%= @event.content %></p>
+      <div class="row pt-4 mx-4">
+        <div class="col-6 px-0 bg-light">
+          <div class="event-content">
+            <%= @event.content.html_safe %>
+          </div>
         </div>
         <div class="col-6 px-0 m-0">
           <%= image_tag @event.thumbnail, class: 'portrait' %>
         </div>
       </div>
     <% else %>
-      <div class="row pt-4 ml-5" style="width: 90%;">
-        <div class="col-4 px-0 bg-light" id="event-content">
-          <%= @event.content.html_safe %>
+      <div class="row pt-4 mx-4">
+        <div class="col-5 px-0 bg-light" id="event-content">
+          <div class="event-content">
+            <%= @event.content.html_safe %>
+          </div>
         </div>
-        <div class="col-8 px-0 m-0">
+        <div class="col-7 px-0 m-0">
           <%= image_tag @event.thumbnail, class: 'img-fluid' %>
         </div>
       </div>
     <% end %>
   <% else %>
     <div class="col px-0 bg-light" id="event-content">
-      <%= @event.content.html_safe %>
+      <div class="event-content">
+        <%= @event.content.html_safe %>
+      </div>
     </div>
   <% end %>
 </div>
@@ -37,7 +43,7 @@
 <% if @event.images.attached? %>
   <div class="container-fluid mt-5">
     <div class="row justify-content-center">
-      <h1 class="title"><%= @event.title.capitalize %></h1>
+      <h1 class="title"><%= @event.title %></h1>
     </div>
     <div class="row">
       <div id="wrapper">

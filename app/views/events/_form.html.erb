@@ -17,8 +17,13 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :tag_list %>
-    <%= form.text_field :tag_list, class: 'form-control' %>
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :end_date %>
+    <%= form.date_field :end_date, class: 'form-control' %>
   </div>
 
   <div class="form-group">
@@ -63,8 +68,7 @@
 
   <div class="form-group">
     <%= form.label :content %>
-    <%= form.text_area :content, class: 'form-control' %>
-    <!--
+    <%= form.text_area :content, :class => "tinymce"%>
     <script type="text/javascript">
         tinyMCE.init({
             selector: 'textarea',
@@ -141,7 +145,6 @@
             }
         });
     </script>
-    -->
   </div>
 
   <div>

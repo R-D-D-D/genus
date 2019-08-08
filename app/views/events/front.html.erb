@@ -3,18 +3,63 @@
 <p id="notice"><%= notice %></p>
 
 <div class='container-fluid'>
-  <div class="row mx-5">
-    <div class="col ml-3">
+  <div class="row ml-5 pl-1">
+    <div class="col">
       <h1><strong>Posts</strong></h1>
     </div>
   </div>
+
+  <div class="row ml-5 pl-3">
+    <%= link_to 'New Event', new_event_path, class: 'btn' %>
+  </div>
+
   <div class="row mx-5" id="admin-card">
     <!-- Card -->
-      <%= render 'admin_card', events: @events %>
+    <% @events.each do |event| %>
+      <div class="col-md-6 col-lg-4 mt-5">
+        <div>
+          <div class="card height-10 event-card shadow">
+            <!--Card image-->
+            <div class="bg-dark d-flex justify-content-center">
+              <% if event.thumbnail.attached? %>
+                <% if event.thumbnail_type.eql?("Portrait") %>
+                  <%= image_tag event.thumbnail, class: 'portrait' %>
+                <% else %>
+                  <%= image_tag event.thumbnail, class: 'landscape' %>
+                <% end %>
+              <% end %>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+              <!--Title-->
+              <h4 class="card-title"><%= event.title %></h4><!--Text-->
+              <% if event.start_date && event.end_date %>
+                <p class="card-text">
+                  Date: <%= event.start_date.strftime("%d %b %Y") %> - <%= event.end_date.strftime("%d %b %Y") %>
+                </p>
+              <% end %>
+              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+              <div id="publish-btn-<%= event.id %>">
+                <% if event.published? %>
+                  <%= render 'unpublish', event: event %>
+                <% else %>
+                  <%= render 'publish', event: event %>
+                <% end %>
+              </div>
+              <%= link_to 'Show', event %>
+              <%= link_to 'Edit', edit_event_path(event) %>
+              <%= link_to 'Destroy', event, method: :delete, data: {confirm: 'Are you sure?'} %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
     <!-- End of Card -->
   </div>
-  <div class="row ">
-    <%= link_to 'New Event', new_event_path, class: 'btn' %>
-    <%= will_paginate %>
+
+  <div class="row justify-content-center mt-3">
+    <%= will_paginate @events, class: 'pagination' %>
   </div>
+
 </div>

@@ -6,12 +6,15 @@ class Event < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  scope :most_recent, -> {order(published_at: :desc)}
-  scope :published, -> {where(published: true)}
+  scope :most_recent, -> { order(start_date: :desc) }
+  scope :least_recent, -> { order(start_date: :asc) }
+  scope :published, -> { where(published: true) }
   validates :title, presence: true
   validates :content, presence: true
   validate :image_type
   validates :thumbnail, presence: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
 
   def should_generate_new_friendly_id?
     title_changed?

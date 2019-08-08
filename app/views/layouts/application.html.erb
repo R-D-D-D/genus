@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Cantarell:400i&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Overlock&display=swap" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Blinker|Crimson+Text|Farro|Grenze|Lacquer|Montserrat|Saira+Stencil+One&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Cantarell:400i&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Overlock&display=swap" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Blinker|Crimson+Text|Farro|Grenze|Lacquer|Montserrat|Saira+Stencil+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
 
-<head>
+  <head>
     <title><%= yield(:page_title) %> | Genus</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,6 +17,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('guitar.png') %>
   </head>
 
   <body>

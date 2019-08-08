@@ -148,6 +148,22 @@ body {
   }
 }
 
+.page-link {
+  color: $brown;
+
+  &:hover {
+    color: $brown;
+    background-color: $light-brown !important;
+  }
+}
+
+.page-item.active .page-link {
+  background-color: $light-brown !important;
+  border-color: #dee2e6 !important;
+  color: $brown;
+}
+
+
 /* about */
 
 #about {

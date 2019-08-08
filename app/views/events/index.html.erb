@@ -20,10 +20,9 @@
       <%= render @events %>
     </div>
 
-    <% if @current_user %>
-      <%= link_to 'New Event', new_event_path, class: 'btn mt-5' %>
-    <% end %>
+    <div class="row justify-content-center mt-5">
+      <%= will_paginate @events, class: 'pagination' %>
+    </div>
 
-    <%= will_paginate @events %>
   </div>
 </section>

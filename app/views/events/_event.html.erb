@@ -17,7 +17,9 @@
         <!--Title-->
         <h4 class="card-title"><%= event.title %></h4><!--Text-->
         <p class="card-text">
-          Date: <%= event.start_date.strftime("%d %b %Y") %> - <%= event.end_date.strftime("%d %b %Y") %>
+          <% if !event.start_date.nil? && !event.end_date.nil? %>
+            Date: <%= event.start_date.strftime("%d %b %Y") %> - <%= event.end_date.strftime("%d %b %Y") %>
+          <% end %>
         </p>
         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
         <%= link_to event_path(event), class: 'stretched-link' do %>

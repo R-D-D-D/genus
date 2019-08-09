@@ -34,7 +34,7 @@
             <div class="card-body">
               <!--Title-->
               <h4 class="card-title"><%= event.title %></h4><!--Text-->
-              <% if event.start_date && event.end_date %>
+              <% if !event.start_date.nil? && !event.end_date.nil? %>
                 <p class="card-text">
                   Date: <%= event.start_date.strftime("%d %b %Y") %> - <%= event.end_date.strftime("%d %b %Y") %>
                 </p>

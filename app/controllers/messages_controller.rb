@@ -5,15 +5,20 @@ class MessagesController < ApplicationController
         @message = Message.new
     end 
 
+    def show
+    end 
+
     def create
         @message = Message.new(message_params)
 
         respond_to do |format|
             if @message.save
+              MessageMailer.contact_me(@message).deliver_now
               format.html { redirect_to new_message_url, notice: "We've received the message and will get back to you soon!" }
-              format.json { render :show, status: :created, location: @message }
+              format.json { render :new, status: :created, location: @message }
             else
-              format.html { render :new }
+              format.html {redirect_to new_message_url, notice: "Please fill in all fields."}
+              # format.html { render :new }
               format.json { render json: @message.errors, status: :unprocessable_entity }
             end
           end

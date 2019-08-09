@@ -1,9 +1,14 @@
 <% provide(:page_title, "All Messages") %>
 
-<div id="message" class="container-fluid heading-background">
-  <h1 class="text-light">All Messages</h1>
+<p id="notice" class="text-success"><%= notice %></p>
 
-<p> <%= @messages.count %> </p>       
+<div id="message" class="container-fluid d-flex justify-content-center">
+  <div class="col-8">
+  
+  <h1 class="text-dark">
+    All Messages
+    <p class="btn text-small"> <%= @messages.count %> New </p>       
+  </h1>
 
     <% @messages.each do |message| %>
       <div class="card">
@@ -25,5 +30,6 @@
         </div>
       </div>
     <% end %>
+  </div>
 
 </div>

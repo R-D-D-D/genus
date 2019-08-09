@@ -146,6 +146,44 @@ body {
   h1 {
     @include title;
   }
+
+  #bonding-tab {
+    color: #292c2f;
+
+    &:hover {
+      color: #292c2f;
+    }
+  }
+
+  #production-tab {
+    color: #292c2f;
+
+    &:hover {
+      color: #292c2f;
+    }
+  }
+
+  #profile-tab {
+    color: #292c2f;
+
+    &:hover {
+      color: #292c2f;
+    }
+  }
+
+  .nav-tabs {
+    border-bottom: 1px solid $brown;
+  }
+
+  .nav-tabs .nav-link.active {
+    border-color: $brown $brown #fff;
+  }
+
+  .nav-tabs .nav-link {
+    &:hover {
+      border-color: $brown $brown transparent;
+    }
+  }
 }
 
 .page-link {
@@ -173,6 +211,15 @@ body {
 
   section {
     min-height: 100vh;
+  }
+
+  .founder {
+
+    img {
+      float: left;
+    }
+
+    display: inline;
   }
 
   .tutors {

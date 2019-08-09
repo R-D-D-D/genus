@@ -31,34 +31,42 @@
       <% end %>
       <ul class="p-1">
         <li class="py-1 ml-2">
-          <%= link_to "GENUS", about_path(anchor: 'genus'), class: 'nav-link text-light ml-0 pl-0' %>
+          <%= link_to "About GENUS", about_path(anchor: 'genus'), class: 'nav-link text-light ml-0 pl-0' %>
         </li>
         <hr class="p-0 m-0">
 
         <li class="py-1 ml-2">
-          <%= link_to "The Niibori Method", about_path(anchor: 'niibori-method'), class: 'nav-link text-light ml-0 pl-0' %>
+          <%= link_to "Our Mission Vision Values", about_path(anchor: 'mvv'), class: 'nav-link text-light ml-0 pl-0' %>
         </li>
         <hr class="p-0 m-0">
 
         <li class="py-1 ml-2">
-          <%= link_to "Mission Vision Values", about_path(anchor: 'mvv'), class: 'nav-link text-light ml-0 pl-0' %>
+          <%= link_to "About Our Founder", about_path(anchor: 'founder'), class: 'nav-link text-light ml-0 pl-0' %>
         </li>
+
         <hr class="p-0 m-0">
 
         <li class="py-1 ml-2">
-          <%= link_to "Music we play", about_path(anchor: 'music'), class: 'nav-link text-light ml-0 pl-0' %>
+          <%= link_to "Our Music Director", about_path(anchor: 'tutors'), class: 'nav-link text-light ml-0 pl-0' %>
         </li>
+
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "Our Tutors", about_path(anchor: 'tutors'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "About The Niibori Method", about_path(anchor: 'niibori-method'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+
         <hr class="p-0 m-0">
 
         <li class="py-1 ml-2">
           <%= link_to "Schedule", about_path(anchor: 'schedule'), class: 'nav-link text-light ml-0 pl-0' %>
         </li>
-        <hr class="p-0 m-0">
-
-        <li class="py-1 ml-2">
-          <%= link_to "Tutors", about_path(anchor: 'tutors'), class: 'nav-link text-light ml-0 pl-0' %>
-        </li>
-
 
       </ul>
     </li>
@@ -88,10 +96,10 @@
     </li>
 
     <li>
-      <%= link_to events_path(event_type: "Gallery"), class: 'nav-link text-light' do %>
+      <%= link_to events_path, class: 'nav-link text-light' do %>
         Gallery <i class="fas fa-caret-down"></i>
       <% end %>
-      <% if gallery_events = Event.where("event_type = ? AND published = ?", 'Gallery', true) %>
+      <% if gallery_events = Event.where.not("event_type = ?", 'Upcoming').where("published = ?", true) %>
         <% if gallery_events.any? %>
           <ul class="p-1">
             <% gallery_events.each do |event| %>

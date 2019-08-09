@@ -41,14 +41,26 @@
   <p>Please indicate if the event you are creating is an upcoming one or past one</p>
   <div class="custom-control custom-radio custom-control-inline">
     <%= form.label :event_type, class: 'radio inline' do %>
-      <%= form.radio_button :event_type, 'Gallery', checked: true, class: 'form-check-input' %>
-      <span class="form-check-label">Gallery event</span>
+      <%= form.radio_button :event_type, 'Upcoming', checked: true, class: 'form-check-input' %>
+      <span class="form-check-label">Upcoming event</span>
     <% end %>
   </div>
   <div class="custom-control custom-radio custom-control-inline">
     <%= form.label :event_type, class: 'radio inline' do %>
-      <%= form.radio_button :event_type, 'Upcoming', class: 'form-check-input' %>
-      <span class="form-check-label">Upcoming Event</span>
+      <%= form.radio_button :event_type, 'Performance & Production', class: 'form-check-input' %>
+      <span class="form-check-label">Performance & Production</span>
+    <% end %>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <%= form.label :event_type, class: 'radio inline' do %>
+      <%= form.radio_button :event_type, 'Musical Development', class: 'form-check-input' %>
+      <span class="form-check-label">Musical Development</span>
+    <% end %>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <%= form.label :event_type, class: 'radio inline' do %>
+      <%= form.radio_button :event_type, 'Bonding', class: 'form-check-input' %>
+      <span class="form-check-label">Bonding</span>
     <% end %>
   </div>
 

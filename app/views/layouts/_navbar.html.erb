@@ -120,7 +120,7 @@
     </li>
 
     <li>
-      <%= link_to "Contact Us", join_us_path, class: 'nav-link text-light' %>
+      <%= link_to "Contact Us", new_message_path, class: 'nav-link text-light' %>
     </li>
 
     <li>
@@ -130,6 +130,9 @@
     <% if @current_user %>
       <li>
         <%= link_to "Manage Post", manage_posts_path, class: 'nav-link text-light' %>
+      </li>
+      <li>
+        <%= link_to "All Messages", messages_path, class: 'nav-link text-light' %>
       </li>
       <li>
         <%= link_to "Log out", logout_path, method: :delete, class: 'nav-link text-light' %>

@@ -9,6 +9,6 @@ class MessageMailer < ApplicationMailer
     @message = message
     @content = message.message_body
 
-    mail to: "mannggo1999@gmail.com", subject: "General Enquiries"
+    mail to: "nusguitarensemble@gmail.com", subject: "General Enquiries"
   end
 end

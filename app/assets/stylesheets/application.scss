@@ -138,6 +138,20 @@ body {
     border-width: 3px;
     width: 100px;
   }
+
+  input#message_name {
+    border: none;
+    margin-bottom: 3px;
+  }
+
+  input#message_email {
+    border: none;
+    margin-bottom: 3px;
+  }
+
+  textarea {
+    border: none;
+  }
 }
 
 /* events */

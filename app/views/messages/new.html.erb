@@ -4,7 +4,7 @@
   <div class="row hero" style="height: 89vh; overflow: hidden;">
     <div class="container">
       <div class="row">
-        <div class="col mt-5">
+        <div class="col mt-3">
           <h1>Contact us</h1>
         </div>
       </div>
@@ -32,49 +32,48 @@
       </div>
       <!-- end of icons -->
 
-      <div class="row py-3 justify-content-center">       
-        <div class="col d-flex justify-content-end">      
-          <!-- Form for contact message -->  
-          <%= form_for @message, url: {action: "create"} do |f| %> 
-            <!-- Errors if any --> 
+      <div class="row py-3 justify-content-center">
+        <div class="col d-flex justify-content-end">
+          <!-- Form for contact message -->
+          <%= form_for @message, url: {action: "create"} do |f| %>
+            <!-- Errors if any -->
             <% if @message.errors.any? %>
               <div id="error_explanation">
                 <ul>
-                <% @message.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
+                  <% @message.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
                 </ul>
               </div>
             <% end %>
-            
+
             <!-- Form fields -->
             <div class="field">
-              <%= f.text_field :name, placeholder: 'name', size: "40", class: "col-12" %>
+              <%= f.text_field :name, placeholder: 'Name *', size: "40", class: "col-12" %>
             </div>
 
-            <div class="field">    
-            <%= f.email_field :email, placeholder: 'email', class:"col-12"%>
+            <div class="field">
+              <%= f.email_field :email, placeholder: 'Email *', class: "col-12" %>
             </div>
-            
-            <div class="field">    
-            <%= f.text_area :message_body, placeholder: 'body', size: "40x8", class:"col-12" %>
+
+            <div class="field">
+              <%= f.text_area :message_body, placeholder: 'Leave us your question and we will get back to you soon!', size: "40x8", class: "col-12" %>
             </div>
-            
+
             <div class="actions">
-              <%= f.submit 'Send', class:"col-12 btn" %>
+              <%= f.submit 'Send', class: "col-12 btn" %>
             </div>
           <% end %>
           <!-- End of Form -->
         </div>
 
-          <!-- start of Google Maps -->
-          <div class="col d-flex justify-content-start">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7925696931566!2d103.77159691405718!3d1.2992456620995538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1af78cce2317%3A0x130a63b0e55d5d43!2sRunme+Shaw+CFA+Studios!5e0!3m2!1sen!2ssg!4v1564846462846!5m2!1sen!2ssg" width="350" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div>
-          <!-- end of Google Maps -->
+        <!-- start of Google Maps -->
+        <div class="col d-flex justify-content-start">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7925696931566!2d103.77159691405718!3d1.2992456620995538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1af78cce2317%3A0x130a63b0e55d5d43!2sRunme+Shaw+CFA+Studios!5e0!3m2!1sen!2ssg!4v1564846462846!5m2!1sen!2ssg" width="350" height="295" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
+        <!-- end of Google Maps -->
+      </div>
 
-    
 
     </div>
   </div>

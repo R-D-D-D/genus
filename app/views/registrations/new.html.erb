@@ -1,21 +1,22 @@
 <div class="container-fluid" id="admin">
-    <% if @current_user %>
-        <div class="container">
-        <div class="d-flex justify-content-center h-100">
-            <div class="card">
-                <div class="card-header">
-                    <div class="col">
-                    <h1 class="title">Create Account</h1>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="row py-5">
-                </div>
-                <%= render 'form', registration: @registration %>
+  <% if @current_user %>
+    <div class="container">
+      <div class="d-flex justify-content-center h-100">
+        <div class="card">
+          <div class="card-header">
+            <div class="col">
+              <h1 class="title">Create Account</h1>
             </div>
+          </div>
+          <div class="card-body">
+            <div class="row py-5">
+            </div>
+            <%= render 'form', registration: @registration %>
+          </div>
         </div>
+      </div>
     </div>
-    <% else %>
-        <% flash[:danger] = "Please log in to existing account to create new account"%>
-    <% end %>
+  <% else %>
+    <% flash[:danger] = "Please log in to existing account to create new account" %>
+  <% end %>
 </div>

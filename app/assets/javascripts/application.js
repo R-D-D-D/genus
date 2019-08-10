@@ -47,4 +47,12 @@ document.addEventListener("turbolinks:load", function() {
             var links = $('a')
             links.addClass("disabled");
     });
+
+    // make contact page footer no margin-top
+
+    if ($('title').html() == 'Join Us | GENUS') {
+        $('footer').css({"margin-top" : "0px"});
+    } else {
+        $('footer').css({"margin-top" : "80px"});
+    }
 });

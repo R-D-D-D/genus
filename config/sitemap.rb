@@ -1,6 +1,6 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://www.nusguitarensemble.com"
-
+require 'aws-sdk'
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
   #

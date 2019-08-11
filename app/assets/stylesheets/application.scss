@@ -493,6 +493,15 @@ body {
     font-size: 4rem;
   }
 
+  .welcome {
+    img {
+      width: 25vw;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+
   hr {
     background-color: $brown;
     color: $brown;

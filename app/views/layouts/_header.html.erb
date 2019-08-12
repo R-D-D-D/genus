@@ -1,4 +1,5 @@
 <% if yield(:page_title).eql?("NUS") %>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col p-0">
@@ -13,8 +14,8 @@
     <div class="row home-bg">
       <div class="container">
 
-        <div class="row justify-content-center mt-3 welcome">
-          <%= image_tag "welcome.png" %>
+        <div class="row justify-content-center mt-3 welcome" id="welcome-word">
+            <%= image_tag "welcome.png" %>
         </div>
 
 
@@ -115,3 +116,11 @@
     </div>
   </div>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+    if ($(window).width() < 768) {
+        $('#welcome-word').html('<h2 class="text-light p-0 m-0 text-center" style="font-size: 1rem;">WELCOME TO</h2>');
+    } else {
+        $('#welcome-word').html('<%= image_tag "welcome.png" %>');
+    }
+</script>

@@ -9,24 +9,24 @@
   <% if @event.thumbnail.attached? %>
     <% if @event.thumbnail_type == 'Portrait' %>
       <div class="row pt-4 mx-4">
-        <div class="col-6 px-0 bg-light">
+        <div class="col-md-6 px-0 m-0">
+          <%= image_tag @event.thumbnail, class: 'portrait' %>
+        </div>
+        <div class="col-md-6 px-0 bg-light">
           <div class="event-content">
             <%= @event.content.html_safe %>
           </div>
-        </div>
-        <div class="col-6 px-0 m-0">
-          <%= image_tag @event.thumbnail, class: 'portrait' %>
         </div>
       </div>
     <% else %>
       <div class="row pt-4 mx-4">
-        <div class="col-5 px-0 bg-light" id="event-content">
+        <div class="col-md-7 px-0 m-0">
+          <%= image_tag @event.thumbnail, class: 'img-fluid' %>
+        </div>
+        <div class="col-md-5 px-0 bg-light" id="event-content">
           <div class="event-content">
             <%= @event.content.html_safe %>
           </div>
-        </div>
-        <div class="col-7 px-0 m-0">
-          <%= image_tag @event.thumbnail, class: 'img-fluid' %>
         </div>
       </div>
     <% end %>

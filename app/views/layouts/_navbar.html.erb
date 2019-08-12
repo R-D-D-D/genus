@@ -27,7 +27,7 @@
 
     <li>
       <%= link_to about_path, class: 'nav-link text-light' do %>
-        About <i class="fas fa-caret-down"></i>
+        About <i class="fas fa-caret-down" id="down-arrow"></i>
       <% end %>
       <ul class="p-1">
         <li class="py-1 ml-2">
@@ -73,7 +73,7 @@
 
     <li>
       <%= link_to events_path(event_type: "Upcoming"), class: 'nav-link text-light' do %>
-        Upcoming Events <i class="fas fa-caret-down"></i>
+        Upcoming Events <i class="fas fa-caret-down" id="down-arrow-1"></i>
       <% end %>
       <% if upcoming_events = Event.where("event_type = ? AND published = ?", 'Upcoming', true) %>
         <% if upcoming_events.any? %>
@@ -97,7 +97,7 @@
 
     <li>
       <%= link_to events_path, class: 'nav-link text-light' do %>
-        Gallery <i class="fas fa-caret-down"></i>
+        Gallery <i class="fas fa-caret-down" id="down-arrow-2"></i>
       <% end %>
       <% if gallery_events = Event.where.not("event_type = ?", 'Upcoming').where("published = ?", true) %>
         <% if gallery_events.any? %>
@@ -138,8 +138,8 @@
         <%= link_to "Log out", logout_path, method: :delete, class: 'nav-link text-light' %>
       </li>
       <li>
-      <%= link_to "Create Admin", signup_path, method: :get, class: 'nav-link text-light' %>
-    </li>
+        <%= link_to "Create Admin", signup_path, method: :get, class: 'nav-link text-light' %>
+      </li>
     <% end %>
 
   </ul>
@@ -160,7 +160,13 @@
 </div>
 
 <script type="text/javascript">
-    $('.dropDownMenu ul li').hover(function () {
-        $(this).children('ul').stop(true, false, true).fadeToggle(300);
-    });
+    if ($(window).width() < 992) {
+        $('#down-arrow').addClass('no-display');
+        $('#down-arrow-1').addClass('no-display');
+        $('#down-arrow-2').addClass('no-display');
+    } else {
+        $('.dropDownMenu ul li').hover(function () {
+            $(this).children('ul').stop(true, false, true).slideToggle(300);
+        });
+    }
 </script>

@@ -50,7 +50,7 @@ document.addEventListener("turbolinks:load", function() {
 
     // make contact page footer no margin-top
 
-    if ($('title').html() == 'Join Us | Singapore | NUS Guitar Ensemble') {
+    if ($('title').html() == 'Contact Us | Singapore | NUS Guitar Ensemble') {
         $('footer').css({"margin-top" : "0px"});
     } else {
         $('footer').css({"margin-top" : "80px"});

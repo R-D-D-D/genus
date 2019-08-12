@@ -5,7 +5,7 @@
 
     <div class="row">
       <div class="col">
-        <h1>OUR STORY</h1>
+        <h1><%= phrase('OUR STORY') %></h1>
       </div>
     </div>
 
@@ -20,12 +20,12 @@
       </div>
 
       <div class="col-md-6">
-        <h1 class="text-left">The GENUS Family</h1>
+        <h1 class="text-left"><%= phrase('The GENUS Family') %></h1>
         <p>
-          GENUS is a warm and welcoming community of students who are bound by their passion for playing
+          <%= phrase('GENUS is a warm and welcoming community of students who are bound by their passion for playing
           the guitar and making music together. Through a variety of opportunities such as annual concerts
           and overseas exchanges, GENUS offers its members an enriching environment that promotes musical
-          excellence and continued growth.
+          excellence and continued growth.') %>
         </p>
         <%= link_to "Read more", about_path, class: 'brown-button' %>
       </div>
@@ -36,16 +36,16 @@
 
     <div class="row pt-5 mt-5">
       <div class="col-md-6">
-        <h1 class="text-left">The Niibori Method</h1>
+        <h1 class="text-left"><%= phrase('The Niibori Method') %></h1>
         <p>
-          Fun fact: Not only is GENUS Singapore’s oldest guitar ensemble, it is also the first in the region
+          <%= phrase('Fun fact: Not only is GENUS Singapore’s oldest guitar ensemble, it is also the first in the region
           to become a full-fledged Niibori guitar ensemble! Developed by Hiroki Niibori since 1957, the
           Niibori method utilises a family of guitars of varying pitches, thus creating a more diverse and
-          distinctive sound.
+          distinctive sound.') %>
         </p>
 
         <p>
-          Read on to find out more about the different types of guitars!
+          <%= phrase('Read on to find out more about the different types of guitars!') %>
         </p>
         <%= link_to "Read more", about_path(anchor: 'niibori-method'), class: 'brown-button' %>
       </div>
@@ -65,29 +65,29 @@
               <div class="row justify-content-center">
                 <%= image_tag 'target.svg', style: 'width: 7vw; height: 7vw;' %>
               </div>
-                <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"> Mission </h4>
+                <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"><%= phrase(' Mission ') %></h4>
               <p class="p-3">
-                To provide an environment for our members to learn, grow and perform and at the same time, promote
-                our art form to the community 2 through our performances.
+                <%= phrase('To provide an environment for our members to learn, grow and perform and at the same time, promote
+                our art form to the community 2 through our performances.') %>
               </p>
             </div>
             <div class="col-md-4">
               <div class="row justify-content-center">
                 <%= image_tag 'brain.svg', style: 'width: 7vw; height: 7vw;' %>
               </div>
-              <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"> Vision </h4>
+              <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"><%= phrase(' Vision ') %></h4>
               <p class="p-3">
-                To be the leading guitar ensemble in Singapore that is at the forefront of advancing the recognition
-                and appreciation of guitar ensemble music.
+                <%= phrase('To be the leading guitar ensemble in Singapore that is at the forefront of advancing the recognition
+                and appreciation of guitar ensemble music.') %>
               </p>
             </div>
             <div class="col-md-4">
               <div class="row justify-content-center">
                 <%= image_tag 'value.svg', style: 'width: 7vw; height: 7vw;' %>
               </div>
-              <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"> Values </h4>
+              <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"><%= phrase(' Values ') %></h4>
               <p class="p-3">
-                Community  Excellence ️ Versatility
+                <%= phrase('Community  Excellence  Versatility') %>
               </p>
             </div>
           </div>

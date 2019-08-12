@@ -20,6 +20,7 @@
 //= require jquery.carouFredSel.js
 //= require_tree .
 //= require direct_uploads.js
+//= require phrasing
 
 document.addEventListener("turbolinks:load", function() {
 

@@ -25,7 +25,8 @@ Rails.application.routes.draw do
 
   #static_pages
   get "/about" , to: 'static_pages#about'
-  get "/join_us", to: 'static_pages#join_us'
+  get "/join_us", to: 'messages#new'
+  get "/home", to: 'static_pages#home'
 
   #sessions
   get "/login", to: 'sessions#new'
@@ -40,4 +41,6 @@ Rails.application.routes.draw do
   #search_page
   get '/search', to: 'search_page#search'
 
+  #sitemap
+  get '/sitemap', to: 'sitemap#index', defaults: {format: "xml"}
 end

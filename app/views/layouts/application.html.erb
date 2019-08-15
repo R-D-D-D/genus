@@ -10,17 +10,32 @@
   <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
 
   <head>
-    <title><%= yield(:page_title) %> | Genus</title>
+    <title><%= yield(:page_title) %> | Singapore | NUS Guitar Ensemble</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/b33f59b361.js"></script>
 
+    <meta name="organisation" content="NUS | NUS Guitar Ensemble" />
+    <meta name="description" content="Established in 1981 by Cultural Medallion recipient Mr Alex Abisheganaden, NUS Guitar Ensemble (GENUS) is Singapore’s leading guitar ensemble. Initially comprising only classical prime guitars, GENUS was later modelled after the Niibori Orchestra in Japan, becoming the pioneering Niibori guitar ensemble in Singapore." />
+    <meta property="og:title" content="NUS | Singapore | NUS Guitar Ensemble" />
+    <meta property="og:description" content="Established in 1981 by Cultural Medallion recipient Mr Alex Abisheganaden, NUS Guitar Ensemble (GENUS) is Singapore’s leading guitar ensemble. Initially comprising only classical prime guitars, GENUS was later modelled after the Niibori Orchestra in Japan, becoming the pioneering Niibori guitar ensemble in Singapore." />
+    <meta property="og:url" content="https://www.nusguitarensemble.com" />
+    <meta name="keywords" content="Niibori Guitars, Guitar Ensemble, Guitar, Music, NUS, Singapore, Classical Music, Japanese Music" />
+
+    <!-- making responsive sites -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="google-site-verification" content="WS1S8USmKu9G-B75H6UsPPR7ZgAqpQcexsOUxw9kj8A" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'footer', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('guitar2.ico') %>
   </head>
 
   <body>
+    <%= render 'phrasing/initializer' %>
     <%= render 'layouts/header' %>
     <div class="container">
       <% flash.each do |message_type, message| %>

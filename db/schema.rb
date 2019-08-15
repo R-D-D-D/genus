@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_07_060343) do
+ActiveRecord::Schema.define(version: 2019_08_12_152639) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -74,6 +74,22 @@ ActiveRecord::Schema.define(version: 2019_08_07_060343) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "phrasing_phrase_versions", force: :cascade do |t|
+    t.integer "phrasing_phrase_id"
+    t.text "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["phrasing_phrase_id"], name: "index_phrasing_phrase_versions_on_phrasing_phrase_id"
+  end
+
+  create_table "phrasing_phrases", force: :cascade do |t|
+    t.string "locale"
+    t.string "key"
+    t.text "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
@@ -97,14 +113,6 @@ ActiveRecord::Schema.define(version: 2019_08_07_060343) do
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
-  end
-
-  create_table "upcoming_events", force: :cascade do |t|
-    t.string "title"
-    t.string "content"
-    t.string "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

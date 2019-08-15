@@ -20,7 +20,7 @@
 //= require jquery.carouFredSel.js
 //= require_tree .
 //= require direct_uploads.js
-//= require fancybox
+//= require phrasing
 
 document.addEventListener("turbolinks:load", function() {
 
@@ -49,5 +49,9 @@ document.addEventListener("turbolinks:load", function() {
             links.addClass("disabled");
     });
 
-
+    if ($('title').html() == 'Contact Us | Singapore | NUS Guitar Ensemble') {
+        $('footer').css({"margin-top" : "0px"});
+    } else {
+        $('footer').css({"margin-top" : "80px"});
+    }
 });

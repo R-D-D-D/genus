@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
+@import 'phrasing';
 
 
 $gray-base: #000 !default;
@@ -21,6 +22,11 @@ $dark-brown: #9b7b4e;
 body {
   /* background-color: #F2EFE8; */
   color: #2c2f2f;
+
+}
+
+.no-display {
+  display: none;
 }
 
 .title {
@@ -56,15 +62,185 @@ body {
   }
 }
 
-/*admin */
-#admin {
-  background: image-url('practicing.jpeg') center no-repeat;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+/* home  & nav */
+
+.home-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://d3ej4wsb6lfww2.cloudfront.net/ensemble_photo_bernice_grey.jpg') center no-repeat;
   background-size: cover;
+
+  .home-text {
+    text-shadow: 2px 2px 4px black;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    color: $brown;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  p {
+    color: white;
+    text-align: center;
+    padding: 0;
+    font-size: 0.5rem;
+  }
+
+  h2 {
+    text-align: center;
+    font: normal 1rem 'Ubuntu';
+  }
+
+  h5 {
+    padding-top: 5px;
+    color: $brown;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+
+  a {
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 2px;
+
+    font-size: 0.7rem;
+    color: $brown;
+    text-align: center;
+    line-height: 35px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+
+    &:hover {
+      color: $dark-brown;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .home-text {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font: normal 1rem 'Ubuntu';
+    }
+
+  }
+
+  @include media-breakpoint-up(md) {
+    .home-text {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font: normal 1.5rem 'Ubuntu';
+    }
+
+    h5 {
+      font-size: 1rem;
+    }
+
+    a {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.7rem;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .home-text {
+      font-size: 4rem;
+    }
+
+    h2 {
+      font: normal 2rem 'Ubuntu';
+    }
+
+    h5 {
+      font-size: 1.2rem;
+    }
+
+    a {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .welcome {
+    img {
+      width: 20vw;
+      height: auto;
+    }
+  }
+
+  hr {
+    background-color: $brown;
+    color: $brown;
+    border-width: 3px;
+  }
+
 }
+
+
+.logo {
+  float: left;
+  margin-right: 30px;
+  font-size: 2.3rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  font-family: 'Overlock', cursive;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+#myelement {
+  background: image-url("guitar.svg") center no-repeat;
+  filter: invert(87%) sepia(100%) saturate(3%) hue-rotate(264deg) brightness(111%) contrast(97%);
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar {
+  background-color: #151515;
+  z-index: 10;
+
+  .dropDownMenu {
+    li {
+      a {
+        padding: 0px;
+      }
+
+      ul {
+        text-align: left;
+        display: none;
+        position: absolute;
+        top: 100%;
+        width: 200px;
+        background-color: $brown;
+        list-style: outside none none;
+        z-index: 99;
+
+        li {
+          color: #151515;
+          line-height: inherit;
+        }
+      }
+    }
+  }
+}
+
 
 /* home page */
 
@@ -95,6 +271,29 @@ body {
 
 #contact-us {
   color: white;
+
+  .contact-detail-left {
+    justify-content: center;
+    display: flex;
+  }
+
+  .contact-detail-right {
+    justify-content: center;
+    padding-top: 2rem;
+    display: flex;
+  }
+
+  @include media-breakpoint-up(md) {
+    .contact-detail-right {
+      padding-top: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .contact-detail-right {
+      padding-top: 0;
+    }
+  }
 
   h1 {
     @include title;
@@ -138,6 +337,20 @@ body {
     border-width: 3px;
     width: 100px;
   }
+
+  input#message_name {
+    border: none;
+    margin-bottom: 3px;
+  }
+
+  input#message_email {
+    border: none;
+    margin-bottom: 3px;
+  }
+
+  textarea {
+    border: none;
+  }
 }
 
 /* events */
@@ -146,10 +359,48 @@ body {
   h1 {
     @include title;
   }
+
+  #bonding-tab {
+    color: #292c2f;
+
+    &:hover {
+      color: #292c2f;
+    }
+  }
+
+  #production-tab {
+    color: #292c2f;
+
+    &:hover {
+      color: #292c2f;
+    }
+  }
+
+  #profile-tab {
+    color: #292c2f;
+
+    &:hover {
+      color: #292c2f;
+    }
+  }
+
+  .nav-tabs {
+    border-bottom: 1px solid $brown;
+  }
+
+  .nav-tabs .nav-link.active {
+    border-color: $brown $brown #fff;
+  }
+
+  .nav-tabs .nav-link {
+    &:hover {
+      border-color: $brown $brown transparent;
+    }
+  }
 }
 
 .page-link {
-  color: $brown;
+  color: $brown !important;
 
   &:hover {
     color: $brown;
@@ -258,6 +509,15 @@ body {
   
 
 
+  .founder {
+
+    img {
+      float: left;
+    }
+
+    display: inline;
+  }
+
   .tutors {
 
     img {
@@ -302,17 +562,47 @@ body {
 }
 
 /* card */
+
 .card {
+
   .landscape {
     width: 100%;
-    height: 20vw;
+    height: 40vw;
     object-fit: cover;
   }
 
   .portrait {
     width: auto;
-    height: 20vw;
+    height: 40vw;
     object-fit: cover;
+  }
+
+  @include media-breakpoint-up(md) {
+    .landscape {
+      width: 100%;
+      height: 30vw;
+      object-fit: cover;
+    }
+
+    .portrait {
+      width: auto;
+      height: 30vw;
+      object-fit: cover;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .landscape {
+      width: 100%;
+      height: 20vw;
+      object-fit: cover;
+    }
+
+    .portrait {
+      width: auto;
+      height: 20vw;
+      object-fit: cover;
+    }
   }
 
 }
@@ -323,6 +613,142 @@ body {
 
 .card-title {
   color: #292c2f;
+}
+
+
+/* miscellaneous */
+
+
+.info-page {
+  h1, h2 {
+    text-align: left;
+  }
+  h2 {
+    line-height: 1.75;
+    letter-spacing: -0.5px;
+  }
+}
+
+/* icon
+
+
+/* button */
+
+.btn {
+  background-color: #a8865d;
+  border-color: #a8865d;
+  color: white;
+  padding: 5px 8px;
+
+  &:hover {
+    color: #fff;
+    background-color: #837359;
+    border-color: #837359;
+  }
+}
+
+/* carousel gallery */
+
+.carousel {
+  i.fa {
+    display: inline-block;
+    border-radius: 60px;
+    padding: 0.5em 0.6em;
+    color: white;
+    background: #a8865d;
+
+    &:hover {
+      color: #fff;
+      background-color: #837359;
+      border-color: #837359;
+    }
+  }
+}
+
+#wrapper {
+  height: 100%;
+  width: 100%;
+  min-height: 650px;
+  min-width: 900px;
+}
+
+#slider {
+  margin: 10px 0 0 0;
+  height: auto;
+  overflow: hidden;
+}
+
+#slider .slide {
+  position: relative;
+  display: none;
+  height: 500px;
+  float: left;
+  background-position: center right;
+  cursor: pointer;
+  border-left: 1px solid #fff;
+}
+
+#slider .slide:first-child {
+  border: none;
+}
+
+#slider .slide.active {
+  cursor: default;
+}
+
+/* event */
+.event-content {
+  padding: 2rem;
+}
+
+/* direct_uploads.css */
+
+.direct-upload {
+  display: block;
+  position: relative;
+  padding: 4px 4px;
+  margin: 0 3px 3px 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-size: 14px;
+  font-color: gray;
+  line-height: 13px;
+  width: 50%;
+}
+
+.direct-upload--pending {
+  opacity: 0.6;
+}
+
+.direct-upload__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0.2;
+  background: #0076ff;
+  transition: width 120ms ease-out, opacity 60ms 60ms ease-in;
+  transform: translate3d(0, 0, 0);
+}
+
+.direct-upload--complete
+.direct-upload__progress {
+  opacity: 0.4;
+}
+
+.direct-upload--error {
+  border-color: red;
+}
+
+input[type=file][data-direct-upload-url][disabled] {
+  display: none;
+}
+
+/* images */
+.portrait {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* footer */
@@ -336,6 +762,7 @@ body {
   font: bold 16px sans-serif;
 
   padding: 55px 50px;
+  margin-top: 80px;
 }
 
 .footer-distributed .footer-left,
@@ -493,270 +920,4 @@ body {
     margin-left: 0;
   }
 
-}
-
-
-.css1 {
-  font-size: 1.0em;
-}
-
-.css2 {
-  font-size: 1.2em;
-}
-
-.css3 {
-  font-size: 1.4em;
-}
-
-.css4 {
-  font-size: 1.6em;
-}
-
-/* nav */
-
-.home-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), image-url('ensemble_photo_bernice_grey_blur.jpg') center no-repeat;
-  background-size: cover;
-
-  .home-text {
-    text-shadow: 2px 2px 4px black;
-    font-family: 'Rubik', sans-serif;
-    text-align: center;
-    color: $brown;
-    font-weight: bold;
-    font-size: 4rem;
-  }
-
-  hr {
-    background-color: $brown;
-    color: $brown;
-    border-width: 3px;
-  }
-
-  h2 {
-    text-align: center;
-    font: normal 32px 'Ubuntu';
-  }
-
-  h5 {
-    padding-top: 5px;
-    color: $brown;
-    text-align: center;
-  }
-
-  p {
-    color: white;
-    text-align: center;
-  }
-
-  a {
-    cursor: pointer;
-    background-color: transparent;
-    border-radius: 2px;
-
-    font-size: 20px;
-    color: $brown;
-    text-align: center;
-    line-height: 35px;
-
-    margin-right: 3px;
-    margin-bottom: 5px;
-
-    &:hover {
-      color: $dark-brown;
-    }
-  }
-
-}
-
-
-.logo {
-  float: left;
-  margin-right: 30px;
-  font-size: 2.3em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
-  font-family: 'Overlock', cursive;
-
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-}
-
-#myelement {
-  background: image-url("guitar.svg") center no-repeat;
-  filter: invert(87%) sepia(100%) saturate(3%) hue-rotate(264deg) brightness(111%) contrast(97%);
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.navbar {
-  background-color: #151515;
-  z-index: 10;
-
-  .dropDownMenu {
-    li {
-      a {
-        padding: 0px;
-      }
-
-      ul {
-        text-align: left;
-        display: none;
-        position: absolute;
-        top: 100%;
-        width: 200px;
-        background-color: $brown;
-        list-style: outside none none;
-        z-index: 99;
-
-        li {
-          color: #151515;
-          line-height: inherit;
-        }
-      }
-    }
-  }
-}
-
-/* miscellaneous */
-
-.info-page {
-  h1, h2 {
-    text-align: left;
-  }
-
-  h2 {
-    line-height: 1.75;
-    letter-spacing: -0.5px;
-  }
-}
-
-/* icon
-
-
-/* button */
-
-.btn {
-  background-color: #a8865d;
-  border-color: #a8865d;
-  color: white;
-  padding: 5px 8px;
-
-  &:hover {
-    color: #fff;
-    background-color: #837359;
-    border-color: #837359;
-  }
-}
-
-/* carousel gallery */
-
-.carousel {
-  i.fa {
-    display: inline-block;
-    border-radius: 60px;
-    padding: 0.5em 0.6em;
-    color: white;
-    background: #a8865d;
-
-    &:hover {
-      color: #fff;
-      background-color: #837359;
-      border-color: #837359;
-    }
-  }
-}
-
-#wrapper {
-  height: 100%;
-  width: 100%;
-  min-height: 650px;
-  min-width: 900px;
-}
-
-#slider {
-  margin: 10px 0 0 0;
-  height: auto;
-  overflow: hidden;
-}
-
-#slider .slide {
-  position: relative;
-  display: none;
-  height: 500px;
-  float: left;
-  background-position: center right;
-  cursor: pointer;
-  border-left: 1px solid #fff;
-}
-
-#slider .slide:first-child {
-  border: none;
-}
-
-#slider .slide.active {
-  cursor: default;
-}
-
-/* event */
-.event-content {
-  padding: 2rem;
-}
-
-/* direct_uploads.css */
-
-.direct-upload {
-  display: block;
-  position: relative;
-  padding: 4px 4px;
-  margin: 0 3px 3px 0;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-  font-size: 14px;
-  font-color: gray;
-  line-height: 13px;
-  width: 80%;
-}
-
-.direct-upload--pending {
-  opacity: 0.6;
-}
-
-.direct-upload__progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  opacity: 0.2;
-  background: #0076ff;
-  transition: width 120ms ease-out, opacity 60ms 60ms ease-in;
-  transform: translate3d(0, 0, 0);
-}
-
-.direct-upload--complete
-.direct-upload__progress {
-  opacity: 0.4;
-}
-
-.direct-upload--error {
-  border-color: red;
-}
-
-input[type=file][data-direct-upload-url][disabled] {
-  display: none;
-}
-
-/* images */
-.portrait {
-  height: auto;
-  width: 100%;
-  object-fit: cover;
 }

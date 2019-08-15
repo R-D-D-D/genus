@@ -5,12 +5,14 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    if params[:event_type] == "Gallery"
-      @events = Event.least_recent.published.where(:event_type => "Gallery").paginate(page: params[:page], per_page: 6)
-      @title = "Gallery"
-    else
-      @title = "Upcoming"
+    if params[:event_type] == "Upcoming"
       @events = Event.least_recent.published.where(:event_type => "Upcoming").paginate(page: params[:page], per_page: 6)
+      @title = "Upcoming"
+    else
+      @title = "Gallery"
+      @development_events = Event.least_recent.published.where(:event_type => "Musical Development").paginate(page: params[:page], per_page: 6)
+      @bonding_events = Event.least_recent.published.where(:event_type => "Bonding").paginate(page: params[:page], per_page: 6)
+      @production_events = Event.least_recent.published.where(:event_type => "Performance & Production").paginate(page: params[:page], per_page: 6)
     end
   end
 

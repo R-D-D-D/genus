@@ -27,45 +27,53 @@
 
     <li>
       <%= link_to about_path, class: 'nav-link text-light' do %>
-        About <i class="fas fa-caret-down"></i>
+        About <i class="fas fa-caret-down" id="down-arrow"></i>
       <% end %>
       <ul class="p-1">
         <li class="py-1 ml-2">
-          <%= link_to "GENUS", about_path(anchor: 'genus'), class: 'nav-link text-light ml-0 pl-0' %>
+          <%= link_to "About GENUS", about_path(anchor: 'genus'), class: 'nav-link text-light ml-0 pl-0' %>
         </li>
         <hr class="p-0 m-0">
 
         <li class="py-1 ml-2">
-          <%= link_to "The Niibori Method", about_path(anchor: 'niibori-method'), class: 'nav-link text-light ml-0 pl-0' %>
+          <%= link_to "Our Mission Vision Values", about_path(anchor: 'mvv'), class: 'nav-link text-light ml-0 pl-0' %>
         </li>
         <hr class="p-0 m-0">
 
         <li class="py-1 ml-2">
-          <%= link_to "Mission Vision Values", about_path(anchor: 'mvv'), class: 'nav-link text-light ml-0 pl-0' %>
+          <%= link_to "About Our Founder", about_path(anchor: 'founder'), class: 'nav-link text-light ml-0 pl-0' %>
         </li>
+
         <hr class="p-0 m-0">
 
         <li class="py-1 ml-2">
-          <%= link_to "Music we play", about_path(anchor: 'music'), class: 'nav-link text-light ml-0 pl-0' %>
+          <%= link_to "Our Music Director", about_path(anchor: 'tutors'), class: 'nav-link text-light ml-0 pl-0' %>
         </li>
+
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "Our Tutors", about_path(anchor: 'tutors'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+
+        <hr class="p-0 m-0">
+
+        <li class="py-1 ml-2">
+          <%= link_to "About The Niibori Method", about_path(anchor: 'niibori-method'), class: 'nav-link text-light ml-0 pl-0' %>
+        </li>
+
         <hr class="p-0 m-0">
 
         <li class="py-1 ml-2">
           <%= link_to "Schedule", about_path(anchor: 'schedule'), class: 'nav-link text-light ml-0 pl-0' %>
         </li>
-        <hr class="p-0 m-0">
-
-        <li class="py-1 ml-2">
-          <%= link_to "Tutors", about_path(anchor: 'tutors'), class: 'nav-link text-light ml-0 pl-0' %>
-        </li>
-
 
       </ul>
     </li>
 
     <li>
       <%= link_to events_path(event_type: "Upcoming"), class: 'nav-link text-light' do %>
-        Upcoming Events <i class="fas fa-caret-down"></i>
+        Upcoming Events <i class="fas fa-caret-down" id="down-arrow-1"></i>
       <% end %>
       <% if upcoming_events = Event.where("event_type = ? AND published = ?", 'Upcoming', true) %>
         <% if upcoming_events.any? %>
@@ -88,10 +96,10 @@
     </li>
 
     <li>
-      <%= link_to events_path(event_type: "Gallery"), class: 'nav-link text-light' do %>
-        Gallery <i class="fas fa-caret-down"></i>
+      <%= link_to events_path, class: 'nav-link text-light' do %>
+        Gallery <i class="fas fa-caret-down" id="down-arrow-2"></i>
       <% end %>
-      <% if gallery_events = Event.where("event_type = ? AND published = ?", 'Gallery', true) %>
+      <% if gallery_events = Event.where.not("event_type = ?", 'Upcoming').where("published = ?", true) %>
         <% if gallery_events.any? %>
           <ul class="p-1">
             <% gallery_events.each do |event| %>
@@ -112,7 +120,7 @@
     </li>
 
     <li>
-      <%= link_to "Contact Us", join_us_path, class: 'nav-link text-light' %>
+      <%= link_to "Contact Us", new_message_path, class: 'nav-link text-light' %>
     </li>
 
     <li>
@@ -124,11 +132,14 @@
         <%= link_to "Manage Post", manage_posts_path, class: 'nav-link text-light' %>
       </li>
       <li>
+        <%= link_to "All Messages", messages_path, class: 'nav-link text-light' %>
+      </li>
+      <li>
         <%= link_to "Log out", logout_path, method: :delete, class: 'nav-link text-light' %>
       </li>
       <li>
-      <%= link_to "Create Admin", signup_path, method: :get, class: 'nav-link text-light' %>
-    </li>
+        <%= link_to "Create Admin", signup_path, method: :get, class: 'nav-link text-light' %>
+      </li>
     <% end %>
 
   </ul>
@@ -149,7 +160,13 @@
 </div>
 
 <script type="text/javascript">
-    $('.dropDownMenu ul li').hover(function () {
-        $(this).children('ul').stop(true, false, true).fadeToggle(300);
-    });
+    if ($(window).width() < 992) {
+        $('#down-arrow').addClass('no-display');
+        $('#down-arrow-1').addClass('no-display');
+        $('#down-arrow-2').addClass('no-display');
+    } else {
+        $('.dropDownMenu ul li').hover(function () {
+            $(this).children('ul').stop(true, false, true).slideToggle(300);
+        });
+    }
 </script>

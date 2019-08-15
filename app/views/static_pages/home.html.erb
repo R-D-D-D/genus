@@ -1,62 +1,56 @@
-<% provide(:page_title, "Home") %>
+<% provide(:page_title, "NUS") %>
 
 <div class="section" id="home">
   <div class="container pt-5">
 
     <div class="row">
       <div class="col">
-        <h1>OUR STORY</h1>
+        <h1><%= phrase('OUR STORY') %></h1>
       </div>
     </div>
 
-    <hr class="mt-5" width="800px">
+    <hr class="mt-5">
 
     <div class="row pt-5 mt-5">
 
-      <div class="col-6 d-flex justify-content-center">
-        <div style="width: 90%">
+      <div class="col-md-6 d-flex justify-content-center">
+        <div>
           <%= image_tag 'casual.jpg', class: 'img-fluid' %>
         </div>
       </div>
 
-      <div class="col-6">
-        <h1 class="text-left">The GENUS Family</h1>
+      <div class="col-md-6">
+        <h1 class="text-left"><%= phrase('The GENUS Family') %></h1>
         <p>
-          GENUS is a welcoming and warm community made up of a group of guitar lovers. We practice together, face
-          challenges together and have fun together. Many of us are may come in worrying about the upcoming semester,
-          the new environment and seemingly daunting music scores.
-          However, everyone has the will to help each others out, not only in terms of guitar playing but also day
-          to day life. It might be a new experience for some us, but as we go through practices and concerts together,
-          we improve together as a team and most important of all, we have
-          found a new family in NUS.
+          <%= phrase('GENUS is a warm and welcoming community of students who are bound by their passion for playing
+          the guitar and making music together. Through a variety of opportunities such as annual concerts
+          and overseas exchanges, GENUS offers its members an enriching environment that promotes musical
+          excellence and continued growth.') %>
         </p>
+        <%= link_to "Read more", about_path, class: 'brown-button' %>
       </div>
 
     </div>
 
-    <hr class="mt-5" width="800px">
+    <hr class="mt-5">
 
     <div class="row pt-5 mt-5">
-      <div class="col-6">
-        <h1 class="text-left">The niibori method</h1>
+      <div class="col-md-6">
+        <h1 class="text-left"><%= phrase('The Niibori Method') %></h1>
         <p>
-          As one of the many Niibori guitar ensembles in Singapore, GENUS utilises a system of guitars with
-          varying pitches, as well as a playing style, technique and repertoire unique to these guitars,
-          collectively known as the Niibori method. Developed by Hiroki Niibori since 1957, each Niibori
-          ensemble usually features these guitars at its core: the alto, prime, bass, contrabass and guitarron.
-          These different guitars create a diverse sound range which allows for greater versatility in our
-          repertoire compared to ensembles consisting of only normal classical guitars.
+          <%= phrase('Fun fact: Not only is GENUS Singapore’s oldest guitar ensemble, it is also the first in the region
+          to become a full-fledged Niibori guitar ensemble! Developed by Hiroki Niibori since 1957, the
+          Niibori method utilises a family of guitars of varying pitches, thus creating a more diverse and
+          distinctive sound.') %>
         </p>
 
         <p>
-          Thanks to the unique system of guitar tunings and score transpositions, it is easy for members to pick
-          up any guitar or score and start playing, regardless of which section they belong to. Read on to find
-          out more about each type of guitar!
+          <%= phrase('Read on to find out more about the different types of guitars!') %>
         </p>
         <%= link_to "Read more", about_path(anchor: 'niibori-method'), class: 'brown-button' %>
       </div>
 
-      <div class="col-6 d-flex justify-content-center">
+      <div class="col-md-6 pt-3 d-flex justify-content-center">
         <div style="width: 200px">
           <%= image_tag 'alto guitar.jpg', class: 'img-fluid' %>
         </div>
@@ -67,36 +61,33 @@
     <div class="row pt-5">
       <div class="col jumbotron" style="padding: 4rem 2rem 2rem 2rem;">
           <div class="row">
-            <div class="col-4">
+            <div class="col-md-4">
               <div class="row justify-content-center">
-                <%= image_tag 'target.svg', style: 'filter: invert(57%) sepia(68%) saturate(273%) hue-rotate(359deg) brightness(95%) contrast(84%);
-                    width: 7vw; height: 7vw;' %>
+                <%= image_tag 'target.svg', style: 'width: 7vw; height: 7vw;' %>
               </div>
-                <h4 class="p-3 m-0"> Mission </h4>
+                <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"><%= phrase(' Mission ') %></h4>
               <p class="p-3">
-                To provide an environment for our members to learn, grow and perform and at the same time, promote
-                our art form to the community 2 through our performances.
+                <%= phrase('To provide an environment for our members to learn, grow and perform and at the same time, promote
+                our art form to the community 2 through our performances.') %>
               </p>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
               <div class="row justify-content-center">
-                <%= image_tag 'brain.svg', style: 'filter: invert(57%) sepia(68%) saturate(273%) hue-rotate(359deg) brightness(95%) contrast(84%);
-                    width: 7vw; height: 7vw;' %>
+                <%= image_tag 'brain.svg', style: 'width: 7vw; height: 7vw;' %>
               </div>
-              <h4 class="p-3 m-0"> Vision </h4>
+              <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"><%= phrase(' Vision ') %></h4>
               <p class="p-3">
-                To be the leading guitar ensemble in Singapore that is at the forefront of advancing the recognition
-                and appreciation of guitar ensemble music.
+                <%= phrase('To be the leading guitar ensemble in Singapore that is at the forefront of advancing the recognition
+                and appreciation of guitar ensemble music.') %>
               </p>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
               <div class="row justify-content-center">
-                <%= image_tag 'value.svg', style: 'filter: invert(57%) sepia(68%) saturate(273%) hue-rotate(359deg) brightness(95%) contrast(84%);
-                    width: 7vw; height: 7vw;' %>
+                <%= image_tag 'value.svg', style: 'width: 7vw; height: 7vw;' %>
               </div>
-              <h4 class="p-3 m-0"> Values </h4>
+              <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"><%= phrase(' Values ') %></h4>
               <p class="p-3">
-                Community ♦️ Excellence ♦️ Versatility
+                <%= phrase('Community  Excellence  Versatility') %>
               </p>
             </div>
           </div>

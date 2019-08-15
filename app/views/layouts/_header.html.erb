@@ -1,28 +1,28 @@
-<% if yield(:page_title).include?("Home") %>
+<% if yield(:page_title).eql?("NUS") %>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col p-0">
         <div>
-          <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+          <nav class="navbar navbar-expand-lg navbar-dark py-1" id="navbar">
             <%= render 'layouts/navbar' %>
           </nav>
         </div>
       </div>
     </div>
 
-    <div class="row home-bg" style="height: 90vh; overflow: auto;">
+    <div class="row home-bg">
       <div class="container">
-        <div class="row d-flex justify-content-center pt-5 mt-3 text-light">
-          <h1>WELCOME TO</h1>
+        <div class="row justify-content-center mt-3 welcome" id="welcome-word">
+            <%= image_tag "welcome.png" %>
         </div>
-
 
         <div class="row">
           <div class="col">
-            <div class="container mb-0" style="width: 900px">
+            <div class="container mb-0">
               <div class="row">
                 <div class="col">
-                  <h1 class="home-text">NUS GUITAR ENSEMBLE</h1>
+                  <h1 class="home-text m-0">NUS GUITAR ENSEMBLE</h1>
                 </div>
               </div>
               <div class="row">
@@ -32,8 +32,8 @@
                 <div class="col-3">
                   <hr>
                 </div>
-                <div class="col-2 text-light">
-                  <h2 class="font-italic">GENUS</h2>
+                <div class="col-2 d-flex text-light align-items-center justify-content-center p-0">
+                  <h2 class="font-italic m-0 text-center">GENUS</h2>
                 </div>
                 <div class="col-3">
                   <hr>
@@ -48,15 +48,15 @@
 
         <div class="row">
           <div class="col d-flex justify-content-center">
-            <p class="font-italic">A member of NUS Center For The Arts</p>
+            <p class="font-italic m-0">A member of NUS Center For The Arts</p>
           </div>
         </div>
 
         <!-- begin of 4 icons -->
-        <div class="row mt-5">
+        <div class="row">
           <div class="container d-flex justify-content-center pt-5 mt-1">
-            <div class="row" style="width: 80%;">
-              <div class="col-3">
+            <div class="row">
+              <div class="col-6 col-md-3">
                 <div class="d-flex justify-content-center">
                   <%= link_to events_path(event_type: "Gallery") do %>
                     <i class="fas fa-photo-video fa-3x"></i>
@@ -66,7 +66,7 @@
                 <p>Check out our key events!</p>
               </div>
 
-              <div class="col-3">
+              <div class="col-6 col-md-3">
                 <div class="d-flex justify-content-center">
                   <%= link_to events_path(event_type: "Upcoming") do %>
                     <i class="far fa-calendar-check fa-3x"></i>
@@ -76,7 +76,7 @@
                 <p>Find out more about upcoming events!</p>
               </div>
 
-              <div class="col-3">
+              <div class="col-6 col-md-3">
                 <div class="d-flex justify-content-center">
                   <a href="https://www.youtube.com/user/NusGuitarEnsemble" target="_blank"><i class="fas fa-guitar fa-3x"></i></a>
                 </div>
@@ -84,7 +84,7 @@
                 <p>Watch videos from our previous concerts!</p>
               </div>
 
-              <div class="col-3">
+              <div class="col-6 col-md-3">
                 <div class="d-flex justify-content-center">
                   <%= link_to join_us_path do %>
                     <i class="far fa-address-book fa-3x"></i>
@@ -107,10 +107,18 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col p-0">
-        <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
           <%= render 'layouts/navbar' %>
         </nav>
       </div>
     </div>
   </div>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+    if ($(window).width() < 768) {
+        $('#welcome-word').html('<h2 class="text-light p-0 m-0 text-center" style="font-size: 1rem;">WELCOME TO</h2>');
+    } else {
+        $('#welcome-word').html('<%= image_tag "welcome.png" %>');
+    }
+</script>

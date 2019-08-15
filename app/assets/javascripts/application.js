@@ -20,6 +20,7 @@
 //= require jquery.carouFredSel.js
 //= require_tree .
 //= require direct_uploads.js
+//= require fancybox
 
 document.addEventListener("turbolinks:load", function() {
 
@@ -47,4 +48,6 @@ document.addEventListener("turbolinks:load", function() {
             var links = $('a')
             links.addClass("disabled");
     });
+
+
 });

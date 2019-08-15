@@ -167,13 +167,96 @@ body {
 /* about */
 
 #about {
-  h1 {
-    @include title;
-  }
 
   section {
-    min-height: 100vh;
+    min-height: 60vh;
   }
+
+  #genus{
+      min-height: 90vh;
+  }
+
+  .component{
+    background: #ecf5ff;
+    padding: 0 0 40px 0;
+    box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    
+    #niibori-method{
+
+    .img-alto{
+      position: relative;
+      top: 100px;
+      left: -80px;
+      z-index: 10;
+
+    }
+    
+    .box {
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 0 10px 40px 10px;
+        background: #fff;
+        box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .triggered-popup{
+      background:rgba(0,0,0,.4);
+      cursor:pointer;
+      display:none;
+      height:100%;
+      position:fixed;
+      width:100vw;
+      text-align:center;
+      top:0;
+      left:0;
+      z-index:10000;
+
+      .helper{
+        display:inline-block;
+        height:100%;
+        vertical-align:middle;
+      }
+
+      .triggered-box{
+        background-color: #fff;
+        box-shadow: 10px 10px 60px #555;
+        display: inline-block;
+        height: auto;
+        max-width: 700px;
+        min-height: 100px;
+        vertical-align: middle;
+        width: 60%;
+        position: relative;
+        border-radius: 8px;
+        padding: 15px 5%;
+
+        .triggered-box-close-btn{
+          background-color: #fff;
+          border: 3px solid #999;
+          border-radius: 50px;
+          cursor: pointer;
+          display: inline-block;
+          font-family: arial;
+          font-weight: bold;
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          font-size: 25px;
+          line-height: 30px;
+          width: 30px;
+          height: 30px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  }
+  
+
 
   .tutors {
 
@@ -185,6 +268,19 @@ body {
   }
 }
 
+.about-text{
+  font-family: "Montserrat", sans-serif;
+  margin: 0 0 20px 0;
+  padding: 0; 
+  text-align: center;
+  color: $brown;
+  font-size: 4rem;
+}
+
+.about-bg{
+    background: image-url('ensemble_photo_bernice.JPG') center no-repeat;
+    background-size: cover;
+}
 /* faq */
 
 #faq {
@@ -240,7 +336,6 @@ body {
   font: bold 16px sans-serif;
 
   padding: 55px 50px;
-  margin-top: 80px;
 }
 
 .footer-distributed .footer-left,

@@ -85,7 +85,7 @@ gem "font-awesome-rails"
 
 gem 'caroufredsel_rails'
 
-gem "aws-sdk-s3", require: false
+gem "aws-sdk-s3"
 
 gem 'sitemap_generator'
 

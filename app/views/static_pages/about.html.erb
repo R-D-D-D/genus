@@ -1,22 +1,27 @@
 <% provide(:page_title, "About") %>
 
 <section id="about">
-  <div class ="row about-bg",  style="height: 50vh;">
-  </div>
-  <div class="container-fluid pr-0 pl-0">
+  <div class="container px-5">
     <section id="genus">
-      <div class="row pt-5 pb-3 pl-5">
-            <h1 class="about-text"><strong>About |&nbsp;</strong> </h1>
-             <h2 class="about-text" style="align-self: center"> GENUS </h2>
+      <div class="row pt-3 pb-3">
+        <div class="col">
+          <h1 class="title">GENUS</h1>
+        </div>
+      </div>
+
+      <div class="row px-5">
+        <div class="col">
+          <%= image_tag "ensemble_photo_bernice.JPG", class: 'img-fluid' %>
+        </div>
       </div>
 
       <div class="row px-5 pt-3">
-        <p> 
+        <p>
           <%= phrase('Established in 1981 by Cultural Medallion recipient Mr Alex Abisheganaden, NUS Guitar Ensemble (GENUS) is
           Singapore’s leading guitar ensemble. Initially comprising only classical prime guitars, GENUS was later
           modelled after the Niibori Orchestra in Japan, becoming the pioneering Niibori guitar ensemble in Singapore.') %>
         </p>
-        <p> 
+        <p>
           <%= phrase('Unlike solo classical, acoustic or electric guitar playing, the Niibori method utilises a family of guitars
           with varying pitches, creating endless exciting musical possibilities for the instrument. Through innovative
           performance elements such as the Niibori Rhythm Method, GENUS seeks to present immersive and impactful
@@ -30,7 +35,7 @@
           promoting a greater love for guitar ensemble music in Singapore, so as to establish the guitar art form as an
           integral part of the local arts landscape.') %>
         </p>
-        <p> 
+        <p>
           <%= phrase('In pursuit of musical excellence and continued improvement, GENUS offers our members an environment that is
           both nurturing and challenging. Beginning with a structured workshop programme for newcomers, each member’s
           journey promises ample performance and learning opportunities — through annual concerts, external performances
@@ -41,249 +46,259 @@
       </div>
     </section>
 
-  <div class = "component">
-    <div class="container px-5">
-      <section id="niibori-method">
-        <div class="row pt-5 pl-6">
-          <div class = "col">
-            <h3 class = "about-text"> The Niibori Method </h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-5 offset-lg-1">
-            <div class = "img-alto">
-              <%= image_tag 'target.svg', style: 'width: 7vw; height: 7vw;' %>
-            </div>
-            <div class = 'box '>
-              <h4 class = "triggerer-alto">Alto</h4>
-              <div class = 'triggered-popup triggered-popup-alto' >
-                <span class = "helper"></span>
-                <div class = "triggered-box triggered-box-alto">
-                  <div class = "triggered-box-close-btn triggered-box-close-btn-alto">X</div>
-                  <p>
-                    First, the Alto guitars. Being tuned a perfect fifth higher than a normal classical guitar, an Alto
-                    guitar can also be said to be the king of high pitch guitars. The distances between the frets are
-                    smaller in an Alto guitar than a normal classical guitar, allowing people with small hands to play
-                    the Alto guitar with ease. In addition, this makes the Alto guitar suitable to play the melody and
-                    counter-melody as it can be optimally used to play fast runs that are usually played by instruments
-                    like the violin.
-
-                    The alto guitar is the smallest and highest-sounding guitar in a standard Niibori guitar ensemble.
-                    It is tuned a 5th higher than the standard classical guitar. Alto players are usually entrusted with
-                    the melody in the pieces we play, and can frequently be seen playing high up on the necks of their
-                    guitars! Fast runs and tremolos are also common sounds in these sections.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-5 ">
-            <div class = 'box'>
-              <h4 class = "triggerer-prime">Prime</h4>
-              <div class = 'triggered-popup triggered-popup-prime'>
-                <span class = "helper"></span>
-                <div class = "triggered-box triggered-box-prime">
-                  <div class = "triggered-box-close-btn triggered-box-close-btn-prime">X</div>
-                  <p>
-                    The second member of the Niibori family would be the Prime guitars. This is also recognized as the standard
-                    classical guitar which is commonly used during solo guitar playing. In the Niibori Orchestra, it is called the
-                    Prime guitar to differentiate it from the other guitars. All Niibori guitars are tuned relative to the Prime
-                    guitar. The Prime guitar is indispensable to the Niibori guitar orchestra as it is mainly responsible for
-                    chords, which adds depth to the pieces. However, it is not only limited to chords as it can also take on the
-                    melody as well, making it one of the more versatile guitar in the orchestra.
-
-                    Prime guitars are the standard classical guitars most of us are familiar with. The role of the prime section
-                    evolves with each piece we play - oftentimes chords and arpeggios, but also melodies, tremolos and bass notes.
-                    With the wide range of techniques, there’s never a dull moment as a prime player!
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-5 offset-lg-1 ">
-            <div class ="box">
-              <h4 class = "triggerer-bass">Bass</h4>
-              <div class = 'triggered-popup triggered-popup-bass'>
-                <span class = "helper"></span>
-                <div class = "triggered-box triggered-box-bass">
-                  <div class = "triggered-box-close-btn triggered-box-close-btn-bass">X</div>
-                  <p>
-                    The third member would be the Bass guitars. The Bass guitar is tuned a fourth lower than a Prime guitar,
-                    giving it the same tuning as an Alto guitar, but one octave lower. Contrary to popular belief that the Bass
-                    guitar only takes on the bass line, it can sometimes take on the melody as well. Its characteristic tone makes
-                    it important in the Niibori guitar orchestra. In fact, it can be used to play solo parts of certain pieces as
-                    well.
-
-                    In addition to the Bass guitar, there is also the upright Guitarron, an instruments with South American roots.
-                    It is shaped differently from the other Niibori guitars, giving it a warm and rich tone. It's very deep bass
-                    sound is very important in helping to gel the different parts of a Niibori guitar orchestral piece together.
-                    Also unique to the Guitarron, it is the only instrument in the Niibori guitar orchestra that is fretless.
-                    Playing a Guitarron requires different left and right hand techniques as compared to the other types of
-                    Niibori guitars.
-
-                    Also in the Bass family are the Contrabass guitars, which are tuned one octave lower than Prime guitars. Since
-                    the very deep bass sound of the Guitarron is not easily picked up by listeners, the Contrabass guitars are
-                    important in helping to bridge the Bass and the Guitarron parts together, and add on to the depth of the music
-                    produced.
-
-                    The bass family comprises the bass guitar, the contrabass guitar and the guitarron, and plays an important
-                    role in keeping the rhythm of the ensemble.
-                    The bass and contrabass guitars are usually played with the thumb instead of the fingers. Don’t be fooled into
-                    thinking Bass parts are easy or boring to play! The warm tone of the bass guitar lends itself well to playing
-                    beautiful melodies too.
-                    The guitarron is a large, fretless guitar with a rounded body, played upright by plucking the strings
-                    outwards. Despite having Latin American roots and resembling guitarrons used in Mexican mariachi groups, our
-                    version of a guitarron is truly unique to Niibori guitar ensembles!
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-5">
-            <div class = 'box'>
-              <h4 class = "triggerer-other">Other Special Instruments</h4>
-             <div class = 'triggered-popup triggered-popup-other'>
-              <span class = "helper"></span>
-              <div class = "triggered-box triggered-box-other">
-                <div class = "triggered-box-close-btn triggered-box-close-btn-other">X</div>
-                  <p>
-                    Other than the main members of the Niibori family, other special Niibori guitar instruments are sometimes
-                    featured in certain pieces. One such Niibori guitar is the Soprano guitar, which is tuned one octave higher
-                    than the Prime guitar. Another family of Niibori guitar is the Cembalo guitars or 12-stringed guitars. This
-                    includes the Alto Cembalo and Prime Cembalo which are 12 string counterparts to the Alto and Prime guitars
-                    respectively. Unlike the normal Niibori guitars, the Cembalos are often played with needles at the finger tips
-                    instead of plucking the strings directly with the fingers. These unique members add a different colour to the
-                    music produced and often can be found taking the limelight in orchestral pieces.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-
-  <div class="container px-5">
     <section id="mvv">
       <div class="row py-5">
-        <h2 class="pl-4 about-text col" style="align-self: center"> Mission Vision Values</h2>
+        <h1><strong>About |</strong></h1>
+        <h2 class="pl-4" style="align-self: center"> Mission Vision Values</h2>
       </div>
-      <div class="row ">
-      <div class="col jumbotron" style="padding: 4rem 2rem 2rem 2rem;">
-          <div class="row">
-            <div class="col-4">
-              <div class="row justify-content-center">
-                <%= image_tag 'target.svg', style: 'width: 7vw; height: 7vw;' %>
-              </div>
-                <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"> Mission </h4>
-              <p class="p-3">
-                To provide an environment for our members to learn, grow and perform and at the same time, promote
-                our art form to the community 2 through our performances.
-              </p>
-            </div>
-            <div class="col-4">
-              <div class="row justify-content-center">
-                <%= image_tag 'brain.svg', style: 'width: 7vw; height: 7vw;' %>
-              </div>
-              <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"> Vision </h4>
-              <p class="p-3">
-                To be the leading guitar ensemble in Singapore that is at the forefront of advancing the recognition
-                and appreciation of guitar ensemble music.
-              </p>
-            </div>
-            <div class="col-4">
-              <div class="row justify-content-center">
-                <%= image_tag 'value.svg', style: 'width: 7vw; height: 7vw;' %>
-              </div>
-              <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"> Values </h4>
-              <p class="p-3">
-                Community  Excellence ️ Versatility
-              </p>
-            </div>
+
+      <div class="row d-block">
+        <p>
+          <%= phrase('Mission:') %>
+        </p>
+        <p>
+          <%= phrase('To provide an environment for our members to learn, grow and perform and at the same time, promote
+          our art form to the community 2 through our performances') %>
+        </p>
+        <p>
+          <%= phrase('Vision:') %>
+        </p>
+        <p>
+          <%= phrase('To be the leading guitar ensemble 1 in Singapore that is at the forefront of advancing the recognition
+          and appreciation of guitar ensemble music') %>
+        </p>
+        <p>
+          <%= phrase('Values:') %>
+        </p>
+        <p>
+          <%= phrase('Community') %>
+        </p>
+        <p>
+          <%= phrase('A strong sense of belonging among members
+          Strong connections with the wider guitar ensemble community in Singapore') %>
+        </p>
+
+        <p>
+          <%= phrase('Excellencey') %>
+        </p>
+        <p>
+          <%= phrase('High musical standards at both the individual and ensemble level
+          Motivation to learn and improve together') %>
+        </p>
+
+        <p>
+          <%= phrase('Versatility') %>
+        </p>
+
+        <p>
+          <%= phrase('Showcasing the distinctive features of guitar ensemble music
+          Showcasing a diverse repertoire') %>
+        </p>
+      </div>
+
+    </section>
+
+    <section id="founder">
+      <div class="row py-5">
+        <h1><strong>About |</strong></h1>
+        <h2 class="pl-4" style="align-self: center"> Our Founder </h2>
+      </div>
+
+      <div class="row">
+        <div class="col tutors">
+          <div class="pr-3" style="float: left;">
+            <%= image_tag 'Alex Abisheganaden.png', size: '200x200', class: 'rounded-circle' %>
           </div>
+          <div class="h4">
+            Our Founder: Mr Alex Abisheganaden
+          </div>
+
+          <p> <%= phrase('hey') %>
+            Mr. Alex Abisheganaden is the founder and Honorary Conductor of GENUS. In 1986, he introduced the concept of
+            Niibori guitars to the Ensemble. Since then, Niibori guitars have gained immense popularity in the
+            Singaporean music scene.
+          </p>
+          <p> <%= phrase('hey') %>
+            Having excelled as a guitarist, singer, double bassist, conductor and actor in dramas, musicals and operas,
+            Mr. Abisheganaden is one of Singapore's best-known musicians and stage personalities. In addition, he has
+            shown other facets of his talent as a writer, composer and music adjudicator. Some of his famous works
+            include "Huan Ying-Vanakam" and "Gela-Nexus" (Amalgamation of GENUS and his name), both of which were
+            performed by GENUS in Singapore and Germany in 2007. Mr. Abisheganaden also founded the Singapore Classical
+            Guitar Society in 1967 and remained at its helm for 25 years.
+          </p>
+          <p> <%= phrase('hey') %>
+            In 1988, in recognition of his leadership and involvement in music in Singapore as a performer, teacher,
+            adjudicator and impresario, he was awarded our government’s prestigious Singapore Cultural Medallion award.
+            Apart from this award, Mr. Abisheganaden also received the COMPASS Meritorious Award from the Composers &
+            Authors Society of Singapore.
+          </p>
+
         </div>
       </div>
     </section>
-  </div>
 
-  <div class = "component">
-    <div class="container px-5">
-      <section id="music">
-        <div class="row py-5">
-          <h2 class="pl-4 col about-text" style="align-self: center"> Music We Play</h2>
-        </div>
+    <section id="tutors">
+      <div class="row py-5">
+        <h1><strong>About |</strong></h1>
+        <h2 class="pl-4" style="align-self: center"> Tutors</h2>
+      </div>
 
-        <div class="row">
+      <div class="row">
+        <div class="col tutors">
+          <div class="pr-3" style="float: left;">
+            <%= image_tag 'robert.png', class: 'rounded-circle' %>
+          </div>
+          <div class="h4">
+            <%= phrase('Music Director & Resident Conductor: Dr Robert Casteels') %>
+          </div>
+
           <p>
-            GENUS plays a wide range of music, including classical music, Spanish music, Niibori Rhythm Method
-            pieces and anime/movie theme songs. Although GENUS does not focus on strum and sing, GENUS members
-            would be able to develop good guitar playing techniques which could help greatly in their strum and
-            sing.
+            <%= phrase('Composer, conductor, pianist, educator and arts administrator, Dr Robert Casteels believes that these
+            activities form an intertwined and kaleidoscopic part of music making.') %>
           </p>
           <p>
-            Below is one of our past concert's repertoire, have a look to get a better idea!
+            <%= phrase('Casteels has conducted professional orchestras in 20 countries with a repertoire of 600 works ranging from
+            the early classics to contemporary music. He has conducted first performances of symphonic works and operas
+            in major festivals in Europe, the USA and Australia. After graduating from the Guildhall School of Music of
+            London and the Juilliard School in New York, Casteels was appointed staff conductor at the Brussels Royal
+            Opera House and Head of conducting studies at the Brussels (Flemish) Royal Music Conservatory. In 2001 he
+            was awarded the Christoffel Plantin prize, Flanders’ highest cultural award, for his cross-cultural
+            research.') %>
+          </p>
+          <p>
+            <%= phrase('Casteels took up permanent residency in Singapore in 1996 and citizenship in 2007. He has contributed
+            tirelessly to Singapore’s music scene, as a member of various arts related committees, as Dean of the
+            Faculty of Performing Arts at LASALLE-SIA College of the Arts, as Music Director of the Singapore National
+            Youth Orchestra and as Artistic Director of ‘I’mPULSE’, Asia-Europe Foundation’s first music camp held in
+            The Philippines. Casteels has premiered significant masterpieces in Singapore, such as works by Boulez,
+            Ligeti, Takemitsu, Stockhausen and Varèse. In April 2004, Casteels was appointed the first
+            Associate-in-Residence (Special Music Projects) by the Centre For the Arts, National University of Singapore
+            (NUS).') %>
+          </p>
+          <p>
+            <%= phrase('A composer in his own right, Casteels has written a growing corpus of 120 musical works that cross several
+            cultures, genres and disciplines.') %>
           </p>
         </div>
+      </div>
+    </section>
 
-        <div class="row">
-          <div class="col-6">
-              <%= image_tag 'program1.jpg', class: 'img-fluid' %>
-              <%= link_to "Image", class: 'fancybox' %>
-          </div>
-          <div class="col-6">
-            <%= image_tag 'program2.jpg', class: 'img-fluid' %>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
+    <section id="niibori-method">
+      <div class="row py-5">
+        <h1><strong>About |</strong></h1>
+        <h2 class="pl-4" style="align-self: center"> The Niibori Method </h2>
+      </div>
 
-  <div class="container px-5">
+      <div class="row">
+        <h4>Alto</h4>
+        <p>
+          <%= phrase('First, the Alto guitars. Being tuned a perfect fifth higher than a normal classical guitar, an Alto
+          guitar can also be said to be the king of high pitch guitars. The distances between the frets are
+          smaller in an Alto guitar than a normal classical guitar, allowing people with small hands to play
+          the Alto guitar with ease. In addition, this makes the Alto guitar suitable to play the melody and
+          counter-melody as it can be optimally used to play fast runs that are usually played by instruments
+          like the violin.') %>
+        </p>
+        <p>
+          <%= phrase('The alto guitar is the smallest and highest-sounding guitar in a standard Niibori guitar ensemble.
+          It is tuned a 5th higher than the standard classical guitar. Alto players are usually entrusted with
+          the melody in the pieces we play, and can frequently be seen playing high up on the necks of their
+          guitars! Fast runs and tremolos are also common sounds in these sections.') %>
+        </p>
+
+        <h4>Prime</h4>
+        <p>
+          <%= phrase('The second member of the Niibori family would be the Prime guitars. This is also recognized as the standard
+          classical guitar which is commonly used during solo guitar playing. In the Niibori Orchestra, it is called the
+          Prime guitar to differentiate it from the other guitars. All Niibori guitars are tuned relative to the Prime
+          guitar. The Prime guitar is indispensable to the Niibori guitar orchestra as it is mainly responsible for
+          chords, which adds depth to the pieces. However, it is not only limited to chords as it can also take on the
+          melody as well, making it one of the more versatile guitar in the orchestra.') %>
+        </p>
+        <p>
+          <%= phrase ('Prime guitars are the standard classical guitars most of us are familiar with. The role of the prime section
+          evolves with each piece we play - oftentimes chords and arpeggios, but also melodies, tremolos and bass notes.
+          With the wide range of techniques, there’s never a dull moment as a prime player!') %>
+        </p>
+
+
+        <h4>Bass</h4>
+        <p>
+          <%= phrase('The third member would be the Bass guitars. The Bass guitar is tuned a fourth lower than a Prime guitar,
+          giving it the same tuning as an Alto guitar, but one octave lower. Contrary to popular belief that the Bass
+          guitar only takes on the bass line, it can sometimes take on the melody as well. Its characteristic tone makes
+          it important in the Niibori guitar orchestra. In fact, it can be used to play solo parts of certain pieces as
+          well.') %>
+        </p>
+
+        <p>
+          <%= phrase('In addition to the Bass guitar, there is also the upright Guitarron, an instruments with South American roots.
+          It is shaped differently from the other Niibori guitars, giving it a warm and rich tone. It is very deep bass
+              sound is very important in helping to gel the different parts of a Niibori guitar orchestral piece together.
+              Also unique to the Guitarron, it is the only instrument in the Niibori guitar orchestra that is fretless.
+              Playing a Guitarron requires different left and right hand techniques as compared to the other types of
+              Niibori guitars.') %>
+        </p>
+
+        <p>
+          <%= phrase('Also in the Bass family are the Contrabass guitars, which are tuned one octave lower than Prime guitars. Since
+          the very deep bass sound of the Guitarron is not easily picked up by listeners, the Contrabass guitars are
+          important in helping to bridge the Bass and the Guitarron parts together, and add on to the depth of the music
+          produced.') %>
+        </p>
+
+        <p>
+          <%= phrase('The bass family comprises the bass guitar, the contrabass guitar and the guitarron, and plays an important
+          role in keeping the rhythm of the ensemble.') %>
+        </p>
+
+        <p>
+          <%= phrase('The bass and contrabass guitars are usually played with the thumb instead of the fingers. Don’t be fooled into
+          thinking Bass parts are easy or boring to play! The warm tone of the bass guitar lends itself well to playing
+          beautiful melodies too.') %>
+        </p>
+
+        <p>
+          <%= phrase('The guitarron is a large, fretless guitar with a rounded body, played upright by plucking the strings
+          outwards. Despite having Latin American roots and resembling guitarrons used in Mexican mariachi groups, our
+          version of a guitarron is truly unique to Niibori guitar ensembles!') %>
+        </p>
+
+        <h4>Other Special Instruments</h4>
+        <p>
+          <%= phrase('Other than the main members of the Niibori family, other special Niibori guitar instruments are sometimes
+          featured in certain pieces. One such Niibori guitar is the Soprano guitar, which is tuned one octave higher
+          than the Prime guitar. Another family of Niibori guitar is the Cembalo guitars or 12-stringed guitars. This
+          includes the Alto Cembalo and Prime Cembalo which are 12 string counterparts to the Alto and Prime guitars
+          respectively. Unlike the normal Niibori guitars, the Cembalos are often played with needles at the finger tips
+          instead of plucking the strings directly with the fingers. These unique members add a different colour to the
+          music produced and often can be found taking the limelight in orchestral pieces.') %>
+        </p>
+      </div>
+    </section>
+
     <section id="schedule">
       <div class="row py-5">
-        <h2 class="pl-4 col about-text" style="align-self: center"> Timeline </h2>
+        <h1><strong>About |</strong></h1>
+        <h2 class="pl-4" style="align-self: center"> Timeline </h2>
       </div>
-      <div class="row ">
-        <div class="col jumbotron" style="padding: 4rem 2rem 2rem 2rem;">
-          <div class="row">
-            <div class="col-6">
-              <div class="row justify-content-center">
-                <%= image_tag 'target.svg', style: 'width: 7vw; height: 7vw;' %>
-              </div>
-              <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"> Practice Timing </h4>
-              <div class = "col">
-                <div class="row">
-                  <p>
-                    Tuesday: 7pm - 9pm
-                  </p>
-                </div>
 
-                <div class="row">
-                  <p>
-                    Saturday: 2pm - 6pm
-                  </p>
-                </div>
-              </div>
+      <div class="row">
+        <h4>
+          Practice Timing:
+        </h4>
+      </div>
 
-            <div class="col-6">
-              <div class="row justify-content-center">
-                <%= image_tag 'brain.svg', style: 'width: 7vw; height: 7vw;' %>
-              </div>
-              <h4 class="pt-3 pl-3 pr-3 m-0" style="font-size: 1.5rem;"> Vision </h4>
-              <p class="p-3">
-                To be the leading guitar ensemble in Singapore that is at the forefront of advancing the recognition
-                and appreciation of guitar ensemble music.
-              </p>
-            </div>
-          </div>
-          </div>
-        </div>
+      <div class="row">
+        <p>
+          <%= phrase('Tuesday: 7pm - 9pm') %>
+        </p>
+      </div>
+
+      <div class="row">
+        <p>
+          <%= phrase('Saturday: 2pm - 6pm') %>
+        </p>
       </div>
 
       <div class="row">
@@ -302,103 +317,7 @@
         </p>
       </div>
     </section>
-  </div>
 
-  <div class = "component">
-    <div class="container">
-      <section id="tutors">
-        <div class="row py-5">
-          <h2 class="pl-4 col about-text" style="align-self: center"> Tutors</h2>
-        </div>
 
-        <div class="row">
-          <div class="col tutors">
-            <div class="pr-3" style="float: left;">
-              <%= image_tag 'robert.png', class: 'rounded-circle' %>
-            </div>
-            <div class="h4">
-              Music Director & Resident Conductor: Dr Robert Casteels
-            </div>
-
-            <p>
-              Composer, conductor, pianist, educator and arts administrator, Dr Robert Casteels believes that these
-              activities form an intertwined and kaleidoscopic part of music making.
-            </p>
-            <p>
-              Casteels has conducted professional orchestras in 20 countries with a repertoire of 600 works ranging from
-              the early classics to contemporary music. He has conducted first performances of symphonic works and operas
-              in major festivals in Europe, the USA and Australia. After graduating from the Guildhall School of Music of
-              London and the Juilliard School in New York, Casteels was appointed staff conductor at the Brussels Royal
-              Opera House and Head of conducting studies at the Brussels (Flemish) Royal Music Conservatory. In 2001 he
-              was awarded the Christoffel Plantin prize, Flanders’ highest cultural award, for his cross-cultural
-              research.
-            </p>
-            <p>
-              Casteels took up permanent residency in Singapore in 1996 and citizenship in 2007. He has contributed
-              tirelessly to Singapore’s music scene, as a member of various arts related committees, as Dean of the
-              Faculty of Performing Arts at LASALLE-SIA College of the Arts, as Music Director of the Singapore National
-              Youth Orchestra and as Artistic Director of ‘I’mPULSE’, Asia-Europe Foundation’s first music camp held in
-              The Philippines. Casteels has premiered significant masterpieces in Singapore, such as works by Boulez,
-              Ligeti, Takemitsu, Stockhausen and Varèse. In April 2004, Casteels was appointed the first
-              Associate-in-Residence (Special Music Projects) by the Centre For the Arts, National University of Singapore
-              (NUS).
-            </p>
-            <p>
-              A composer in his own right, Casteels has written a growing corpus of 120 musical works that cross several
-              cultures, genres and disciplines.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
   </div>
 </section>
-
-
-<script>
-    //about
-
-        $(".triggerer-alto").click(function(){
-           $('.triggered-popup-alto').show();
-        });
-        $('.triggered-popup-alto').click(function(){
-            $('.triggered-popup-alto').hide();
-        });
-        $('.triggered-box-close-btn-alto').click(function(){
-            $('.triggered-popup-alto').hide();
-        });
-
-        $(".triggerer-prime").click(function(){
-           $('.triggered-popup-prime').show();
-        });
-        $('.triggered-popup-prime').click(function(){
-            $('.triggered-popup-prime').hide();
-        });
-        $('.triggered-box-close-btn-prime').click(function(){
-            $('.triggered-popup-prime').hide();
-        });
-
-        $(".triggerer-bass").click(function(){
-           $('.triggered-popup-bass').show();
-        });
-        $('.triggered-popup-bass').click(function(){
-            $('.triggered-popup-bass').hide();
-        });
-        $('.triggered-box-close-btn-bass').click(function(){
-            $('.triggered-popup-bass').hide();
-        });    
-
-        $(".triggerer-other").click(function(){
-           $('.triggered-popup-other').show();
-        });
-        $('.triggered-popup-other').click(function(){
-            $('.triggered-popup-other').hide();
-        });
-        $('.triggered-box-close-btn-other').click(function(){
-            $('.triggered-popup-other').hide();
-        });
-
-        $(document).ready(function() {
-          $('.fancybox').fancybox();
-        });       
-</script>

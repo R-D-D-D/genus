@@ -72,6 +72,7 @@
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.8.0, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="excon (v0.65.0, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.7.0, ruby-2.3.7-p456) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="fancybox-rails (v0.3.1, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.11.1, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fission (v0.5.0, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog (v1.42.0, ruby-2.3.7-p456) [gem]" level="application" />

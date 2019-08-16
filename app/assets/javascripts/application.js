@@ -49,8 +49,6 @@ document.addEventListener("turbolinks:load", function() {
             links.addClass("disabled");
     });
 
-    // make contact page footer no margin-top
-
     if ($('title').html() == 'Contact Us | Singapore | NUS Guitar Ensemble') {
         $('footer').css({"margin-top" : "0px"});
     } else {

@@ -108,6 +108,8 @@ GEM
     erubi (1.8.0)
     excon (0.65.0)
     execjs (2.7.0)
+    fancybox-rails (0.3.1)
+      railties (>= 3.1.0)
     ffi (1.11.1)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -457,6 +459,7 @@ DEPENDENCIES
   caroufredsel_rails
   chromedriver-helper
   coffee-rails (~> 4.2)
+  fancybox-rails
   fog (= 1.42)
   font-awesome-rails
   friendly_id (~> 5.2.4)

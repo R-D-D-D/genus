@@ -115,6 +115,14 @@ ActiveRecord::Schema.define(version: 2019_08_12_152639) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  create_table "upcoming_events", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.string "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"

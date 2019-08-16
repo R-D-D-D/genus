@@ -1,6 +1,17 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://www.nusguitarensemble.com"
-require 'aws-sdk'
+
+require 'aws-sdk-s3'
+
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new('nusguitarensemble',
+                                                                        aws_access_key_id: ENV['S3_ACCESS_KEY'],
+                                                                        aws_secret_access_key: ENV['S3_SECRET_KEY'],
+                                                                        aws_region: 'ap-southeast-1'
+)
+SitemapGenerator::Sitemap.public_path = 'tmp/'
+SitemapGenerator::Sitemap.sitemaps_host = "https://niibori.s3.amazonaws.com/"
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.ping_search_engines('https://nusguitarensemble.com/sitemap')
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
   #

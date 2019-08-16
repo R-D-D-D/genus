@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get "/about" , to: 'static_pages#about'
   get "/join_us", to: 'messages#new'
   get "/home", to: 'static_pages#home'
+  get "/maintenance", to: 'static_pages#maintenance'
 
   #sessions
   get "/login", to: 'sessions#new'

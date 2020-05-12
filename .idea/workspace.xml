@@ -37,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/config/sitemap.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="82" selection-start-line="1" selection-start-column="82" selection-end-line="1" selection-end-column="82" />
+              <caret line="1" column="81" selection-start-line="1" selection-start-column="81" selection-end-line="1" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -399,12 +399,12 @@
       <workItem from="1565664650842" duration="3691000" />
       <workItem from="1565965815138" duration="6383000" />
       <workItem from="1566117514910" duration="1404000" />
-      <workItem from="1589252332963" duration="1286000" />
+      <workItem from="1589252332963" duration="1366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204916000" />
+    <option name="totallyTimeSpent" value="204996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1268" height="671" extended-state="0" />
@@ -736,7 +736,7 @@
     <entry file="file://$PROJECT_DIR$/config/sitemap.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="82" selection-start-line="1" selection-start-column="82" selection-end-line="1" selection-end-column="82" />
+          <caret line="1" column="81" selection-start-line="1" selection-start-column="81" selection-end-line="1" selection-end-column="81" />
         </state>
       </provider>
     </entry>

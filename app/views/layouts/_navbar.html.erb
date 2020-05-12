@@ -1,7 +1,8 @@
 <%= link_to root_url do %>
   <div class="container logo">
     <div class="row">
-      <div class="col-3 text-light pr-3" id="myelement">
+      <div class="col-3 text-light">
+        <%= image_tag "genus_logo_no_bg.png", class: "pr-4"%>
       </div>
       <div class="col-9 pl-2">
         GENUS
@@ -129,16 +130,30 @@
 
     <% if @current_user %>
       <li>
-        <%= link_to "Manage Post", manage_posts_path, class: 'nav-link text-light' %>
-      </li>
-      <li>
-        <%= link_to "All Messages", messages_path, class: 'nav-link text-light' %>
-      </li>
-      <li>
-        <%= link_to "Log out", logout_path, method: :delete, class: 'nav-link text-light' %>
-      </li>
-      <li>
-        <%= link_to "Create Admin", signup_path, method: :get, class: 'nav-link text-light' %>
+        <%= link_to root_path, class: 'nav-link text-light' do %>
+          Admin Actions <i class="fas fa-caret-down" id="down-arrow-3"></i>
+        <% end %>
+        <ul class="p-1">
+          <li class="py-1 ml-2">
+            <%= link_to "Manage Post", manage_posts_path, class: 'nav-link text-light' %>
+          </li>
+          <hr class="p-0 m-0">
+
+          <li class="py-1 ml-2">
+            <%= link_to "All Messages", messages_path, class: 'nav-link text-light' %>
+          </li>
+          <hr class="p-0 m-0">
+
+          <li class="py-1 ml-2">
+            <%= link_to "Create Admin", signup_path, method: :get, class: 'nav-link text-light' %>
+          </li>
+
+          <hr class="p-0 m-0">
+
+          <li class="py-1 ml-2">
+            <%= link_to "Log out", logout_path, method: :delete, class: 'nav-link text-light' %>
+          </li>
+        </ul>
       </li>
     <% end %>
 
@@ -164,6 +179,7 @@
         $('#down-arrow').addClass('no-display');
         $('#down-arrow-1').addClass('no-display');
         $('#down-arrow-2').addClass('no-display');
+        $('#down-arrow-3').addClass('no-display');
     } else {
         $('.dropDownMenu ul li').hover(function () {
             $(this).children('ul').stop(true, false, true).slideToggle(300);

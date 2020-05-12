@@ -199,11 +199,17 @@ body {
     color: #fff;
     text-decoration: none;
   }
+
+  img {
+    height: 3.5rem;
+    width: auto;
+  }
 }
 
 #myelement {
-  background: image-url("guitar.svg") center no-repeat;
-  filter: invert(87%) sepia(100%) saturate(3%) hue-rotate(264deg) brightness(111%) contrast(97%);
+  background: image-url("genus_logo_no_bg.png") center no-repeat;
+  width: 100%;
+  //filter: invert(87%) sepia(100%) saturate(3%) hue-rotate(264deg) brightness(111%) contrast(97%);
 }
 
 .sticky {

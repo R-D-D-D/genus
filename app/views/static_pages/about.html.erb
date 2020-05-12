@@ -5,7 +5,7 @@
     <section id="genus">
       <div class="row pt-3 pb-3">
         <div class="col">
-          <h1 class="title">GENUS</h1>
+          <h1 class="title"> <%= phrase('GENUS') %></h1>
         </div>
       </div>
 
@@ -48,8 +48,8 @@
 
     <section id="mvv">
       <div class="row py-5">
-        <h1><strong>About |</strong></h1>
-        <h2 class="pl-4" style="align-self: center"> Mission Vision Values</h2>
+        <h1><strong><%= phrase('About |') %></strong></h1>
+        <h2 class="pl-4" style="align-self: center"> <%= phrase('Mission Vision Values') %></h2>
       </div>
 
       <div class="row d-block">
@@ -100,8 +100,8 @@
 
     <section id="founder">
       <div class="row py-5">
-        <h1><strong>About |</strong></h1>
-        <h2 class="pl-4" style="align-self: center"> Our Founder </h2>
+        <h1><strong><%= phrase('About |') %></strong></h1>
+        <h2 class="pl-4" style="align-self: center"> <%= phrase('Our Founder') %>Our Founder </h2>
       </div>
 
       <div class="row">
@@ -110,7 +110,7 @@
             <%= image_tag 'Alex Abisheganaden.png', size: '200x200', class: 'rounded-circle' %>
           </div>
           <div class="h4">
-            Our Founder: Mr Alex Abisheganaden
+            <%= phrase('Our Founder: Mr Alex Abisheganaden') %>
           </div>
 
           <p> <%= phrase('hey') %>
@@ -118,19 +118,18 @@
             Niibori guitars to the Ensemble. Since then, Niibori guitars have gained immense popularity in the
             Singaporean music scene.
           </p>
-          <p> <%= phrase('hey') %>
-            Having excelled as a guitarist, singer, double bassist, conductor and actor in dramas, musicals and operas,
-            Mr. Abisheganaden is one of Singapore's best-known musicians and stage personalities. In addition, he has
-            shown other facets of his talent as a writer, composer and music adjudicator. Some of his famous works
-            include "Huan Ying-Vanakam" and "Gela-Nexus" (Amalgamation of GENUS and his name), both of which were
-            performed by GENUS in Singapore and Germany in 2007. Mr. Abisheganaden also founded the Singapore Classical
-            Guitar Society in 1967 and remained at its helm for 25 years.
+          <p> <%= phrase('Having excelled as a guitarist, singer, double bassist, conductor and actor in dramas, musicals and operas,
+                  Mr. Abisheganaden is one of Singapore\'s best-known musicians and stage personalities. In addition, he has
+                  shown other facets of his talent as a writer, composer and music adjudicator. Some of his famous works
+                  include "Huan Ying-Vanakam" and "Gela-Nexus" (Amalgamation of GENUS and his name), both of which were
+                  performed by GENUS in Singapore and Germany in 2007. Mr. Abisheganaden also founded the Singapore Classical
+                  Guitar Society in 1967 and remained at its helm for 25 years.') %>
+
           </p>
-          <p> <%= phrase('hey') %>
-            In 1988, in recognition of his leadership and involvement in music in Singapore as a performer, teacher,
+          <p> <%= phrase('In 1988, in recognition of his leadership and involvement in music in Singapore as a performer, teacher,
             adjudicator and impresario, he was awarded our government’s prestigious Singapore Cultural Medallion award.
             Apart from this award, Mr. Abisheganaden also received the COMPASS Meritorious Award from the Composers &
-            Authors Society of Singapore.
+            Authors Society of Singapore.') %>
           </p>
 
         </div>
@@ -139,8 +138,8 @@
 
     <section id="tutors">
       <div class="row py-5">
-        <h1><strong>About |</strong></h1>
-        <h2 class="pl-4" style="align-self: center"> Tutors</h2>
+        <h1><strong><%= phrase('About |') %></strong></h1>
+        <h2 class="pl-4" style="align-self: center"><%= phrase(' Tutors') %></h2>
       </div>
 
       <div class="row">
@@ -185,12 +184,12 @@
 
     <section id="niibori-method">
       <div class="row py-5">
-        <h1><strong>About |</strong></h1>
-        <h2 class="pl-4" style="align-self: center"> The Niibori Method </h2>
+        <h1><strong><%= phrase('About |') %></strong></h1>
+        <h2 class="pl-4" style="align-self: center"><%= phrase(' The Niibori Method') %></h2>
       </div>
 
       <div class="row">
-        <h4>Alto</h4>
+        <h4><%= phrase('Alto') %></h4>
         <p>
           <%= phrase('First, the Alto guitars. Being tuned a perfect fifth higher than a normal classical guitar, an Alto
           guitar can also be said to be the king of high pitch guitars. The distances between the frets are
@@ -206,7 +205,7 @@
           guitars! Fast runs and tremolos are also common sounds in these sections.') %>
         </p>
 
-        <h4>Prime</h4>
+        <h4><%= phrase('Prime') %></h4>
         <p>
           <%= phrase('The second member of the Niibori family would be the Prime guitars. This is also recognized as the standard
           classical guitar which is commonly used during solo guitar playing. In the Niibori Orchestra, it is called the
@@ -222,7 +221,7 @@
         </p>
 
 
-        <h4>Bass</h4>
+        <h4><%= phrase('Bass') %></h4>
         <p>
           <%= phrase('The third member would be the Bass guitars. The Bass guitar is tuned a fourth lower than a Prime guitar,
           giving it the same tuning as an Alto guitar, but one octave lower. Contrary to popular belief that the Bass
@@ -264,7 +263,7 @@
           version of a guitarron is truly unique to Niibori guitar ensembles!') %>
         </p>
 
-        <h4>Other Special Instruments</h4>
+        <h4><%= phrase('Other Special Instruments') %></h4>
         <p>
           <%= phrase('Other than the main members of the Niibori family, other special Niibori guitar instruments are sometimes
           featured in certain pieces. One such Niibori guitar is the Soprano guitar, which is tuned one octave higher
@@ -279,13 +278,13 @@
 
     <section id="schedule">
       <div class="row py-5">
-        <h1><strong>About |</strong></h1>
-        <h2 class="pl-4" style="align-self: center"> Timeline </h2>
+        <h1><strong><%= phrase('About |') %></strong></h1>
+        <h2 class="pl-4" style="align-self: center"><%= phrase(' Timeline') %></h2>
       </div>
 
       <div class="row">
         <h4>
-          Practice Timing:
+          <%= phrase('Practice Timing:') %>
         </h4>
       </div>
 
@@ -303,7 +302,7 @@
 
       <div class="row">
         <h4>
-          Concerts
+          <%= phrase('Concerts') %>
         </h4>
       </div>
       <div class="row">

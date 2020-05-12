@@ -3,19 +3,18 @@
 <section id="about">
   <div class="container px-5">
     <section id="genus">
-      <div class="row pt-3 pb-3">
-        <div class="col">
-          <h1 class="title"> <%= phrase('GENUS') %></h1>
-        </div>
-      </div>
-
       <div class="row px-5">
         <div class="col">
-          <%= image_tag "ensemble_photo_bernice.JPG", class: 'img-fluid' %>
+          <%= image_tag "genus_pano.jpg", class: 'img-fluid full-width' %>
         </div>
       </div>
 
-      <div class="row px-5 pt-3">
+      <div class="row py-3 align-items-center">
+          <h1><strong><%= phrase('About |') %></strong></h1>
+        <h2 class="pl-4" style="align-self: center"> <%= phrase('GENUS') %></h2>
+      </div>
+
+      <div class="row">
         <p>
           <%= phrase('Established in 1981 by Cultural Medallion recipient Mr Alex Abisheganaden, NUS Guitar Ensemble (GENUS) is
           Singapore’s leading guitar ensemble. Initially comprising only classical prime guitars, GENUS was later
@@ -47,51 +46,41 @@
     </section>
 
     <section id="mvv">
-      <div class="row py-5">
+      <div class="row py-3">
         <h1><strong><%= phrase('About |') %></strong></h1>
         <h2 class="pl-4" style="align-self: center"> <%= phrase('Mission Vision Values') %></h2>
       </div>
 
       <div class="row d-block">
-        <p>
+        <h4>
           <%= phrase('Mission:') %>
-        </p>
+        </h4>
         <p>
           <%= phrase('To provide an environment for our members to learn, grow and perform and at the same time, promote
           our art form to the community 2 through our performances') %>
         </p>
-        <p>
+        <h4>
           <%= phrase('Vision:') %>
-        </p>
+        </h4>
         <p>
           <%= phrase('To be the leading guitar ensemble 1 in Singapore that is at the forefront of advancing the recognition
           and appreciation of guitar ensemble music') %>
         </p>
-        <p>
+        <h4>
           <%= phrase('Values:') %>
-        </p>
+        </h4>
         <p>
-          <%= phrase('Community') %>
-        </p>
-        <p>
-          <%= phrase('A strong sense of belonging among members
+          <%= phrase('Community: A strong sense of belonging among members
           Strong connections with the wider guitar ensemble community in Singapore') %>
         </p>
 
         <p>
-          <%= phrase('Excellencey') %>
-        </p>
-        <p>
-          <%= phrase('High musical standards at both the individual and ensemble level
+          <%= phrase('Excellence: High musical standards at both the individual and ensemble level
           Motivation to learn and improve together') %>
         </p>
 
         <p>
-          <%= phrase('Versatility') %>
-        </p>
-
-        <p>
-          <%= phrase('Showcasing the distinctive features of guitar ensemble music
+          <%= phrase('Versatility: Showcasing the distinctive features of guitar ensemble music
           Showcasing a diverse repertoire') %>
         </p>
       </div>
@@ -99,9 +88,9 @@
     </section>
 
     <section id="founder">
-      <div class="row py-5">
+      <div class="row py-3">
         <h1><strong><%= phrase('About |') %></strong></h1>
-        <h2 class="pl-4" style="align-self: center"> <%= phrase('Our Founder') %>Our Founder </h2>
+        <h2 class="pl-4" style="align-self: center"> <%= phrase('Our Founder') %> </h2>
       </div>
 
       <div class="row">
@@ -137,7 +126,7 @@
     </section>
 
     <section id="tutors">
-      <div class="row py-5">
+      <div class="row py-3">
         <h1><strong><%= phrase('About |') %></strong></h1>
         <h2 class="pl-4" style="align-self: center"><%= phrase(' Tutors') %></h2>
       </div>
@@ -183,7 +172,7 @@
     </section>
 
     <section id="niibori-method">
-      <div class="row py-5">
+      <div class="row py-3">
         <h1><strong><%= phrase('About |') %></strong></h1>
         <h2 class="pl-4" style="align-self: center"><%= phrase(' The Niibori Method') %></h2>
       </div>
@@ -277,7 +266,7 @@
     </section>
 
     <section id="schedule">
-      <div class="row py-5">
+      <div class="row py-3">
         <h1><strong><%= phrase('About |') %></strong></h1>
         <h2 class="pl-4" style="align-self: center"><%= phrase(' Timeline') %></h2>
       </div>

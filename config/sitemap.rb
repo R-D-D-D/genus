@@ -9,9 +9,9 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new('nusguit
                                                                         aws_region: 'ap-southeast-1'
 )
 SitemapGenerator::Sitemap.public_path = 'tmp/'
-SitemapGenerator::Sitemap.sitemaps_host = "https://niibori.s3.amazonaws.com/"
+SitemapGenerator::Sitemap.sitemaps_host = "http://s3-ap-southeast-1.amazonaws.com/nusguitarensemble/"
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
-SitemapGenerator::Sitemap.ping_search_engines('https://nusguitarensemble.com/sitemap')
+SitemapGenerator::Sitemap.ping_search_engines('https://nusguitarensemble.herokuapp.com/sitemap')
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
   #

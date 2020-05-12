@@ -1,1 +1,1 @@
-Sitemap: https://www.nusguitarensemble.com/sitemap.xml
+Sitemap: https://nusguitarensemble.s3-ap-southeast-1.amazonaws.com/sitemaps/sitemap.xml.gz

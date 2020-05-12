@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://www.nusguitarensemble.com"
+SitemapGenerator::Sitemap.default_host = "https://nusguitarensemble.herokuapp.com/"
 
 require 'aws-sdk-s3'
 
